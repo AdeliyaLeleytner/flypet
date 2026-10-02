@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{iclr2027_conference,times}
+\usepackage{amsmath,amssymb,booktabs,tabularx,graphicx,microtype}
+\usepackage{hyperref,url}
+\hypersetup{colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue,pdfauthor={Anonymous authors},pdftitle={An Interactive Connectome-Based Fly Model with Sensory Grounding and Plastic Memory}}
+\title{An Interactive Connectome-Based Fly Model with Sensory Grounding and Plastic Memory}
+\author{Anonymous authors}
+\newcommand{\draftnote}[1]{\par\noindent\fbox{\parbox{0.94\linewidth}{\textbf{Working draft.} #1}}\par}
+\begin{document}
+\maketitle
+\draftnote{The title and abstract remain provisional until checked against the submitted abstract. The main text retains the earlier platform framing. Appendices~\ref{app:physiology-pilot} and~\ref{app:question-decoder} report the physiological language pilot and the completed six-fit decoder comparison. The later memory-forecast study is not yet integrated into the main argument. Central claims, submitted-abstract compatibility, literature coverage, and final artifact export require revision.}
+\begin{abstract}
+Connectome-based models constrain neural interactions, but an interactive experiment also needs sensory encoding, persistent state, interpretable outputs, and a way to inspect the assumptions connecting them. We present a research platform that brings these components together around a spiking model of the adult fly brain. It combines measured chemical-response profiles and other sensory inputs, a dopamine-gated memory rule, a descending-to-motor bridge, and separate language interfaces for planning, explanation, and neural-state decoding. Across 156 simulation records, six chemicals produced differentiated and repeatable Kenyon-cell codes; sensory combinations altered annotated motor outputs; and opposite reinforcement histories changed responses to identical odor probes, with exact restoration after loading saved memory. Under the evaluated batch-update policy, an externally unpaired control also changed one odor's response because odor-only input recruited dopamine neurons. A panel of 18 language interactions connected descriptions to recorded state while exposing concrete narration errors. A separate reader audit confirmed dependence on neural state and unreliable decoding of a held-out taste combination. The contribution is an inspectable experimental assembly and its characterization, enabling researchers to connect interventions, internal state, and output without treating language or animation as biological evidence.
+\end{abstract}
+\input{sections/introduction}
+\input{sections/system}
+\input{sections/case_studies}
+\input{sections/reader}
+\input{sections/related_work}
+\input{sections/limitations}
+\section*{Reproducibility statement}
+The review artifact contains source and environment manifests, 156 numerical records, 18 language-interaction records, saved memory, the selected seed-0 reader checkpoint, and reports, predictions, and manifests for all three reader runs. Large connectome inputs remain external, with source references and checksums; legacy reader-training datasets are not included in this export. Recorded recipes can be replayed without repeating LLM calls. A fresh extraction of the smoke archive reproduced a nonzero brain/VNC case exactly in the existing Python environment, with source and data checksums verified. This checks extraction and replay with locally staged data; independent upstream downloads, a new dependency installation, and cross-platform execution were not tested. The final anonymous export and public release remain author decisions.
+\section*{Use of large language models}
+Large language models assisted implementation, literature discovery, analysis, and manuscript drafting. The language models used as experimental components are reported separately in the corresponding methods and execution records. The authors are responsible for checking the sources, numerical results, and final claims. The final author review will reconcile this statement with the contribution record and ICLR 2027 requirements.
+\bibliography{references}
+\bibliographystyle{iclr2027_conference}
+\appendix
+\input{sections/appendix}
+\input{sections/physiology_pilot}
+\clearpage
+\input{sections/question_decoder_results}
+\end{document}

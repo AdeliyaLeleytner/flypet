@@ -1,0 +1,19 @@
+{
+    admin off
+    auto_https off
+}
+http://127.0.0.1:8773 {
+    bind 127.0.0.1
+    request_body {
+        max_size 16KB
+    }
+    @garden path /healthz /api/garden /api/garden/session /api/garden/options /api/garden/thought /api/garden/reset
+    handle @garden {
+        reverse_proxy 127.0.0.1:8766 {
+            header_up X-Flypet-Public 1
+        }
+    }
+    handle {
+        respond "Not found" 404
+    }
+}

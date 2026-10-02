@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Question access at the decoder, with the encoder and physiological states held fixed. Values are mean $\pm$ sample standard deviation over three initializations; this is not a confidence interval. Accuracy columns are percentages on the same 288 examples. Earlier/latest identify which object's location is queried; Both requires correct answers to both questions about one history. NLL is the first-answer-token negative log-likelihood in nats. Invalid generated answers count as errors. Chance accuracy is 25\%. The test split was used by the previous pilot and is reused here for exploration.}
+\label{tab:question-decoder}
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Decoder & State & Overall & Earlier & Latest & Both & NLL $\downarrow$ \\
+\midrule
+State only & Intact & 30.0 $\pm$ 3.4 & 36.8 $\pm$ 6.2 & 23.1 $\pm$ 1.6 & 9.0 $\pm$ 0.0 & 1.50 $\pm$ 0.17 \\
+State only & Train mean & 17.1 $\pm$ 14.9 & 16.7 $\pm$ 14.4 & 17.6 $\pm$ 15.3 & 4.4 $\pm$ 3.8 & 5.25 $\pm$ 5.54 \\
+State only & Paired swap & 14.1 $\pm$ 3.3 & 5.1 $\pm$ 7.1 & 23.1 $\pm$ 1.6 & 0.7 $\pm$ 1.2 & 1.94 $\pm$ 0.04 \\
+\midrule
+State + question & Intact & 28.7 $\pm$ 2.9 & 31.5 $\pm$ 4.1 & 25.9 $\pm$ 1.7 & 8.3 $\pm$ 2.5 & 1.50 $\pm$ 0.05 \\
+State + question & Train mean & 22.7 $\pm$ 4.2 & 22.2 $\pm$ 4.8 & 23.1 $\pm$ 4.2 & 5.8 $\pm$ 2.1 & 2.07 $\pm$ 0.83 \\
+State + question & Paired swap & 16.8 $\pm$ 2.4 & 7.6 $\pm$ 3.2 & 25.9 $\pm$ 1.7 & 2.3 $\pm$ 0.8 & 1.86 $\pm$ 0.10 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,1 @@
+How your answer is scored: the average of two fractions, the fraction of trained odours you label with the right sign and the fraction of untrained odours you label 0. If no odour was trained, only the second fraction counts.

@@ -1,0 +1,30 @@
+[Unit]
+Description=flypet - fruit fly connectome pet
+After=network-online.target tailscale-wait-online.service ollama.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=flypet
+Group=flypet
+WorkingDirectory=/opt/flypet
+Environment=HOME=/var/lib/flypet
+Environment=FLYPET_STATE_DIR=/var/lib/flypet
+Environment=FLYPET_BRIAN_TARGET=cython
+Environment=FLYPET_READER=0
+Environment=FLYPET_LLM=ollama
+Environment=FLYPET_OLLAMA_MODEL=qwen3:0.6b
+EnvironmentFile=/etc/flypet/app.env
+ExecStart=/opt/flypet/.venv/bin/python -m flypet.pet --host 127.0.0.1 --port 8766
+Restart=on-failure
+RestartSec=5
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/flypet
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

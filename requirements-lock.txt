@@ -1,0 +1,15 @@
+# Exact versions of the simulation environment. With Python 3.12 they reproduce the reference run
+# (looming stimulus, seed 11: 1,498 active neurons, 27,898 spikes) on macOS arm64 and Linux x86_64.
+brian2==2.10.1
+cython==3.1.3
+jinja2==3.1.6
+joblib==1.6.0
+numpy==2.5.3
+pandas==3.0.5
+pyarrow==25.0.1
+pyparsing==3.3.2
+scikit-learn==1.9.1
+scipy==1.18.1
+setuptools==84.0.0
+sympy==1.14.0
+threadpoolctl==3.7.0

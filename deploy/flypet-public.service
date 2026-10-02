@@ -1,0 +1,17 @@
+[Unit]
+Description=Public gateway for bounded Fly Garden API only
+After=network-online.target flypet.service
+Requires=flypet.service
+
+[Service]
+User=flypet
+Group=flypet
+ExecStart=/usr/bin/caddy run --config /opt/flypet/deploy/garden-public.Caddyfile --adapter caddyfile
+Restart=on-failure
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

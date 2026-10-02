@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>flypet — муха на коннектоме</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#f6f4ee; --panel:#fff; --ink:#222; --muted:#777; --acc:#c8552d; --line:#e2ddd2; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.4 -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--bg); }
+  header { padding:12px 20px; border-bottom:1px solid var(--line); display:flex; gap:20px; align-items:baseline; }
+  header h1 { font-size:18px; margin:0; }
+  header .meta { color:var(--muted); font-size:13px; }
+  main { display:grid; grid-template-columns: 1fr 380px; gap:16px; padding:16px 20px; max-width:1300px; }
+  @media (max-width:900px){ main { grid-template-columns:1fr; } }
+  .arena { background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; position:relative; }
+  .arena svg { width:100%; height:auto; display:block; background: radial-gradient(circle at 50% 40%, #fbfaf6, #efece4); }
+  #portrait svg { width:100%; height:auto; display:block; background:#12100e; }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px; margin-bottom:14px; }
+  .panel h2 { font-size:14px; margin:0 0 8px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+  .bar { height:8px; background:#eee; border-radius:4px; overflow:hidden; margin:4px 0 10px; }
+  .bar i { display:block; height:100%; background:var(--acc); width:30%; transition:width .6s; }
+  .btns { display:flex; flex-wrap:wrap; gap:6px; }
+  button { font:inherit; padding:6px 10px; border:1px solid var(--line); background:#faf8f3; border-radius:8px; cursor:pointer; }
+  button:hover { border-color:var(--acc); }
+  button:disabled { opacity:.5; cursor:wait; }
+  .group { margin-bottom:8px; }
+  .group b { display:block; font-size:12px; color:var(--muted); margin:6px 0 4px; }
+  select, input[type=text] { font:inherit; padding:6px 8px; border:1px solid var(--line); border-radius:8px; }
+  input[type=text] { width:100%; }
+  #chatlog { max-height:260px; overflow:auto; font-size:14px; }
+  #chatlog p { margin:6px 0; }
+  #chatlog .me { color:var(--muted); }
+  #chatlog .fly { }
+  #chatlog .fly::before { content:"🪰 "; }
+  pre { font:12px/1.35 ui-monospace, Menlo, monospace; white-space:pre-wrap; background:#faf8f3; padding:8px; border-radius:8px; margin:0; max-height:220px; overflow:auto; }
+  .status { font-size:13px; color:var(--muted); min-height:18px; }
+  .caption { position:absolute; left:12px; bottom:10px; background:rgba(255,255,255,.85); padding:6px 10px; border-radius:8px; font-size:14px; max-width:70%; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🪰 <span id="name">Дрозя</span> — муха на коннектоме</h1>
+  <a href="/garden">Открыть сад →</a>
+  <span class="meta">138 639 нейронов FlyWire v783, модель Shiu et al. 2024 · LLM: <span id="llm">…</span></span>
+</header>
+<main>
+  <section class="arena">
+    <div id="portrait"></div>
+    <svg id="svg" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="max-height:220px; border-top:1px solid var(--line);">
+      <defs>
+        <radialGradient id="drop" cx="50%" cy="50%"><stop offset="0%" stop-color="#ffe08a"/><stop offset="100%" stop-color="#f0b429" stop-opacity=".6"/></radialGradient>
+      </defs>
+      <g id="objects"></g>
+      <g id="fly" transform="translate(400,280) rotate(-90)">
+        <ellipse id="shadow" cx="0" cy="0" rx="30" ry="16" fill="#000" opacity=".08"/>
+        <g id="legs" stroke="#3a2a1a" stroke-width="2.5" fill="none" stroke-linecap="round">
+          <path class="leg l1" d="M8,-6 q10,-12 22,-14"/><path class="leg r1" d="M8,6 q10,12 22,14"/>
+          <path class="leg l2" d="M0,-8 q0,-16 10,-22"/><path class="leg r2" d="M0,8 q0,16 10,22"/>
+          <path class="leg l3" d="M-8,-7 q-8,-14 -2,-24"/><path class="leg r3" d="M-8,7 q-8,14 -2,24"/>
+        </g>
+        <g id="wings" opacity=".55">
+          <ellipse cx="-22" cy="-10" rx="26" ry="8" fill="#bcd7e6" transform="rotate(-12)"/>
+          <ellipse cx="-22" cy="10" rx="26" ry="8" fill="#bcd7e6" transform="rotate(12)"/>
+        </g>
+        <ellipse cx="-14" cy="0" rx="20" ry="11" fill="#5a4030"/>   <!-- abdomen -->
+        <ellipse cx="4" cy="0" rx="12" ry="9" fill="#7a5a3a"/>       <!-- thorax -->
+        <circle id="head" cx="19" cy="0" r="7" fill="#8a6a45"/>
+        <circle cx="21" cy="-4" r="3" fill="#b8302a"/><circle cx="21" cy="4" r="3" fill="#b8302a"/>
+        <path id="antL" d="M24,-3 q6,-4 10,-8" stroke="#3a2a1a" stroke-width="1.5" fill="none"/>
+        <path id="antR" d="M24,3 q6,4 10,8" stroke="#3a2a1a" stroke-width="1.5" fill="none"/>
+        <line id="proboscis" x1="25" y1="0" x2="29" y2="0" stroke="#3a2a1a" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <div class="caption" id="caption">Нажми стимул или напиши, что делаешь с мухой.</div>
+  </section>
+  <aside>
+    <div class="panel">
+      <h2>Тело</h2>
+      <div>Сытость <span id="satv">—</span></div><div class="bar"><i id="satbar"></i></div>
+      <div class="status" id="status">Загрузка мозга…</div>
+    </div>
+    <div class="panel">
+      <h2>Стимулы <select id="side"><option value="both">обе стороны</option><option value="left">слева</option><option value="right">справа</option></select></h2>
+      <div class="group"><b>Вкус</b><div class="btns" data-keys="sugar,water,bitter,sugar_tarsal,salt_low"></div></div>
+      <div class="group"><b>Касание / звук</b><div class="btns" data-keys="antenna_touch,head_touch,eye_touch,sound"></div></div>
+      <div class="group"><b>Запах</b><div class="btns" data-keys="smell_vinegar,smell_geosmin,smell_co2,smell_cva"></div></div>
+      <div class="group"><b>Зрение / среда</b><div class="btns" data-keys="looming,moving_object,light,heat,cold"></div></div>
+    </div>
+    <div class="panel">
+      <h2>Запах и память</h2>
+      <form id="smellform" style="display:flex; gap:6px; flex-wrap:wrap;">
+        <input type="text" id="smellin" placeholder="что дать понюхать: яблоко, молоток…" autocomplete="off" style="flex:1 1 100%;">
+        <button type="submit" data-r="none">понюхать</button>
+        <button type="button" data-r="reward" id="smellreward">+ награда (PAM)</button>
+        <button type="button" data-r="punish" id="smellpunish">+ наказание (PPL1)</button>
+      </form>
+      <div class="status" id="valence" style="margin-top:6px;"></div>
+      <div class="status" id="assoc"></div>
+    </div>
+    <div class="panel">
+      <h2>Разговор</h2>
+      <div id="chatlog"></div>
+      <form id="chatform" style="margin-top:8px; display:flex; gap:6px;">
+        <input type="text" id="chatin" placeholder="Я капнула тебе сахар на хоботок…" autocomplete="off">
+        <button type="submit" id="send">→</button>
+      </form>
+    </div>
+    <div class="panel">
+      <h2>Показания последней пробы</h2>
+      <pre id="readout">—</pre>
+    </div>
+  </aside>
+</main>
+<script src="static/portrait.js" defer></script>
+<script>
+const $ = s => document.querySelector(s);
+const fly = { x:400, y:280, h:-90 };
+const flyEl = $('#fly'), prob = $('#proboscis'), wings = $('#wings'), legs = $('#legs'), head = $('#head');
+let busy = false, labels = {};
+
+function place(){ flyEl.setAttribute('transform', `translate(${fly.x},${fly.y}) rotate(${fly.h})`); }
+function clamp(){ fly.x = Math.max(40, Math.min(760, fly.x)); fly.y = Math.max(40, Math.min(480, fly.y)); }
+function moveAlong(d){ const r = fly.h*Math.PI/180; fly.x += Math.cos(r)*d; fly.y += Math.sin(r)*d; clamp(); place(); }
+function anim(ms, fn){ return new Promise(res => { const t0 = performance.now(); (function step(t){ const k = Math.min(1,(t-t0)/ms); fn(k); if(k<1) requestAnimationFrame(step); else res(); })(t0); }); }
+
+async function act(bv){
+  if(!bv) return;
+  const tasks = [];
+  if(window.flyPortrait) tasks.push(window.flyPortrait.act(bv));
+  if(bv.proboscis>0.05){ tasks.push(anim(1400, k => { const e = k<0.25? k/0.25 : k>0.75? (1-k)/0.25 : 1; prob.setAttribute('x2', 29 + 22*bv.proboscis*e); })); }
+  if(bv.escape>0.05){ tasks.push((async()=>{ const ang = fly.h + (Math.random()*80-40); const r = ang*Math.PI/180;
+      await anim(500, k => { const s = 1 + 0.5*Math.sin(k*Math.PI)*bv.escape; wings.setAttribute('opacity', 0.2+0.6*Math.abs(Math.sin(k*40))); flyEl.setAttribute('transform', `translate(${fly.x + Math.cos(r)*90*k*bv.escape},${fly.y + Math.sin(r)*90*k*bv.escape}) rotate(${fly.h}) scale(${s})`); });
+      fly.x += Math.cos(r)*90*bv.escape; fly.y += Math.sin(r)*90*bv.escape; clamp(); wings.setAttribute('opacity', .55); place(); })()); }
+  if(bv.grooming>0.05){ tasks.push(anim(1800, k => { const w = Math.sin(k*Math.PI*8)*10*bv.grooming; legs.querySelector('.l1').setAttribute('d', `M8,-6 q${14+w},-16 ${18+w},-4`); legs.querySelector('.r1').setAttribute('d', `M8,6 q${14-w},16 ${18-w},4`); if(k>=1){ legs.querySelector('.l1').setAttribute('d','M8,-6 q10,-12 22,-14'); legs.querySelector('.r1').setAttribute('d','M8,6 q10,12 22,14'); } })); }
+  const turn = (bv.turn_right - bv.turn_left) * 45;
+  if(Math.abs(turn)>2){ const h0 = fly.h; tasks.push(anim(700, k => { fly.h = h0 + turn*k; place(); })); }
+  if(bv.walk_forward>0.05 || bv.walk_backward>0.05){ const d = (bv.walk_forward - bv.walk_backward)*70; let last=0; tasks.push(anim(1000, k => { moveAlong(d*(k-last)); last=k; legs.setAttribute('transform', `translate(0,${Math.sin(k*30)*1.5})`); })); }
+  if(bv.head>0.05){ tasks.push(anim(800, k => head.setAttribute('cy', Math.sin(k*Math.PI*4)*2*bv.head))); }
+  await Promise.all(tasks);
+}
+
+function idle(){ if(busy) return; const r = Math.random(); if(r<0.4){ const h0=fly.h, d=(Math.random()*30-15); anim(600, k=>{ fly.h=h0+d*k; place(); }); } else if(r<0.6){ anim(500, k=>{ head.setAttribute('cy', Math.sin(k*Math.PI*2)*1.2); }); } }
+setInterval(idle, 3500);
+
+function setState(s){ if(!s) return; $('#satv').textContent = Math.round(s.satiety*100)+'%'; $('#satbar').style.width = (s.satiety*100)+'%'; }
+function describe(bv){ if(!bv) return 'ничего не подано'; const parts=[]; if(bv.proboscis>0.05) parts.push('хоботок '+Math.round(bv.proboscis*100)+'%'); if(bv.escape>0.05) parts.push('побег '+Math.round(bv.escape*100)+'%'); if(bv.grooming>0.05) parts.push('груминг '+Math.round(bv.grooming*100)+'%'); if(bv.walk_forward>0.05) parts.push('вперёд'); if(bv.walk_backward>0.05) parts.push('назад'); if(bv.turn_left>0.05||bv.turn_right>0.05) parts.push('поворот'); return parts.length? parts.join(', ') : 'тело не отвечает (активность '+Math.round(bv.arousal*100)+'%)'; }
+
+async function api(path, body){ const r = await fetch(path, body? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)} : {}); return r.json(); }
+function setBusy(b){ busy=b; document.querySelectorAll('button').forEach(x=>x.disabled=b); }
+
+async function stimulate(key){
+  if(busy) return; setBusy(true); $('#status').textContent = 'симуляция: '+(labels[key]||key)+'…';
+  try { const r = await api('/api/stimulate', {key, side: $('#side').value});
+    $('#readout').textContent = `${labels[key]||key} · ${r.rate_used_hz.toFixed(0)} Гц · ${r.summary.duration_ms} мс · ${r.summary.wall_s} с\nактивных нейронов: ${r.summary.n_active_downstream}, спайков: ${r.summary.n_spikes_total}\n\n${r.behaviours_text}`;
+    $('#caption').textContent = (labels[key]||key)+' → '+describe(r.behaviour); setState(r.state); $('#status').textContent = 'готово';
+    await act(r.behaviour);
+  } catch(e){ $('#status').textContent = 'ошибка: '+e; }
+  setBusy(false);
+}
+
+$('#chatform').addEventListener('submit', async ev => {
+  ev.preventDefault(); if(busy) return; const text = $('#chatin').value.trim(); if(!text) return; $('#chatin').value='';
+  const log = $('#chatlog'); log.insertAdjacentHTML('beforeend', `<p class="me">Ты: ${text}</p>`); log.scrollTop = log.scrollHeight;
+  setBusy(true); $('#status').textContent = 'LLM переводит → симуляция → LLM отвечает…';
+  try { const r = await api('/api/chat', {text});
+    if(r.error){ log.insertAdjacentHTML('beforeend', `<p class="fly" style="color:#a33">${r.error}</p>`); $('#status').textContent='LLM недоступна'; setBusy(false); return; }
+    log.insertAdjacentHTML('beforeend', `<p class="fly">${r.reply}</p>`); log.scrollTop = log.scrollHeight;
+    if(r.behaviours_text) $('#readout').textContent = `${r.plan.interpretation}\n${r.plan.stimuli.map(s=>s.key+'/'+s.side+' '+s.rate_hz+'Гц').join(', ')} · ${r.plan.duration_ms} мс\n\n${r.behaviours_text}`;
+    $('#caption').textContent = r.behaviour ? describe(r.behaviour) : r.plan.interpretation; setState(r.state); $('#status').textContent = `готово за ${r.wall_s} с`;
+    await act(r.behaviour);
+  } catch(e){ $('#status').textContent = 'ошибка: '+e; }
+  setBusy(false);
+});
+
+async function smell(reinf){
+  if(busy) return; const text = $('#smellin').value.trim(); if(!text) return;
+  setBusy(true); $('#status').textContent = 'запах: '+text+(reinf!=='none'? ' + '+reinf : '')+'…';
+  if(window.flyPortrait) window.flyPortrait.smell(reinf);
+  try { const r = await api('/api/smell', {text, reinforcement: reinf});
+    const v = r.valence; if(v){ const d = v.delta; const word = d>0.1? 'тянет к нему' : d<-0.1? 'отталкивает' : 'нейтрально';
+      $('#valence').textContent = `«${v.odor}» → гломерулы ${v.glomeruli.join(', ')}; валентность наивная ${v.naive_score>=0?'+':''}${v.naive_score}, с памятью ${v.score>=0?'+':''}${v.score} (Δ ${d>=0?'+':''}${d}: ${word})`; }
+    if(r.learning) $('#valence').textContent += ` · обучение: ${r.learning.reinforcement}, изменено синапсов ${r.learning.synapses_changed}`;
+    $('#assoc').textContent = r.associations && r.associations.length ? 'память: '+r.associations.join(', ') : 'память пуста';
+    $('#readout').textContent = r.behaviours_text; $('#caption').textContent = `запах «${text}» → ${describe(r.behaviour)}`; setState(r.state); $('#status').textContent = `готово за ${r.wall_s} с`;
+    await act(r.behaviour);
+  } catch(e){ $('#status').textContent = 'ошибка: '+e; }
+  setBusy(false);
+}
+$('#smellform').addEventListener('submit', ev => { ev.preventDefault(); smell('none'); });
+$('#smellreward').addEventListener('click', () => smell('reward'));
+$('#smellpunish').addEventListener('click', () => smell('punish'));
+
+async function init(){
+  const s = await api('/api/state'); labels = Object.fromEntries(Object.entries(s.stimuli).map(([k,v])=>[k,v.label]));
+  document.querySelectorAll('.btns').forEach(div => { div.dataset.keys.split(',').forEach(k => { const b=document.createElement('button'); b.textContent = labels[k]||k; b.title = s.stimuli[k]? s.stimuli[k].expected : ''; b.onclick=()=>stimulate(k); div.appendChild(b); }); });
+  $('#name').textContent = s.name; $('#llm').textContent = s.llm||'—'; setState(s); $('#status').textContent = 'мозг готов';
+  if(s.memory) $('#assoc').textContent = s.memory.associations.length ? 'память: '+s.memory.associations.join(', ') : 'память пуста';
+  (s.events||[]).slice(-8).forEach(e => { if(e.kind==='chat'){ const [me, fl] = e.text.split(' / Муха: '); $('#chatlog').insertAdjacentHTML('beforeend', `<p class="me">${me}</p><p class="fly">${fl||''}</p>`); } });
+  setInterval(async()=>{ if(!busy){ setState(await api('/api/state')); } }, 15000);
+}
+init();
+</script>
+</body>
+</html>

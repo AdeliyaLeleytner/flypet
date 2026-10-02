@@ -1,0 +1,4071 @@
+{
+  "about": "Checked upstream inputs and GitHub release artifacts. Scientific outputs retain their original licenses; see THIRD_PARTY_NOTICES.md. Source hashes are recorded where personal paths were normalized.",
+  "files": [
+    {
+      "path": "data/door/door_mappings.csv",
+      "group": "brain",
+      "size": 12824,
+      "sha256": "1197c492e769b1b587c907c5b750ffa2507d7e6c9fe9dfcb2ee8603871e00912",
+      "upstream": "https://raw.githubusercontent.com/ropensci/DoOR.data/db323a496577c4b4a72b5c2fcd1859e07521ffb5/data/door_mappings.csv",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "path": "data/door/door_response_matrix.csv",
+      "group": "brain",
+      "size": 295852,
+      "sha256": "bc2aa5414ff54d3a1399f5fe171e154bcadc754bcf323a3c27711a54f70848e2",
+      "upstream": "https://raw.githubusercontent.com/ropensci/DoOR.data/db323a496577c4b4a72b5c2fcd1859e07521ffb5/data/door_response_matrix.csv",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "path": "data/door/odor.csv",
+      "group": "brain",
+      "size": 155880,
+      "sha256": "a31d1841cf90ce23ec149760a5efa38eae02de7820bb2300c3a7dba221745940",
+      "upstream": "https://raw.githubusercontent.com/ropensci/DoOR.data/db323a496577c4b4a72b5c2fcd1859e07521ffb5/data/odor.csv",
+      "licence": "CC-BY-SA-4.0"
+    },
+    {
+      "path": "data/flywire_annotations_783.tsv",
+      "group": "brain",
+      "size": 31718505,
+      "sha256": "9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be",
+      "upstream": "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/8587524c1748ce5ef2080822a2fc890fc03bf597/supplemental_files/Supplemental_file1_neuron_annotations.tsv",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "vendor/Drosophila_brain_model/Completeness_783.csv",
+      "group": "brain",
+      "size": 3327347,
+      "sha256": "bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311",
+      "upstream": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "vendor/Drosophila_brain_model/Connectivity_783.parquet",
+      "group": "brain",
+      "size": 100804642,
+      "sha256": "efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347",
+      "upstream": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Connectivity_783.parquet",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "vendor/Drosophila_brain_model/LICENSE",
+      "group": "brain",
+      "size": 1085,
+      "sha256": "3621f6d6476189190e2960fa43f11b275ba4eca848fdac50a1ba2925de6223e8",
+      "upstream": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/LICENSE",
+      "licence": "MIT"
+    },
+    {
+      "path": "data/malecns/annotations.feather",
+      "group": "vnc",
+      "size": 14483314,
+      "sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+      "upstream": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "path": "data/malecns/neurotransmitters.feather",
+      "group": "vnc",
+      "size": 43282834,
+      "sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+      "upstream": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-neurotransmitters-male-cns-v1.0.feather",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "path": "data/malecns/weights.feather",
+      "group": "vnc",
+      "size": 502169298,
+      "sha256": "5c536423a62a688e59e7b441f9c04d6272c9a1f017e35814cf561f8c275d9e9e",
+      "upstream": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5-significant-only.feather",
+      "licence": "CC-BY-4.0"
+    },
+    {
+      "path": "data/architecture_reader_20260924_gpu/seed_2/local_graph_reload.json",
+      "group": "results",
+      "size": 650,
+      "sha256": "bc42a68dbb7aec8c3e5fa4f502cd02c7f298915351fd1d2ef797a80fa42161fd",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/architecture_reader_analysis_20260924/architecture_comparison.pdf",
+      "group": "results",
+      "size": 26613,
+      "sha256": "c93c9174558c01e1413e90687e95da3b3e8c205560cdaadfc35c295c4078bd1e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/architecture_reader_analysis_20260924/architecture_comparison.png",
+      "group": "results",
+      "size": 135551,
+      "sha256": "7a47c747c6ad9a790ac8b8f828b746f64263f3c44aec4629ae4ece684519c2d1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/architecture_reader_analysis_20260924/metrics.csv",
+      "group": "results",
+      "size": 11500,
+      "sha256": "38344a8b3618573110eb15bba2d48758b4670aa3f1bddbe939af103e56896637",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/architecture_reader_analysis_20260924/paired_differences.csv",
+      "group": "results",
+      "size": 6700,
+      "sha256": "284e65e5a8c41e4b25db68a77adcc5af07bdbdc5b6232e69ff6034ccef545bf2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/architecture_reader_analysis_20260924/summary.json",
+      "group": "results",
+      "size": 1443273,
+      "sha256": "5267602de247560153e6516752ba5f35d5f713a1e63110e6c041e6e8cd3dbe86",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/architecture_reader_analysis_20260924/train_mean_comparison_audit.json",
+      "group": "results",
+      "size": 8182,
+      "sha256": "f6a1f43d38537970250fb3ed526d6109b409eb0b067e866de04de343eee61894",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/baselines.json",
+      "group": "results",
+      "size": 777098,
+      "sha256": "4d9e991a3fa2a50420a85382d61a7543a47f56eefcbc5dfd40a1c2f09b56cb58",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/baselines.log",
+      "group": "results",
+      "size": 784,
+      "sha256": "524caca4c8331729fd4dac1ac2b4ab3aa8eb2840162449dca4dc5971070befc2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/bayes_balanced.json",
+      "group": "results",
+      "size": 38534,
+      "sha256": "6b9cf2dc21015b1130d68d89a066e8a29b7b5443411c3c34e03484028f8883ff",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/bayes_play.log",
+      "group": "results",
+      "size": 99,
+      "sha256": "b83d5fe8d0bacd462331d6aee5adc0485ef8267b030c2a8bf8a3753c5c2d8803",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/bayes_player.json",
+      "group": "results",
+      "size": 170932,
+      "sha256": "6299f5d3b2a8a6ddf7328044678827841f82b33bc0a67c91206643a58627231f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/bayes_table.npz",
+      "group": "results",
+      "size": 566838,
+      "sha256": "9db2a160757690ed1edfdeb7a1f47bb9089506e3a2af26d40a4e886955648322",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_opus.json",
+      "group": "results",
+      "size": 125952,
+      "sha256": "13fea79651f0bcb57a76628cb2fa1491ad11abbeab5b0307fd68a4a3173a0ff6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_opus.log",
+      "group": "results",
+      "size": 235,
+      "sha256": "83febc9bd3dd474cbde40efdae42073e7e084c054b987f5bf121b9463b1800d6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_opus_informed_scored.json",
+      "group": "results",
+      "size": 127709,
+      "sha256": "c0bdcd6e8b99c95bcb3613e468acbf503b8a351c4d70769df7471b7c95725f6e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_opus_informed_scored.log",
+      "group": "results",
+      "size": 235,
+      "sha256": "e3043d081e3a8a5f59a39c45e80809f25961bb2e8a6a60906120554d9faf2dd8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet.json",
+      "group": "results",
+      "size": 135317,
+      "sha256": "5f81db137b86c34a15356a948ba19672907c14813b3bc340d863289e1a9fab15",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_diagnose.log",
+      "group": "results",
+      "size": 408,
+      "sha256": "c71e1bb62fce794568dffa43e4634d58697e2d42370769d7f411991f85f171eb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_diagnose_2.log",
+      "group": "results",
+      "size": 637,
+      "sha256": "00183de950f055b9e0657fe1c213a889944dbd2eb1eb3b3bded0b11a8a1f0f4d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_diagnose_3.log",
+      "group": "results",
+      "size": 145,
+      "sha256": "cf628f26e21808cb61eb95d32a5da3bce14e0204c29f94c86b267173c6c7fe21",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_informed.json",
+      "group": "results",
+      "size": 138308,
+      "sha256": "646f45ef06e6da04926926d0f838fe39edbafba8a15e85984df7c43bde5d40c5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_informed.log",
+      "group": "results",
+      "size": 2443,
+      "sha256": "cf23e94c614484bbe34e593fdc8a73c117568c43650be12192cd6b0768167ae4",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_informed_2.log",
+      "group": "results",
+      "size": 155,
+      "sha256": "32443ed6cea6277ce772c4c6f0d797e2b886cb72db432f5b0281f695d71da696",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_informed_scored.json",
+      "group": "results",
+      "size": 140552,
+      "sha256": "0ce2675193e7edea9255da6bfd0bd85258c5e92bd24a9d2c8ebfcebf6832aca1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_informed_scored.log",
+      "group": "results",
+      "size": 235,
+      "sha256": "ec9d021fd2c9f01016513cac652fa878c13707497e20393262623d12707ca754",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_scored.json",
+      "group": "results",
+      "size": 135279,
+      "sha256": "423aa6e1546977f441644f1c9433ad627c1b82356841599f7d899db10ea2b872",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/claude_sonnet_scored.log",
+      "group": "results",
+      "size": 235,
+      "sha256": "2ae0368e2168f241657e93e0a86423932ac5e1c8e56c134497c131f4de6e6dc6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/erase_feasibility.json",
+      "group": "results",
+      "size": 52984,
+      "sha256": "72620f14c302ae8e7546cf33a62e5f34064b009739ff90d67e19d02278fc96ef",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/example_rule.json",
+      "group": "results",
+      "size": 169993,
+      "sha256": "977ad4e9cf10be6817829c236610ff7f666c920fcd0ab52146236f2706e866dd",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/example_rule.log",
+      "group": "results",
+      "size": 3594,
+      "sha256": "344c75825893e7ce2d335308121596e1b83f80014674f623ca5a4741f52bb76e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/leaderboard.csv",
+      "group": "results",
+      "size": 3112,
+      "sha256": "938cb200183eae9405699ad9e4245751736552d408768a92c0c77b99a5a2a9a7",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/lookup_prior.json",
+      "group": "results",
+      "size": 38790,
+      "sha256": "82bb0a2eb9ed0ae6007c876311f4d6c4a8fd40d21fcfb56bcc1b2d08745f35d8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_20260926/smoke_local.log",
+      "group": "results",
+      "size": 1121,
+      "sha256": "5cf9c20d0e89574d9efc12ec0f780d882e0f754dc918cdafacd781cba8d33d2b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T07.log",
+      "group": "results",
+      "size": 7350,
+      "sha256": "299b8a460eb26136f9b112ca5666bcb8fc3166c9c233e8afbf90e8101def21fb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T07/eval_step0.json",
+      "group": "results",
+      "size": 64230,
+      "sha256": "f4a9d377150b02b9dce7512aeada004f3f6763989b75cdad4947402cda17f8b9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T07/eval_step10.json",
+      "group": "results",
+      "size": 63366,
+      "sha256": "47e4457fc6b32df0258c20d131c867945c9e673d4f92431228c5c8524eb320ae",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T07/eval_step20.json",
+      "group": "results",
+      "size": 62046,
+      "sha256": "779606d61d2b4dd1285576999fffb018a0d1c1c6de299aedc7b477a52c7f030c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T07/eval_step30.json",
+      "group": "results",
+      "size": 62296,
+      "sha256": "08ca88a95be47978b3d39b57ed652031ea15c63314122746c03b2401bf6514ec",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T07/log.jsonl",
+      "group": "results",
+      "size": 6693,
+      "sha256": "6f57fcba09a755734b79ccb82c76bb6f96b2ec989aa178ce4768462700442f53",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T1.log",
+      "group": "results",
+      "size": 2018,
+      "sha256": "9b149b75f33df8da341a0dcc71c86e32eba77903e9c1d013516ea3f2c00e88de",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T1/eval_step0.json",
+      "group": "results",
+      "size": 64230,
+      "sha256": "f4a9d377150b02b9dce7512aeada004f3f6763989b75cdad4947402cda17f8b9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_diagnose_T1/log.jsonl",
+      "group": "results",
+      "size": 1039,
+      "sha256": "c268d21765718c15d9c2dbef58016b593850c04713ba92e11b0049119d2d17cf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_grpo_step30_brief.log",
+      "group": "results",
+      "size": 265,
+      "sha256": "e5839c0a483294c3ffd0fd77f1e36813f9ffde7f1d7658d3f55cf6c5b47e0312",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_grpo_step30_brief/eval_step0.json",
+      "group": "results",
+      "size": 62325,
+      "sha256": "a510aeadf82da8709348f9e3c5d9aa8bd1b7321287985f67bf32d1bf9e29f80a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_think.log",
+      "group": "results",
+      "size": 281,
+      "sha256": "b863c248a33d2358eb26c04b02e0ab162168fdb275a06c96cd4e3e92b1e2dd41",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_think/eval_step0.json",
+      "group": "results",
+      "size": 2631752,
+      "sha256": "fcbee1ea54efedcdd1e38903ea6144f959f83194aabf8fed7c744eaba8343fc7",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_zero.log",
+      "group": "results",
+      "size": 411,
+      "sha256": "6ecb38dfb4966eb45e9ddca3e637e240225fe992ee03252345122609c14bf6ab",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_zero/eval_step0.json",
+      "group": "results",
+      "size": 100452,
+      "sha256": "53661a891eec67629a29d9dc414935650a2e3e8e6f519f76ed1736ad6e938112",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_zero_brief.log",
+      "group": "results",
+      "size": 280,
+      "sha256": "34adc13c0288ef7ff4078901985f8097b9a41696bdeae29b38585cdef87e21f5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/qwen32b_zero_brief/eval_step0.json",
+      "group": "results",
+      "size": 63844,
+      "sha256": "4a25e6b2971e359ab15aba7b3e8240dd5524b6ab85c096b02775ce834d0e9e7d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/rows_qwen32b.json",
+      "group": "results",
+      "size": 253667,
+      "sha256": "6a13921c0b532dd021fbd540974b8a9141264949150eac85457f12ddaf38d66d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/rows_qwen32b_brief.json",
+      "group": "results",
+      "size": 127590,
+      "sha256": "046bf8d62c4f49010b91227db5c1b163d7f602379207275f50ce40ba7061e4eb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/flytalk_rl_20260926/rows_qwen32b_think.json",
+      "group": "results",
+      "size": 65569,
+      "sha256": "41eb780845ede40eb453c300b0ed3509c656829f1719d93949c03b2e8c9b1371",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/physiology_profile_20260924/summary.json",
+      "group": "results",
+      "size": 4990,
+      "sha256": "f8c9ce68025cff750457e148dde18b62a346e7d669cdda3303d3533062ab5f52",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/question_decoder_20260925/PROTOCOL.md",
+      "group": "results",
+      "size": 3918,
+      "sha256": "a4c14a8b5da3a3f50d0e369b150df9d8e1cc8f834a4f9c2358725ffbe93788f9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/question_decoder_20260925/results/analysis.json",
+      "group": "results",
+      "size": 66025,
+      "sha256": "16ff9e3ed029ab156c64ff5308cbe9dd8eb8954716b047639af6fd3ec150de3a",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "c8dcc3c8e0de8498e11370894c7dddc016732f790f24b0250cacd061adb212a2",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "data/question_decoder_20260925/results/checkpoint_audit.json",
+      "group": "results",
+      "size": 61798,
+      "sha256": "632f01dcddaeec3e12c6645a347259eb4350a79a7c11257edd5174d11d0b15da",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/question_decoder_20260925/results/ridge_reference.json",
+      "group": "results",
+      "size": 841462,
+      "sha256": "4f3ddee1167bd8eb75ffe66a8bb4d43e7ee65fe07074bc62b1b6a2a1cf5090ff",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "4075c9fdafe48c9e03ea0ec1cecdfede72da5de321a7cb092e50d07d3ae359e2",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "data/rosetta_20260925/block_analysis.json",
+      "group": "results",
+      "size": 21427,
+      "sha256": "44ddcba04d15fa690bdbf8b00d8239661d2d9e85f22140441b01cfa74ec9948f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/block_predictions.npz",
+      "group": "results",
+      "size": 136316,
+      "sha256": "82515f01f753b2f9918720f953cc76929be9067a137e7d731f87772a27e21c39",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/block_sims.json",
+      "group": "results",
+      "size": 2426,
+      "sha256": "feec6cd20863f4741692d0eeb8c5c0d854282a70363cd315d3316d3a6a18fb87",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/block_sims.npz",
+      "group": "results",
+      "size": 2644012,
+      "sha256": "090453f69d08ff7994be3c479faf92b7becb733deeb9858cdde1134f0f75fe47",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/everyday_analysis.json",
+      "group": "results",
+      "size": 59659,
+      "sha256": "4bf91ad27c0f2ac48670c8ea765645edfb8a16499c135f0089aa0055983bbae8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/everyday_embeddings.npz",
+      "group": "results",
+      "size": 514646,
+      "sha256": "16663b57c96ce2bc09a2cfd34af38e029fc1c5f29641a14986206c7896dbd1e9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/everyday_inputs.npz",
+      "group": "results",
+      "size": 41614,
+      "sha256": "bf2a20c0b27afcb315c06e70717a56ad6f595b2af4fd9e2d77ca98d3d6f4cdcb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/everyday_sims.npz",
+      "group": "results",
+      "size": 464036,
+      "sha256": "399f053f38dfcd96f943fb0b3114bccc2bac4d795cc8dfcb220a17f54b9318b9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/forward_block.log",
+      "group": "results",
+      "size": 981,
+      "sha256": "62959fd452ecf8d528301527d62c463c21033c5ec2c7d7d9d024a34627f485fc",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/morgan.npz",
+      "group": "results",
+      "size": 5719196,
+      "sha256": "3d35d638ba822f54cfe33c8931804ee9508f24da2ee6613cfb174f3c207aa7cb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/qwen4b_names.npz",
+      "group": "results",
+      "size": 28495694,
+      "sha256": "d078c11ee564c9f5b4e26404e38f114a11b6af935cdefd91875490c3b6634769",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_20260925/qwen4b_smells_like.npz",
+      "group": "results",
+      "size": 28496270,
+      "sha256": "ada2ad22daf60125148c369bb35129aa8031ecd5fecad116c0d925d15a5a2817",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_pilot_20260925/cv_preds.npz",
+      "group": "results",
+      "size": 808018,
+      "sha256": "e5f903e5cc8c3f4255b5c0ef239e8ccb2f87ea0f25fb0e9c8ac60f6a64c2a2b7",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_pilot_20260925/cv_results.json",
+      "group": "results",
+      "size": 1150,
+      "sha256": "317f67fb6180b8d28f054b861f0c23efe518d32a2bc9643d099080533725dbad",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_scaling_20260926/everyday_generative.json",
+      "group": "results",
+      "size": 3207,
+      "sha256": "131d192831cf82df2b395996bcd2a07a81331d6417bbfc1a683cd88e3003aabf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_scaling_20260926/qwen32b_name.npz",
+      "group": "results",
+      "size": 56758684,
+      "sha256": "f4f89c99625d4099c82298040002b9a987beb46caca40fe99421c3b23167655e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_scaling_20260926/qwen32b_smell.npz",
+      "group": "results",
+      "size": 56758684,
+      "sha256": "9105dc0f2e5e368b70bca67dba0aa1ef333e763a380c1aa66b9545a3cd39876f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/rosetta_scaling_20260926/scaling.json",
+      "group": "results",
+      "size": 6355,
+      "sha256": "5f07c4ff137e50079c6c136e7e72670e4a4fcae071beccf8929fe219c3afdabf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/build_surrogate.log",
+      "group": "results",
+      "size": 57519,
+      "sha256": "377e716ef8aed256a0ea6c8dd041240ede4a41d69477d3fe3c502d933a3e0eba",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/claude_teacher.log",
+      "group": "results",
+      "size": 134,
+      "sha256": "bf71232ff6db2c10b1a1fe612f605a79123ad08ecdf94c0c9ffb5b9f0325f9f6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/dopamine_memory_check.json",
+      "group": "results",
+      "size": 20367,
+      "sha256": "10b4dd9de815fd317ec7ed427dddedfe3bc1092893c8c1a069791a76a849a566",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/dopamine_memory_check.log",
+      "group": "results",
+      "size": 1386,
+      "sha256": "0eb046d6c83f956b7f6b9bac22ac8c4c6781ffced7da96ec40796f2e024f9969",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/eval_teachers_1.log",
+      "group": "results",
+      "size": 1312,
+      "sha256": "72b4cec8fc4979ca2ff3c1ff71166d8acdc73f339a306e4af13089fe612bcd58",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/eval_teachers_2.log",
+      "group": "results",
+      "size": 1524,
+      "sha256": "05321366a0f94b37b8f3ab8dfb85072c9bc0c522f92d3f44921575e65179e1f8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/eval_teachers_3.log",
+      "group": "results",
+      "size": 2004,
+      "sha256": "7bbab8910ef64eedea66d3e28f4547be6c11c1a30db05635eb9dc0f2788e0e80",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b-real.log",
+      "group": "results",
+      "size": 21171,
+      "sha256": "e0b4c68f1219e1a613af3b7a9e38899bb026ec6d9ef6a315b2db4dd3932b30e9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b-real/log.jsonl",
+      "group": "results",
+      "size": 10101,
+      "sha256": "c0c19caa6dd3cda8d7a83a8e33bd6a51dbb4708924bfedc4f9914ca72f7ee9db",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b-real/test_protocols_step0.json",
+      "group": "results",
+      "size": 2,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b-sim2real.log",
+      "group": "results",
+      "size": 63583,
+      "sha256": "8709d1aee22707bde32b77cc469544140848317ba0608eb3f39f791a8df597d1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b-sim2real/log.jsonl",
+      "group": "results",
+      "size": 2198,
+      "sha256": "659fa45a6cc13c1387282caf761322fd9ce7f5b5399a755971e08c363234650e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b-sim2real/test_protocols_step0.json",
+      "group": "results",
+      "size": 32318,
+      "sha256": "4c115ad838f062e0ca56c4c8c4574ec697abf19cdb99a76b3d93da9389c64780",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b.log",
+      "group": "results",
+      "size": 26355,
+      "sha256": "8da3715d9060d233be5bd160348a6066e3381ae2b3c245f8ec657bcc9216ccdf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b/log.jsonl",
+      "group": "results",
+      "size": 26046,
+      "sha256": "1ca990941dca3c527deae7005f68407dee33225aa03d87f3b0601871c517b4c5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b/test_protocols_best.json",
+      "group": "results",
+      "size": 32318,
+      "sha256": "4c115ad838f062e0ca56c4c8c4574ec697abf19cdb99a76b3d93da9389c64780",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-0.6b/test_protocols_step0.json",
+      "group": "results",
+      "size": 39777,
+      "sha256": "4c562b345f92e97400e8c63bce4c9a2b4828b5f99b0677569e0cf6450b0cfb70",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-4b-base-real.log",
+      "group": "results",
+      "size": 229288,
+      "sha256": "fdedbd2036b0684c825c8d722b03a20865d7f5020a1fc1e9ddc8ede6e17f49f0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-4b-base-real/log.jsonl",
+      "group": "results",
+      "size": 2947,
+      "sha256": "e89d3bb8584e385d40f1f72fee5c01066c18177778939ac2b29eac492300a86f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/grpo_qwen3-4b-base-real/test_protocols_step0.json",
+      "group": "results",
+      "size": 37552,
+      "sha256": "fdd5a2521e19eda1ef3402fd81679958d41d2d83baec87d021141c6757709d4b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/oracle_baselines.json",
+      "group": "results",
+      "size": 374867,
+      "sha256": "b8727bdf230c4f0d68ad7050ab90d56d93cedd560d167b4d8395ab8b4dbdc308",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/oracle_baselines.log",
+      "group": "results",
+      "size": 1220,
+      "sha256": "95710efd62149d1a720007196ca4054130dd05dcabbc40733b89f9943ee961d2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/oracle_rerank.log",
+      "group": "results",
+      "size": 244,
+      "sha256": "c32e6d2ec6780736f6f074c1001c59b38af484e9b1147e8ab1fbde097a10c755",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/structured_search.log",
+      "group": "results",
+      "size": 171,
+      "sha256": "4d72b1322f38236b7e4eab996d15e01ef4bd11edaec8c5e4d277feed2d131105",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/surrogate.pkl",
+      "group": "results",
+      "size": 4222385,
+      "sha256": "0da2633e7fcc9167e380608bef9977c73ef65a45359a8e7bf32307ac0ecf1b4a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/surrogate_report.json",
+      "group": "results",
+      "size": 3637,
+      "sha256": "62790e95d7179a89fd964ec3a56e77e200e48b434d2a5d3d53ba55a0581c1033",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/teacher_claude_sonnet.json",
+      "group": "results",
+      "size": 19097,
+      "sha256": "60be750ffc7efb56020931ffec859ac7da3db27bd53c72b8fa8518f99fd21030",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/teacher_oracle_rerank.json",
+      "group": "results",
+      "size": 26166,
+      "sha256": "e6e1657c2475015048485bbc91658151071b18df02bab456b4e46d755817daa0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/teacher_structured.json",
+      "group": "results",
+      "size": 21797,
+      "sha256": "15d66b091a25453559b36d56f1b85b99d1e22971448199ca3ba5602874f69d11",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/teachers_real.json",
+      "group": "results",
+      "size": 708951,
+      "sha256": "6fac94251b35bd0dbf60e11169191b47bbc9783d572165c6169f60ce4640f6ba",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "data/teach_20260925/true_episodes.pkl",
+      "group": "results",
+      "size": 23432,
+      "sha256": "d82097672549270577e90ccbddc441e637768ab9234468a22dfd8a58266a2e98",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/brain_root_ids.npy",
+      "group": "paper-results",
+      "size": 1109240,
+      "sha256": "7df8b3a8fcd63849ceb98db2b8263000ee0c4e5000afe10e93d72c9d1f82e449",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/checkpoints/A-11.npz",
+      "group": "paper-results",
+      "size": 113258,
+      "sha256": "100e0fc8d9bf97b810e1d6f27b10aa4375d173edea54da1669831f8a16af6d44",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/checkpoints/A-11.npz.log.json",
+      "group": "paper-results",
+      "size": 1039,
+      "sha256": "4775dafcb7e39e4a9fe1395d89601aec7294085c4112959054ff30d3cd02e44e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/checkpoints/A-23.npz",
+      "group": "paper-results",
+      "size": 112257,
+      "sha256": "b07ade91501e26090e59232853386c89e9a90d9cfb97bc1a034f4cd55dbe19b5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/checkpoints/A-23.npz.log.json",
+      "group": "paper-results",
+      "size": 1040,
+      "sha256": "49b5c7917c81a8a0479d78be3fe1ec631b6cd397ca8f14a6d806526e4aca62d6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/checkpoints/A-47.npz",
+      "group": "paper-results",
+      "size": 113583,
+      "sha256": "47090f81fa25cfef38c98302a9fb88858ce7832c18d2747bc0d4c207013771b5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/checkpoints/A-47.npz.log.json",
+      "group": "paper-results",
+      "size": 1040,
+      "sha256": "f706857b64d72ff85f5fec5a5847393d513c12636315a4f2cabe0f1304632f7b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/manifest.json",
+      "group": "paper-results",
+      "size": 4920,
+      "sha256": "d751c8a5457ef442a033d6188eeb2e8f9426e4d7d83ea7c161fd43200f0d7bd5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/013b73f5408a33dfd89abbdfbc882f655d015ee9f609d291526e8eaee8782532.npz",
+      "group": "paper-results",
+      "size": 112633,
+      "sha256": "c6c93d857127f907933a5e6012e069d1639b4b53f2fce9f54e22cddd699c77a4",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/04ebefd44d7ca1e29a0b7e6e9e95f82b35e87e3d558563a847f15396f1f17b91.npz",
+      "group": "paper-results",
+      "size": 109491,
+      "sha256": "b5aaa891d3a61421a3978c5d9c05150918f4bcad9fb394b0532ca7e497a2e256",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/0c357f2ecdda4f217bf796f66eca874d7731cacabf7ff668741a0a77f6df2e7c.npz",
+      "group": "paper-results",
+      "size": 113583,
+      "sha256": "47090f81fa25cfef38c98302a9fb88858ce7832c18d2747bc0d4c207013771b5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/0e0a20080dcbb900178580f179d97f46ebd0d2cd56c303d76cf61018b6ead2c2.npz",
+      "group": "paper-results",
+      "size": 109719,
+      "sha256": "cbfae6fdd34842e3b1ed643d469666281cb54b513c0e08f340b22a6f3b8216b0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/152572ff241cb3bd29199c4d8fc8a91530a228110fccfcc1e8d4d7aee7eadef4.npz",
+      "group": "paper-results",
+      "size": 112452,
+      "sha256": "da0128a9bc44d1db60fd099adb7f0eda8c70e21b0f4fb095ccb138da5523e2ab",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/19cd987a569683dc4800c5bb5fd1302ca8a91c95375349462eabc6efab56073f.npz",
+      "group": "paper-results",
+      "size": 108667,
+      "sha256": "a588b603658194d6f5aefe7ca308a355494e3a7c2ccf458679cfb320e2239f51",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/1a24b810db87ac685dd668eadcaf565287441885f9f612d50e37363c949ee3b8.npz",
+      "group": "paper-results",
+      "size": 112622,
+      "sha256": "bb499c44f4ea252d901411b2f04f219fbe55bcd7ef3b4da8ccdfb74711a2b0fe",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/200c0066dd08db9ade94a483d90f710aa300d4c75ad3dee69d1aaa9ccbcd7044.npz",
+      "group": "paper-results",
+      "size": 108876,
+      "sha256": "f2dfa6d727967c92c86a5fcf1bfa625e10f7d70ccc2838d0b3c78083ff3a9ef8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/2544987698300d1a11314c7b888cff0c6d9560af7d959e3f80d4036150bf08e3.npz",
+      "group": "paper-results",
+      "size": 111460,
+      "sha256": "894f71b8e96766a7a70d39bb6f4f75c6d0a39e7bf4c7c053f0efbcf0e0b84329",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/26bd4e308d57356d6670534458e1fcca5ee480519a848b09e9b58877d17700bd.npz",
+      "group": "paper-results",
+      "size": 108039,
+      "sha256": "084d9ec82012e4f9d6fca63e175b072778b696513ae6d2235be1fc7dc596ce36",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/2d57445a534d9d66e7235541641e8b6c09ffa383d368aaa3527e162e2d70e925.npz",
+      "group": "paper-results",
+      "size": 111146,
+      "sha256": "facabf514abd0a4b6b5c2509ca86c1da840bdd500818b337bf04c7430542dc56",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/3344cc11c8b5c49df133568b2b22c638480fdb075a2f1f9205e4f7148a03a0f5.npz",
+      "group": "paper-results",
+      "size": 109500,
+      "sha256": "a44c55c4ec3b963081c332e245659ccf3e3fec843fa718a78fad38b01875cbca",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/43b9d8bdbaeec01040f772a73382aac6cd24ba3c016ac4830f09b2472b9642ec.npz",
+      "group": "paper-results",
+      "size": 111052,
+      "sha256": "a71557f25e66b317f69d8295ad5456af65ef6a2d3898a28a625f29fed456ed38",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/5319dc2ff068d0e745e1860be438c3ab2fcd74815ed2fcffdc1cdd34a3b328e8.npz",
+      "group": "paper-results",
+      "size": 109385,
+      "sha256": "4e1db360a150313bac61c36236c7817eb74bfabe55520e0123ee7844e57d2800",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/5ea16a7c4325d707c13a834444207ed8583567e8a791c282cb57862772732e94.npz",
+      "group": "paper-results",
+      "size": 112257,
+      "sha256": "b07ade91501e26090e59232853386c89e9a90d9cfb97bc1a034f4cd55dbe19b5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/5f88e5285e80aed89940910a0fcde4327c864f6a9c993d17ff39a7d561222c87.npz",
+      "group": "paper-results",
+      "size": 112080,
+      "sha256": "477eb831752f6c0860cee20c8dbeb460831ae01122a027cadb279ed34c2bad16",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/676925f0000c877e7957c782cd223a7f0f48316c5b0517b252f445efc340cb7c.npz",
+      "group": "paper-results",
+      "size": 112009,
+      "sha256": "cfc22e0cabce7769f1bc99728af70c3e94de2590d3d311f76971d2a4debb8823",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/6c9d582ef01bee948d9449beec2f0f7aa4e241aab2690302f261bb62b230f338.npz",
+      "group": "paper-results",
+      "size": 111279,
+      "sha256": "83f5294c5eb87a1c6155fae587a87a79f0a3b9da164c323593945fc314507b1d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/7002f48fa9363c66bccbc65ab67032fb2a0114142af75c1fae9180381c191ac8.npz",
+      "group": "paper-results",
+      "size": 110165,
+      "sha256": "03b55882b79b8b4b7921a6564067ca8914592111b7e2e77466e0378a5e83de87",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/721a3f3196e08e04e0d59f683d4769c4135a1956c631f9b2a2213f8f43b95148.npz",
+      "group": "paper-results",
+      "size": 109259,
+      "sha256": "aa6f5901af5f9b537d35b318acfbd5741180844d23f4f740ced599bd97dda0ca",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/7807bc1b5d8821571032ee44421ae13181de99d7929ed4f7ca9920d8134dbf88.npz",
+      "group": "paper-results",
+      "size": 111637,
+      "sha256": "589470c89c0326b0272713c2165eaa7cf2c269d0f47439848aa9030d8e5466be",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/80cb1da11a84a15246794e8e355a91236926de6fa18b31dabae97493ef8c11f8.npz",
+      "group": "paper-results",
+      "size": 105119,
+      "sha256": "8a4307ea228cfc7cefd11d816c93ecfc40366b4689d4fd16955eb15614f71657",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/859a7314e1d3c8529792a4f808e5e0f10e4fb330120de604375fb0512cb84c9d.npz",
+      "group": "paper-results",
+      "size": 108254,
+      "sha256": "4c1966756f48af489b3afcf60400f26b7c62f75e31ec4549f3bb3d3c82a4b8a5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/87f95424fefbe7e13c60d2ff8531d688faec4f0ee305470b7ce5e25c088f3c70.npz",
+      "group": "paper-results",
+      "size": 111883,
+      "sha256": "be85f9ae3c43fb1fe834a26ff3f1961c2e6bc964b2b0be4ee46839bb561f4d14",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/88a0b9ceec1545c9fc9b6b5a796c088655f5186856199844d2b626cec42e8f16.npz",
+      "group": "paper-results",
+      "size": 109553,
+      "sha256": "a7a644983f6bbadc9baf0adc6934f259b039b70cd9c28140dd4d377ee4bb6c76",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/9080aba0d173a3db2d09e707da124445663f9e6de24bce8413774b168e069e90.npz",
+      "group": "paper-results",
+      "size": 110936,
+      "sha256": "ba00de5a7010dab49b6603c70aaab43def8ca5779a5e9886d6529cdb87785b13",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/93d882740b6a6b0d83da4a7190c5b374f48c39113829f9e0ad3a97b01688b834.npz",
+      "group": "paper-results",
+      "size": 112151,
+      "sha256": "83a82d0dcdc9dad3ce893f0b7a9dc18ca4bf891e97e972e0ec82d52ca6949096",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/99f5ce98ed7b093464d7f017ed5bf47a85a4f30ce8dea6759137f639db9e1ac2.npz",
+      "group": "paper-results",
+      "size": 110549,
+      "sha256": "4f89e230757200c715515587f1fee76c52899532768ed3a7cf857df2dab76d74",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/9a7c7d036d05836bd6932597e515ca0c650de9191c8ae92253506b9f11c167b2.npz",
+      "group": "paper-results",
+      "size": 110967,
+      "sha256": "88f767f2f5564f745b55af70e2c19b6381983aef729fc97a0c8d5314afae8817",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/9c2ce32780dab317bf573817a0bbba26d1c16da1a7c99cd34b7999eb07ef87ec.npz",
+      "group": "paper-results",
+      "size": 112987,
+      "sha256": "25f3561d23649127dabb5f271eb8daf0681ddf689c2cb7623b03a9e328b176f3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/9d71d187e378dba714d4f99b831ab6f753330d03b0474d16a8cf243e9de0548f.npz",
+      "group": "paper-results",
+      "size": 110416,
+      "sha256": "4e8f8787c6ed3e5bbf0e3b68f192ffec1db6758db8461faebe55a1b6309333a8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/9e7d37f963bce54a86c5841e8c1d0eebdfdeba35d931b92850c4a7e39edb96f9.npz",
+      "group": "paper-results",
+      "size": 112553,
+      "sha256": "7bd57139875241ad046ed83a3a137eeff27b281d47d85c15ad00f00fde6b3e3b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/9f4c8e7cbfac40f38a82ce4397c707f9793f7de21f3c7d568ed625fbf219aa2f.npz",
+      "group": "paper-results",
+      "size": 111684,
+      "sha256": "62e916695366bf595de1fa453e44383f6649ef416c865b65584dfa06e327f652",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/aa46797d0901c9c8d0fa47f6886189297a8bdeb14f15aa047afdbe030750d569.npz",
+      "group": "paper-results",
+      "size": 109420,
+      "sha256": "af1a90804c16de3bbb9f7cd6408a4102c65d2aebb58a08eb369f685bc4ec586d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/b3a46e99da35809cd450a4da049cd00369462b4f97c04c41df0f95fd35704c96.npz",
+      "group": "paper-results",
+      "size": 107566,
+      "sha256": "f679f42d654599ccc64d224244980bc5d4062d6ee37f0f3fe8b94b726ab19125",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/bc3e90d4fcb1ce7a37636baa9c89d6acf5a39ca8ea189dd85f7a2531300b4f0f.npz",
+      "group": "paper-results",
+      "size": 110009,
+      "sha256": "79f25918f6489f56d9a8a89edab6eb8a38465b4b70865c53d724c11ff3b67f13",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/bd3115b5b0f51c63600b6b004fef5e77feed33ee7f2c2c0cf7f0063f42bc3294.npz",
+      "group": "paper-results",
+      "size": 111962,
+      "sha256": "75700a46b99a68c179be74a748b55af4b0de4ba0dc94b9b6ef47dda06339b7b7",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/bd63d384171062fe35c44af900fbf007874d45c8b3bc8ce6f87a5ca5c6496463.npz",
+      "group": "paper-results",
+      "size": 112452,
+      "sha256": "7d59636639fea7aa84505c7dc8befd411fea9042451378aeb88744af9a64d025",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/be77cdea97b6875512990ad3b93eaaa27c3ffb3d1adda0c8661088391e455b7d.npz",
+      "group": "paper-results",
+      "size": 109216,
+      "sha256": "1e70a0745cac64a902985d8d72ef7db05c08fd4c4e4f21c56612315bb1a5e47b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/c07d1d4f2ac2d27cba6734c49a5f3be07bccbf3cd287ec47adf0498a025eef5f.npz",
+      "group": "paper-results",
+      "size": 109170,
+      "sha256": "e9429e41e9aff19e3fb39553876365fb80d3a4948018906cc9945580586c1385",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/caaf0db5ecd2367f9c78e2d70fa52a1ed92ca8b57a599d09f1f847dc58d4720b.npz",
+      "group": "paper-results",
+      "size": 111070,
+      "sha256": "4062c4c4dc0407944b4968dbbae1377656159ac268736eeaf2c7e50c420bd8e2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/cc2b3ade3745039180bea671d80cdd7af0686981995ee688ccfd0bd96c276e16.npz",
+      "group": "paper-results",
+      "size": 107851,
+      "sha256": "d596ec921213319c48d0b0515acd837ad13bb78077f25eeeb3c4aa93837cdbc0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/cd554f7f6f8abe53fa28d59ff767c6ca6c235830d256dc0d787e3a98dc4179f4.npz",
+      "group": "paper-results",
+      "size": 108169,
+      "sha256": "486c6879deddc48dbcf13725decf05b1e238f5d96e89d67b8b41e13bd8a29a8d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/d9c49d583a8b519ccdefc9faca398aa9f856320c8f233a85f0a05486ab80ab7a.npz",
+      "group": "paper-results",
+      "size": 109038,
+      "sha256": "9502ab6cbcd54f24ffde765984057f70d901c79bee4fc999d99318293bd97e61",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/e1633e5096b055cffcc404ae2bac80c2b2fc4bff817fe5532dd1eebaf4aa9eb3.npz",
+      "group": "paper-results",
+      "size": 113258,
+      "sha256": "100e0fc8d9bf97b810e1d6f27b10aa4375d173edea54da1669831f8a16af6d44",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/efa07f30c2d748bd9ea68691bbab51ef621013fe519736531aa324f793b7e012.npz",
+      "group": "paper-results",
+      "size": 113530,
+      "sha256": "9c70927efc1fef4f6a57250e57130142c6daf1f3073ce5c371e37da458fedb87",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/fafebb03f769d7701545b3d56cf4b385f571015c8d96e51ca89b03516a57f9ba.npz",
+      "group": "paper-results",
+      "size": 110488,
+      "sha256": "8e15c486c042b7cdbb9d25ec4e2ffd7ad78f7a63f63b93e040a9227574d52b93",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/memory/fe3339a28b90bc137c21520d3fc0fc23fa5cbcf78eb4e03911e722e53989ed6a.npz",
+      "group": "paper-results",
+      "size": 109984,
+      "sha256": "16defc597ab8be20479c7f749d0fd29ca73b59ae4792d50b6fcb44e2723212b9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/protocol.json",
+      "group": "paper-results",
+      "size": 3337,
+      "sha256": "80f608787a2a660963cf08ec4012e1d0a6667ebea8eedc3f44ecde4c7f023ef9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0001-A-odor1-11.brain.npz",
+      "group": "paper-results",
+      "size": 68837,
+      "sha256": "723de292abf779a21a22445d616e8d52783149a77cfef17fc7c482722d0601a8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0002-A-odor2-11.brain.npz",
+      "group": "paper-results",
+      "size": 52567,
+      "sha256": "1cd69a41bc8555483be46256a1bd2d2b91eca0f53419e6f3295f524d7c8ed884",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0003-A-odor3-11.brain.npz",
+      "group": "paper-results",
+      "size": 67689,
+      "sha256": "0154bd2c110fa3b81763e8449ced9ff2444b16545a46bd167be8b4924b77107e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0004-A-odor4-11.brain.npz",
+      "group": "paper-results",
+      "size": 69812,
+      "sha256": "8933f275f8047b58bd3c5ece0fdf6c13d7f34dbff6a5a3d31b3d191766ec22c4",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0005-A-odor5-11.brain.npz",
+      "group": "paper-results",
+      "size": 49808,
+      "sha256": "106ec3999029b4ab4f837518106bf94b045472d733d75c31c6096cb9a4d449b8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0006-A-odor6-11.brain.npz",
+      "group": "paper-results",
+      "size": 32306,
+      "sha256": "7594fa39845d0faa2a188a60851076fcf3da31f6b3bb623ab91b46c09dee3982",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0007-A-odor1-23.brain.npz",
+      "group": "paper-results",
+      "size": 71837,
+      "sha256": "46be4cd03a035b482d8844465ae657bf99e4299353e380f1eb79f56c74fe703a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0008-A-odor2-23.brain.npz",
+      "group": "paper-results",
+      "size": 55679,
+      "sha256": "f49b89af3b1fc8db18ef92fdaaebaaaa3b452890c6584d6b21473d646f1d1cd3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0009-A-odor3-23.brain.npz",
+      "group": "paper-results",
+      "size": 68972,
+      "sha256": "4c44c8d9e1dd7f023d7a60b8f65182d88ecc6cf76d0f8fde8205d13ecc9a5100",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0010-A-odor4-23.brain.npz",
+      "group": "paper-results",
+      "size": 70903,
+      "sha256": "81682cb5ef86525891e117eac85f4a210f2da4130495592ea2a3329286c50bba",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0011-A-odor5-23.brain.npz",
+      "group": "paper-results",
+      "size": 52781,
+      "sha256": "18b549fa316b008f2f523b122ce476449d0f1668edc28b845f9a5f475188be2e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0012-A-odor6-23.brain.npz",
+      "group": "paper-results",
+      "size": 31182,
+      "sha256": "6057905ca5b4c13d7e1ac0052e8024268619dd4a9f3b6f3beace9c17f11b4ea5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0013-A-odor1-47.brain.npz",
+      "group": "paper-results",
+      "size": 72744,
+      "sha256": "fea755a05295a13251621b426d01bae4f0e75ab13bf7edf8775cfc0d68014162",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0014-A-odor2-47.brain.npz",
+      "group": "paper-results",
+      "size": 56946,
+      "sha256": "2ac1948e0e44d30eea485ad321061c365be6b8fa321d06f501ad19e4b0423285",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0015-A-odor3-47.brain.npz",
+      "group": "paper-results",
+      "size": 69056,
+      "sha256": "a516206a48ae56ce4905c9abb7ff2d2c66b0c1f212c01f66d5dd59db38b1d1b3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0016-A-odor4-47.brain.npz",
+      "group": "paper-results",
+      "size": 71311,
+      "sha256": "6ab98cec27f16421f807ff2b36f5f82872bdd240981a47d5e284b1b39c8fc321",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0017-A-odor5-47.brain.npz",
+      "group": "paper-results",
+      "size": 50155,
+      "sha256": "0d5cc7c47da300c83497f5dc807ba5f1a83a9b086b9af78fae106d9216ba6b77",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0018-A-odor6-47.brain.npz",
+      "group": "paper-results",
+      "size": 31919,
+      "sha256": "3a8543ee931bef9399a3bef35aede46872008dceaf1477a7b7b94d0b34aa7925",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0019-B-zero-11.brain.npz",
+      "group": "paper-results",
+      "size": 959,
+      "sha256": "63926cc4a05cc20727586fd3733079a1899609730f1289c587149f07eaf0503c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0019-B-zero-11.vnc.npz",
+      "group": "paper-results",
+      "size": 568,
+      "sha256": "3e70fa43a7204a4532b20db2bcf11cefebbaea49581b831e1f32e7faf3d64c33",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0020-B-sugar-11.brain.npz",
+      "group": "paper-results",
+      "size": 15190,
+      "sha256": "5cedfb1cf52344f25d33143f19aa020d77455c5b5d4d67b13a51ad13210aa72c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0020-B-sugar-11.vnc.npz",
+      "group": "paper-results",
+      "size": 2055,
+      "sha256": "4525a0ff5ca01068782e98d6ff5bcf05ef43e33588b6cb83d0e644df5f23c3ed",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0021-B-bitter-11.brain.npz",
+      "group": "paper-results",
+      "size": 6534,
+      "sha256": "fd1aeccb6774675f304feadd0ba110b53e098eeace8da3aaff96330564b85252",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0021-B-bitter-11.vnc.npz",
+      "group": "paper-results",
+      "size": 962,
+      "sha256": "c48c2dea84d6a0a5abb5385d29c0c904e5deade426064f94b160a5e4000b7303",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0022-B-sugar_bitter-11.brain.npz",
+      "group": "paper-results",
+      "size": 15633,
+      "sha256": "52ef359c79c74a09790bfac215b3531bb1b10d0959357abff8d1ec91fdf19197",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0022-B-sugar_bitter-11.vnc.npz",
+      "group": "paper-results",
+      "size": 1026,
+      "sha256": "e513665f7233923210552c22d2bad3bb91d88489cccc13c5630cdaaa5f90d071",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0023-B-antenna_touch-11.brain.npz",
+      "group": "paper-results",
+      "size": 66560,
+      "sha256": "96be01e3820dbec6004aaf6b09257ff59aab96a7e997d7978d792799c0702d80",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0023-B-antenna_touch-11.vnc.npz",
+      "group": "paper-results",
+      "size": 2378,
+      "sha256": "ebc65601537894bcd9dd31b41bdd01f1febe0554eaba710b1120f0d07f3dd72c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0024-B-looming-11.brain.npz",
+      "group": "paper-results",
+      "size": 85775,
+      "sha256": "b3a1541eda5c6ba96e368210a3528a0cfa2010ded9dfd9df93eba3dd8a68b86c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0024-B-looming-11.vnc.npz",
+      "group": "paper-results",
+      "size": 5049,
+      "sha256": "17e69b70b94e4f8384bc90a109abc1ae361f0949479fb32bfbee2eefc7e00a69",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0025-B-zero-23.brain.npz",
+      "group": "paper-results",
+      "size": 959,
+      "sha256": "63926cc4a05cc20727586fd3733079a1899609730f1289c587149f07eaf0503c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0025-B-zero-23.vnc.npz",
+      "group": "paper-results",
+      "size": 568,
+      "sha256": "3e70fa43a7204a4532b20db2bcf11cefebbaea49581b831e1f32e7faf3d64c33",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0026-B-sugar-23.brain.npz",
+      "group": "paper-results",
+      "size": 14898,
+      "sha256": "fa0602a3b2e2712d7e750e5fd42a4c04ec054709f4f832d215071887b6170c90",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0026-B-sugar-23.vnc.npz",
+      "group": "paper-results",
+      "size": 1995,
+      "sha256": "fac6e03a79b0b6ee4aa56c888563caa5ebc275e9040b74f3fe49c72bb7d5fc02",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0027-B-bitter-23.brain.npz",
+      "group": "paper-results",
+      "size": 7032,
+      "sha256": "474277e46e3b4fda3b1ff3bc26263ce54ec3b67a627e3ff59a7e2608783b8247",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0027-B-bitter-23.vnc.npz",
+      "group": "paper-results",
+      "size": 1017,
+      "sha256": "6e1324953332607ff3ac8d5b2678d76f6c838487eac0f778397920abb6277f6a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0028-B-sugar_bitter-23.brain.npz",
+      "group": "paper-results",
+      "size": 14840,
+      "sha256": "130db1715ccf5a6e4037068dded27172efa19b15469f6682faedea6fcbc2934f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0028-B-sugar_bitter-23.vnc.npz",
+      "group": "paper-results",
+      "size": 1257,
+      "sha256": "b6a0535c74c1d55d9bf01480ac3feda635fc3e7bf02c05e26a028304cb46f4f5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0029-B-antenna_touch-23.brain.npz",
+      "group": "paper-results",
+      "size": 68639,
+      "sha256": "24aa8de06fa408d7fc26939c357269559b350101d7dd291c18c35409565783e7",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0029-B-antenna_touch-23.vnc.npz",
+      "group": "paper-results",
+      "size": 2582,
+      "sha256": "751db422fd2c6eded9c2f034c93df39316704c6d8c1cb1a498865d224ff8784d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0030-B-looming-23.brain.npz",
+      "group": "paper-results",
+      "size": 84937,
+      "sha256": "39c73b7a92937a53ecadf71c3ad6fbaadf3f24f3fefa735e7ba462e9aed153e5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0030-B-looming-23.vnc.npz",
+      "group": "paper-results",
+      "size": 5127,
+      "sha256": "3e49cbb159811d747aff7c531dfceb5b4653446844cb2c34a0d7ce3f425487c1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0031-B-zero-47.brain.npz",
+      "group": "paper-results",
+      "size": 959,
+      "sha256": "63926cc4a05cc20727586fd3733079a1899609730f1289c587149f07eaf0503c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0031-B-zero-47.vnc.npz",
+      "group": "paper-results",
+      "size": 568,
+      "sha256": "3e70fa43a7204a4532b20db2bcf11cefebbaea49581b831e1f32e7faf3d64c33",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0032-B-sugar-47.brain.npz",
+      "group": "paper-results",
+      "size": 15336,
+      "sha256": "6dcf22ec5f751f1be6ca7d03cde3f29d56d97e3521d3c6d2fa61cd366391dfef",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0032-B-sugar-47.vnc.npz",
+      "group": "paper-results",
+      "size": 2199,
+      "sha256": "93a427d45016decb06baabb0ae0c2d06a723d4c15ff320d6e1890ae250f0aca6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0033-B-bitter-47.brain.npz",
+      "group": "paper-results",
+      "size": 7178,
+      "sha256": "c0e601efb9390b76304fe75c6b22718d1f5d280b69db324b0430dd2dd730e4fb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0033-B-bitter-47.vnc.npz",
+      "group": "paper-results",
+      "size": 709,
+      "sha256": "634d6953cf578c8eabf59cd59a9fa7e360053ee60e3d1d20d5cd35c299e7a615",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0034-B-sugar_bitter-47.brain.npz",
+      "group": "paper-results",
+      "size": 14835,
+      "sha256": "97b170da4ab2f8e31cf20c91b7aa64939f5d57e80c86135653c81765971a99bf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0034-B-sugar_bitter-47.vnc.npz",
+      "group": "paper-results",
+      "size": 1213,
+      "sha256": "bc4ee6713abdc08b6faf723c6c377f194dfbcd197f1e6e7d4d9d624cf050632e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0035-B-antenna_touch-47.brain.npz",
+      "group": "paper-results",
+      "size": 68074,
+      "sha256": "63392272d5c01bdd30485f55f6b0dcce43f39def54585e0857c359e0bd54a9b8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0035-B-antenna_touch-47.vnc.npz",
+      "group": "paper-results",
+      "size": 2456,
+      "sha256": "83b2c1f19cb4a28b9e21f75fc7a43cd5f0cc7e53ef9ffc5f7486bf2ca45d703a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0036-B-looming-47.brain.npz",
+      "group": "paper-results",
+      "size": 85918,
+      "sha256": "b8676ed9c93428b7bc3a6a7481a176b044f26a9eec8fcac5acc7ea2b4cae016d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0036-B-looming-47.vnc.npz",
+      "group": "paper-results",
+      "size": 5175,
+      "sha256": "9de88c7cae87b02155fed05e0cd16aeecf31cc82dfb6f8e978245c324cea43ed",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0037-C-odor1-naive-probe-11.brain.npz",
+      "group": "paper-results",
+      "size": 74342,
+      "sha256": "12be2dc420517ed68208da9cd776c64c681f786955514b2e1c39d377020470df",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0038-C-odor2-naive-probe-11.brain.npz",
+      "group": "paper-results",
+      "size": 33834,
+      "sha256": "a53946d1992800dedfba40a930f305426da57b7b687c484cbedba345d62875f9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0039-C-odor1-A-train-10011.brain.npz",
+      "group": "paper-results",
+      "size": 86813,
+      "sha256": "e3e9efee4a2257a7ebc3c5371b911dc24d904416496689e4033d3f79d047233e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0040-C-odor2-A-train-10012.brain.npz",
+      "group": "paper-results",
+      "size": 31522,
+      "sha256": "f13f46ea2c8f6b5836c1618d691ca8ec5ba64f8a005224b23c2fbc3e3003016b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0041-C-odor1-A-train-10013.brain.npz",
+      "group": "paper-results",
+      "size": 84281,
+      "sha256": "96575464368b9325efbde03b4146ac50a796469239ed54fb62acf0488852142a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0042-C-odor2-A-train-10014.brain.npz",
+      "group": "paper-results",
+      "size": 30694,
+      "sha256": "a2482924cab525eb8222ab63c8cb3b77b8a091c18c28ad44f44022a34316e4c9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0043-C-odor1-A-train-10015.brain.npz",
+      "group": "paper-results",
+      "size": 83041,
+      "sha256": "35cf0ee4d15a5efcebd6e052d8f64b8b347952826f1a46a7433f4d850f44ecc9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0044-C-odor2-A-train-10016.brain.npz",
+      "group": "paper-results",
+      "size": 34276,
+      "sha256": "2c8f2ee5577ba8c921cceb133ee4bf92e14e7adb566b369954e0b5b43c3f7dd2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0045-C-odor1-A-post-11.brain.npz",
+      "group": "paper-results",
+      "size": 68603,
+      "sha256": "f15620859f6060db3fea5fecd7e99e0fa44f2f0cefaedbf116a046be6eebbd11",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0046-C-odor2-A-post-11.brain.npz",
+      "group": "paper-results",
+      "size": 32775,
+      "sha256": "1db37ef39dbce6cf15b8e7338497eeec8aad72877487f4f74533d52f45a8e808",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0047-C-odor1-B-train-10011.brain.npz",
+      "group": "paper-results",
+      "size": 72748,
+      "sha256": "5aa0e3ef645196db7f0ea930e70df45a22a3eecec8313eba6d2a1a5d7ecb8293",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0048-C-odor2-B-train-10012.brain.npz",
+      "group": "paper-results",
+      "size": 45429,
+      "sha256": "56d5ff2ec97d30e13f3d96132c29b1bc5b623d1be5899f78b557116e7e90d1f0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0049-C-odor1-B-train-10013.brain.npz",
+      "group": "paper-results",
+      "size": 67063,
+      "sha256": "43d22a24e4455f765159e6b7c10638771258c552ea46ebc3c5de61d9c66e9172",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0050-C-odor2-B-train-10014.brain.npz",
+      "group": "paper-results",
+      "size": 43785,
+      "sha256": "e02028d2d694c6b3c506abeb4b6b6b9e6190f7f739ce519219feb3188ff55af2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0051-C-odor1-B-train-10015.brain.npz",
+      "group": "paper-results",
+      "size": 65732,
+      "sha256": "ee6810a8179bd913f0c1d7e0c64f450c94e8184b2d1fca11d66ceaf856ebf794",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0052-C-odor2-B-train-10016.brain.npz",
+      "group": "paper-results",
+      "size": 44453,
+      "sha256": "cc0857ac6c51509efbf9a450b5b435aecac55cf258f525cab653722f569da40a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0053-C-odor1-B-post-11.brain.npz",
+      "group": "paper-results",
+      "size": 66775,
+      "sha256": "784d46600e51f85b64b68016f0db78344261dbae38162c9f8c1de6c5ff8411e8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0054-C-odor2-B-post-11.brain.npz",
+      "group": "paper-results",
+      "size": 36066,
+      "sha256": "89175e53fef5bb1f4c400afb71ba6ea39aafc71c39549a771918079e0b7be199",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0055-C-odor1-unpaired-train-10011.brain.npz",
+      "group": "paper-results",
+      "size": 74203,
+      "sha256": "43d2fc88e3e3a71e921e731c93cce2cb34730f33a000c1eaef1f59c31885c009",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0056-C-dopamine-unpaired-train-110011.brain.npz",
+      "group": "paper-results",
+      "size": 19031,
+      "sha256": "5f5e878166f8fcbd03523f20efe35f9010c81dd9307b0225c6820cd83003e0c1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0057-C-odor2-unpaired-train-10012.brain.npz",
+      "group": "paper-results",
+      "size": 30755,
+      "sha256": "e505d36825ef4a374dc79bbabace82333084d954cd5c8f2cea234c0a77e8f190",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0058-C-dopamine-unpaired-train-110012.brain.npz",
+      "group": "paper-results",
+      "size": 2784,
+      "sha256": "35d4d5a777058796d86b033b320d2918c9bdbfc4637ea4d792f13f2a770afc1b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0059-C-odor1-unpaired-train-10013.brain.npz",
+      "group": "paper-results",
+      "size": 73956,
+      "sha256": "05d705ee0f300104124fd4a9ed81c4d67c19fa09127b54897f85b836c0e6a4a2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0060-C-dopamine-unpaired-train-110013.brain.npz",
+      "group": "paper-results",
+      "size": 19529,
+      "sha256": "a2ad81bb2f517c09a5eb95515f13ee765c83d79c7df124f01e90aa3f1c8e1a09",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0061-C-odor2-unpaired-train-10014.brain.npz",
+      "group": "paper-results",
+      "size": 32060,
+      "sha256": "287102cc8bb7e961635ab846a961856f6e216c312170d309930eb9c47623423f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0062-C-dopamine-unpaired-train-110014.brain.npz",
+      "group": "paper-results",
+      "size": 2786,
+      "sha256": "bc710705ba1593d05757a77215814278b992d0f2ad158aef4f0fdab38dfc45d6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0063-C-odor1-unpaired-train-10015.brain.npz",
+      "group": "paper-results",
+      "size": 73134,
+      "sha256": "8cae7dd3749be5562377ed8b1a2620b993e27c84ad9843551572e2def771e58a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0064-C-dopamine-unpaired-train-110015.brain.npz",
+      "group": "paper-results",
+      "size": 19166,
+      "sha256": "0c272bf4f8129d10a93cd06a2f4beb6e1a7beaeb302cc44bbc2406791bcbaaab",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0065-C-odor2-unpaired-train-10016.brain.npz",
+      "group": "paper-results",
+      "size": 32069,
+      "sha256": "1545de135ffec677db0e1e81a569343f42933debd5d789a9575607edeb661cfb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0066-C-dopamine-unpaired-train-110016.brain.npz",
+      "group": "paper-results",
+      "size": 2591,
+      "sha256": "03f133d9bf783fd3b2794cb2cdfe226274a50b3b7ebcbf09c299d04ed50d812d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0067-C-odor1-unpaired-post-11.brain.npz",
+      "group": "paper-results",
+      "size": 69633,
+      "sha256": "1b15729dc6f6139926457fb09e995cc3cd2711d79e8f4a1bf5deb03257aa891d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0068-C-odor2-unpaired-post-11.brain.npz",
+      "group": "paper-results",
+      "size": 32722,
+      "sha256": "30c16bd8f53ef75ac9882eed1c0dab4ccb57fc94449223d0f931fb9984a64161",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0069-C-odor1-A_reloaded-reload-11.brain.npz",
+      "group": "paper-results",
+      "size": 69033,
+      "sha256": "9cbf2f6b0ce0229fefcd8fed455032e28f23a93cfcb0c39ee5de7e9161aa4885",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0070-C-odor2-A_reloaded-reload-11.brain.npz",
+      "group": "paper-results",
+      "size": 32671,
+      "sha256": "c1e74f3aa59fadc017f2b83c7f9dd77de662d68492b6f30308fb177c462e75c7",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0071-C-odor1-naive-probe-23.brain.npz",
+      "group": "paper-results",
+      "size": 71471,
+      "sha256": "36d6af561057efee6dc013e34496f09580ea6d761ef8a133a5c1bac296f853fa",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0072-C-odor2-naive-probe-23.brain.npz",
+      "group": "paper-results",
+      "size": 31071,
+      "sha256": "f3a44e8be8c5cd93fad1eac48e8dcb8a7c3d69e221fe54ef44b09a052f140a6e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0073-C-odor1-A-train-10023.brain.npz",
+      "group": "paper-results",
+      "size": 85140,
+      "sha256": "d6080f03de971fd527f02972e97efd210e71224a057b555b119b416b03e0b041",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0074-C-odor2-A-train-10024.brain.npz",
+      "group": "paper-results",
+      "size": 31329,
+      "sha256": "53ff1b1ee061ed49cfd760a7bcb64b8137457c346975db960222c82824edd342",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0075-C-odor1-A-train-10025.brain.npz",
+      "group": "paper-results",
+      "size": 86533,
+      "sha256": "454168b9b5ae7035eb95481b8ed4435d13d779a587705dc2d6484a05f5be96eb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0076-C-odor2-A-train-10026.brain.npz",
+      "group": "paper-results",
+      "size": 35066,
+      "sha256": "ec4dfd2754224ef9218629789a2765d246d01431adebd261aec2f3b4b7026803",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0077-C-odor1-A-train-10027.brain.npz",
+      "group": "paper-results",
+      "size": 86425,
+      "sha256": "3835251d0ce3eec2d5fa6cc77ebc9e818b14a3eef7f5421202c34022a8ae27b0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0078-C-odor2-A-train-10028.brain.npz",
+      "group": "paper-results",
+      "size": 34584,
+      "sha256": "d516bb3e9d0d857ea4949ea5f2b24138b046520ec834d4d9fa5e015834fdb5e3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0079-C-odor1-A-post-23.brain.npz",
+      "group": "paper-results",
+      "size": 73110,
+      "sha256": "2cc88c9e177963901da4833f49552adf0dc7c21cd61f07625740aa785fb8f510",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0080-C-odor2-A-post-23.brain.npz",
+      "group": "paper-results",
+      "size": 32686,
+      "sha256": "7074d521f45284c51f18bff5fd04ee85e746e5ca58ce8e79b4fd26204b3ed547",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0081-C-odor1-B-train-10023.brain.npz",
+      "group": "paper-results",
+      "size": 77960,
+      "sha256": "b9e217bb5e109a5ce032f4116a36a44bc363a8b5c4098028b55ab3a9998e0603",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0082-C-odor2-B-train-10024.brain.npz",
+      "group": "paper-results",
+      "size": 53117,
+      "sha256": "8ced01ab3bdae4a916be67a239b421c39589e927201df8286beb4d48efdd7a49",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0083-C-odor1-B-train-10025.brain.npz",
+      "group": "paper-results",
+      "size": 70210,
+      "sha256": "2eed6a7dec50531975fca038b954f90b0c128be6fef78d641c236a5d83ed4da0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0084-C-odor2-B-train-10026.brain.npz",
+      "group": "paper-results",
+      "size": 49708,
+      "sha256": "8973cc7492fb18fdee8bbffe9b8a912f9b5007113522116c29b3a7e0b10dd7e5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0085-C-odor1-B-train-10027.brain.npz",
+      "group": "paper-results",
+      "size": 66524,
+      "sha256": "42da010c7858694837e7cb91f945f488972906679aaa8a1cd3d19a48b1640335",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0086-C-odor2-B-train-10028.brain.npz",
+      "group": "paper-results",
+      "size": 49598,
+      "sha256": "24e34bf9c755d256761c6b5bf80f2df285b02f12b523dd207ea5e1a4a4e7e901",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0087-C-odor1-B-post-23.brain.npz",
+      "group": "paper-results",
+      "size": 65852,
+      "sha256": "23b602ebb7da72dc84c87125e37612903998736812c38e29c92c6774205bae1f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0088-C-odor2-B-post-23.brain.npz",
+      "group": "paper-results",
+      "size": 37180,
+      "sha256": "0e8e1a5774016c4fad41d241c1cebf77b122faa68d68c4969b5b14906d061d05",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0089-C-odor1-unpaired-train-10023.brain.npz",
+      "group": "paper-results",
+      "size": 75659,
+      "sha256": "2b13c3403c74af486722e0dcfbd4234e106728b018f2dc13591ad3378785f256",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0090-C-dopamine-unpaired-train-110023.brain.npz",
+      "group": "paper-results",
+      "size": 19059,
+      "sha256": "cf407f477b0ebfd8d024dfd4b0c440c254ee4ef06d55d54651e4dd2360f2e39e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0091-C-odor2-unpaired-train-10024.brain.npz",
+      "group": "paper-results",
+      "size": 37565,
+      "sha256": "8cd4343129abbd1d4916db5a8005e0441fbc4f73e8ded679ce44c7d1950dd13d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0092-C-dopamine-unpaired-train-110024.brain.npz",
+      "group": "paper-results",
+      "size": 2786,
+      "sha256": "3c9fde074bf70fe1d8d2c9ba7f5133453f1e5c8d39b5d9b935dde29d809f694e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0093-C-odor1-unpaired-train-10025.brain.npz",
+      "group": "paper-results",
+      "size": 73221,
+      "sha256": "27d82e01593f055b1fa51b836cd4aca985c51c278b1748f4e7a37ef206cf6825",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0094-C-dopamine-unpaired-train-110025.brain.npz",
+      "group": "paper-results",
+      "size": 19307,
+      "sha256": "97d1750c8f074b1301f40088e1f0e68d1c36042e3c66dbd958d227308fa07e7d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0095-C-odor2-unpaired-train-10026.brain.npz",
+      "group": "paper-results",
+      "size": 33980,
+      "sha256": "6e123216e0cb6d8ad14e25036ea276c57f397111a32b06087e7c4ea87f579bc9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0096-C-dopamine-unpaired-train-110026.brain.npz",
+      "group": "paper-results",
+      "size": 2644,
+      "sha256": "8e1cfdfa028d6c1f5df83c546c05fad8a7c5eb40c4e9f4b6371a705d2847de45",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0097-C-odor1-unpaired-train-10027.brain.npz",
+      "group": "paper-results",
+      "size": 72809,
+      "sha256": "1ded3d4f7bc2a8f9705abfd008bdec2752855df6b688b41c5098af1c85e6e037",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0098-C-dopamine-unpaired-train-110027.brain.npz",
+      "group": "paper-results",
+      "size": 19374,
+      "sha256": "dd336c3d540c6408c9af6559ea126a51de6774a23bbbf684ef61d8cfcc17901e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0099-C-odor2-unpaired-train-10028.brain.npz",
+      "group": "paper-results",
+      "size": 35812,
+      "sha256": "2322dc73a31fd0f5861e25e740a9ec939e6da03b3c75b3e442aea70d8df6c2ff",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0100-C-dopamine-unpaired-train-110028.brain.npz",
+      "group": "paper-results",
+      "size": 2698,
+      "sha256": "919d127191c651129269e4eca8a4d56e23cd066c3d33c829813c33b1c89c329a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0101-C-odor1-unpaired-post-23.brain.npz",
+      "group": "paper-results",
+      "size": 74228,
+      "sha256": "f80a265aac77042d458b91ec2391ac99fb4afe5ca8ceb3ff09ed12dc7b1ccd89",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0102-C-odor2-unpaired-post-23.brain.npz",
+      "group": "paper-results",
+      "size": 32892,
+      "sha256": "f81a55782ba3b38b21e54d7c96aa32aa80411ac80b861c61adeb199e26610cf5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0103-C-odor1-A_reloaded-reload-23.brain.npz",
+      "group": "paper-results",
+      "size": 73342,
+      "sha256": "b5317e74f6c605f22303bf7b9b239776e6f7bb084c686f82115d30c49f1735c2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0104-C-odor2-A_reloaded-reload-23.brain.npz",
+      "group": "paper-results",
+      "size": 32778,
+      "sha256": "f2c3f4bcf28d539fdb6999893c1074a43637e6628237291ed632058587a0b3a6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0105-C-odor1-naive-probe-47.brain.npz",
+      "group": "paper-results",
+      "size": 76179,
+      "sha256": "84b1b121fb2b8a1ca9732523a08e9fe1689952f9b0b6523b24054a37f8e240da",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0106-C-odor2-naive-probe-47.brain.npz",
+      "group": "paper-results",
+      "size": 33873,
+      "sha256": "153ade5dddb7800420cf5ea65c4aeb921b6f78c05837ea31ca01ee4e2a2803e0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0107-C-odor1-A-train-10047.brain.npz",
+      "group": "paper-results",
+      "size": 89160,
+      "sha256": "1cef9828e1f9c593327b341883b25858b1deb1634b97f4b6bb633dee7a8f3211",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0108-C-odor2-A-train-10048.brain.npz",
+      "group": "paper-results",
+      "size": 39181,
+      "sha256": "c576f18e6f3ab31d7f0139648011dea915e852fd1182ff6cb6d32fcf0437431d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0109-C-odor1-A-train-10049.brain.npz",
+      "group": "paper-results",
+      "size": 87782,
+      "sha256": "12c5b22720703b905e2d52525d67a34bd612e071347cd79d427f77aad9704f98",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0110-C-odor2-A-train-10050.brain.npz",
+      "group": "paper-results",
+      "size": 35737,
+      "sha256": "2e5deb72ab9dd4a1fa8d8b043a697766069ea456dd5e0d146d053179c41a0c54",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0111-C-odor1-A-train-10051.brain.npz",
+      "group": "paper-results",
+      "size": 86230,
+      "sha256": "f489a87090fd8e26eaa5a5ef880afd3af2a189f37b0461f29e35f2f8c4db1bce",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0112-C-odor2-A-train-10052.brain.npz",
+      "group": "paper-results",
+      "size": 35585,
+      "sha256": "3fcfeb3899591387584ab9d44e1d97488a588a1239e543f6320b04af5d0cabca",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0113-C-odor1-A-post-47.brain.npz",
+      "group": "paper-results",
+      "size": 72211,
+      "sha256": "d960837a25de488deb5bbb5573ef1e468fcc2fa698da5233a9ac7f92eb0aa779",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0114-C-odor2-A-post-47.brain.npz",
+      "group": "paper-results",
+      "size": 34357,
+      "sha256": "18ac5edeb56ab7a7a64bca01bf43d2fde663639a0a163dd21b4518b9831348fa",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0115-C-odor1-B-train-10047.brain.npz",
+      "group": "paper-results",
+      "size": 77620,
+      "sha256": "4937f78f93ad2e86be5da7696aae9c41804b9db202a109fb0a700340a39038bf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0116-C-odor2-B-train-10048.brain.npz",
+      "group": "paper-results",
+      "size": 49890,
+      "sha256": "e3e70575f9f46088291038552f141ab00445268756ec8e45581dcac6164c831c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0117-C-odor1-B-train-10049.brain.npz",
+      "group": "paper-results",
+      "size": 69733,
+      "sha256": "3b102c7d39232cc93d24f970d4459e513de0e142a9f6cd63c9ada842b3a1598f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0118-C-odor2-B-train-10050.brain.npz",
+      "group": "paper-results",
+      "size": 49519,
+      "sha256": "c10026e2b4a03b411ed434f2fa453408c365264578073e3d1fcb564344eb4fbe",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0119-C-odor1-B-train-10051.brain.npz",
+      "group": "paper-results",
+      "size": 66632,
+      "sha256": "c390b8cf0adf91a34fc8d3d1344fd4e456246486591cb5196c248f71197f5dab",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0120-C-odor2-B-train-10052.brain.npz",
+      "group": "paper-results",
+      "size": 52880,
+      "sha256": "d42baf0aa35d4dc2ce7e630ce52cc3638b0f8dab0a9ff05d87b0fd332c55658b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0121-C-odor1-B-post-47.brain.npz",
+      "group": "paper-results",
+      "size": 67554,
+      "sha256": "34c4a6ebffb94029f6fc88ecff8c35a47a88773586f7536aae228385fc182f65",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0122-C-odor2-B-post-47.brain.npz",
+      "group": "paper-results",
+      "size": 34386,
+      "sha256": "92a99c677f15d74c79d31e1b5865ca8f9c3fb289548d640809365c9a20b8733d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0123-C-odor1-unpaired-train-10047.brain.npz",
+      "group": "paper-results",
+      "size": 75759,
+      "sha256": "2edad81e49cd8dfb52c077e133b27eaa900d4c4e6a9e5310f5dce1c07294dd98",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0124-C-dopamine-unpaired-train-110047.brain.npz",
+      "group": "paper-results",
+      "size": 19529,
+      "sha256": "eb7159e9cab7c38226b6ded681a05d09e6da3ea93d04cc5e4d4a1d8b5ad5d90c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0125-C-odor2-unpaired-train-10048.brain.npz",
+      "group": "paper-results",
+      "size": 32741,
+      "sha256": "afaaca2a567dd1c450e21970a2b213793bccd587458b4feb218fc22e253552d0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0126-C-dopamine-unpaired-train-110048.brain.npz",
+      "group": "paper-results",
+      "size": 2642,
+      "sha256": "dcc0918e9edc59c133c43c76a0b3d92576b677c0c3b8feba9347d765a60239a2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0127-C-odor1-unpaired-train-10049.brain.npz",
+      "group": "paper-results",
+      "size": 70864,
+      "sha256": "451dd4b125f03d7faa1168dd145feed044d58b1ddabdacbdb14fd36d8eee9b25",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0128-C-dopamine-unpaired-train-110049.brain.npz",
+      "group": "paper-results",
+      "size": 18911,
+      "sha256": "a13972223399b43ecc0082995889a0245a7d24d74310c55fcb7f8ca59a7666fc",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0129-C-odor2-unpaired-train-10050.brain.npz",
+      "group": "paper-results",
+      "size": 33054,
+      "sha256": "84e745f88151d9f77fcef5d56ab22e840e9ad6d899e86db1ce70376826740a28",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0130-C-dopamine-unpaired-train-110050.brain.npz",
+      "group": "paper-results",
+      "size": 2711,
+      "sha256": "01150ee982090f975723f2fc4e5b5ef9821f27d83097a10ace08922e7b5758bf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0131-C-odor1-unpaired-train-10051.brain.npz",
+      "group": "paper-results",
+      "size": 72949,
+      "sha256": "6b93ddfd4e165cf5b87c8c4d849f14d906dc1f944735da9b8e62bcc1c62cbe7d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0132-C-dopamine-unpaired-train-110051.brain.npz",
+      "group": "paper-results",
+      "size": 19411,
+      "sha256": "340a2b84eaa4ecdf6a043f36677b7cc94f7083d27ad03f58e280a7c635b436cc",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0133-C-odor2-unpaired-train-10052.brain.npz",
+      "group": "paper-results",
+      "size": 32212,
+      "sha256": "3a6f33f96b20feb8654b4bde16543750eadd7fa8b6614e5005cf4b5e94b89f91",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0134-C-dopamine-unpaired-train-110052.brain.npz",
+      "group": "paper-results",
+      "size": 2689,
+      "sha256": "53f9deb9c4525d62ee43694ecc52367583d530f69279932da7893bea24032fd6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0135-C-odor1-unpaired-post-47.brain.npz",
+      "group": "paper-results",
+      "size": 69998,
+      "sha256": "4fe0c4459c4c7c9023e26e25f188175ef7024bfa0b43fb1d2215502ebab79833",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0136-C-odor2-unpaired-post-47.brain.npz",
+      "group": "paper-results",
+      "size": 33088,
+      "sha256": "24c80f203e04cd56e4a65ebba8e596dc7951646a3c42c21176d35dd872f64e4b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0137-C-odor1-A_reloaded-reload-47.brain.npz",
+      "group": "paper-results",
+      "size": 70287,
+      "sha256": "20a0b7169c48a3a22367111cff8788da4af6abfeac18eb312d1e540e2ec9b16c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0138-C-odor2-A_reloaded-reload-47.brain.npz",
+      "group": "paper-results",
+      "size": 33485,
+      "sha256": "889207de0044224d13b0becfb46ecc18c7e64719ea925c120f8a57dc80bd74bc",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0139-GF-GF-11.vnc.npz",
+      "group": "paper-results",
+      "size": 831,
+      "sha256": "9f37bf492fd44cde1b6539a688e08ce209c09c2e6d8b8566a3406ceb894dba2a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0140-GF-random1-11.vnc.npz",
+      "group": "paper-results",
+      "size": 738,
+      "sha256": "684236c825505ae806ed9804f3e07b315688be677c5b7d51ea42d825f6ed4aaf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0141-GF-random2-11.vnc.npz",
+      "group": "paper-results",
+      "size": 1303,
+      "sha256": "c460631c64110679e088bac935ec6f2854f47aa5a85f7acfe439fe21fc79fa9f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0142-GF-random3-11.vnc.npz",
+      "group": "paper-results",
+      "size": 2024,
+      "sha256": "3867cd0cf97e86935db19e0aa36087004eb714a14d8fb5ddc7cf1f5a07fb63da",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0143-GF-random4-11.vnc.npz",
+      "group": "paper-results",
+      "size": 637,
+      "sha256": "43e715714aed267e80c247463bb31549aae68f478e5200a870f45c3f2bd1a48f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0144-GF-random5-11.vnc.npz",
+      "group": "paper-results",
+      "size": 888,
+      "sha256": "12f26033c4a1528a994b76574ab7a9babfe70994571f83da97ecf92b5b0e1773",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0145-GF-GF-23.vnc.npz",
+      "group": "paper-results",
+      "size": 828,
+      "sha256": "21781b07287e1a855ae4bbc53d48f5dcde0ca839fcb1d27fe11bfe5ee40b48e8",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0146-GF-random1-23.vnc.npz",
+      "group": "paper-results",
+      "size": 744,
+      "sha256": "46a9a46bc8dbcc55325fde9711721b4c2a502bea280999dece048a260fa34755",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0147-GF-random2-23.vnc.npz",
+      "group": "paper-results",
+      "size": 1162,
+      "sha256": "d91b0d406c5057fec0f11da3a4613ee08cff66b31dc4ef23517831ad7b6e8060",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0148-GF-random3-23.vnc.npz",
+      "group": "paper-results",
+      "size": 2096,
+      "sha256": "8831ce8d588adb997bf6c16e6a17301fa7122559d931dc4da78e92e2681f0b0c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0149-GF-random4-23.vnc.npz",
+      "group": "paper-results",
+      "size": 682,
+      "sha256": "36f7eaec1c09f9ea0f911b46800f848628b40aa12a801f9abb568c483924e2d2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0150-GF-random5-23.vnc.npz",
+      "group": "paper-results",
+      "size": 852,
+      "sha256": "eb4d83ef73e771c34efe9865adf7f90068a9e0ceac977cd6dafdd071eafc9359",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0151-GF-GF-47.vnc.npz",
+      "group": "paper-results",
+      "size": 791,
+      "sha256": "242cd5354ae92872cbc991e191c89c2f3beb7d6503d027e26bcd9a84abfca7c0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0152-GF-random1-47.vnc.npz",
+      "group": "paper-results",
+      "size": 747,
+      "sha256": "4a2b00d04761a3c5264aff312dd067f8f1c5d5b6ed0675a55674a04a9661e2f0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0153-GF-random2-47.vnc.npz",
+      "group": "paper-results",
+      "size": 1159,
+      "sha256": "e30de2214c7016e78f4a154b62783556649dccd4015f8bcec8ee6ce87e019935",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0154-GF-random3-47.vnc.npz",
+      "group": "paper-results",
+      "size": 2232,
+      "sha256": "b23694da0f6fb826a4ee2ad433d922775e145c47347a24c3cb1940a98191e98f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0155-GF-random4-47.vnc.npz",
+      "group": "paper-results",
+      "size": 657,
+      "sha256": "166498599602ec1347efd29f9285971ae5072a8b0535144789ebb01349beb812",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/raw/0156-GF-random5-47.vnc.npz",
+      "group": "paper-results",
+      "size": 828,
+      "sha256": "28c9379833842c6adbfe394bab690179fc9838cc2e07984dd23c06ea4c69bd39",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/records.jsonl",
+      "group": "paper-results",
+      "size": 27708904,
+      "sha256": "f0ef8974f2527cf617c08ba4d28b22ebb6cd54f986b37ad4453131598030c500",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/replay-0045-C-odor1-A-post-11.json",
+      "group": "paper-results",
+      "size": 367,
+      "sha256": "3b14f24bc8a4e7fe5e8df4865fbddb073812486c772c270a99edd03dd17eede5",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/summary.csv",
+      "group": "paper-results",
+      "size": 41534,
+      "sha256": "c42c857a182646d59e8d8cf9474b085a88cbafc704acb3892c579fc6d49b005c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/summary.json",
+      "group": "paper-results",
+      "size": 169822,
+      "sha256": "55dd18f3ca592964302a30bae08fbc086db0a76e5fb885e156c77f347f119c6e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/validation.json",
+      "group": "paper-results",
+      "size": 8844,
+      "sha256": "4286d4d0603fc60403245fc40c0810e384c4d8796546dc34f1386af7b01a3d37",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/verification.json",
+      "group": "paper-results",
+      "size": 82,
+      "sha256": "90c74820afcdfe9bc6c37bf95db141c6de9b9036934364f266f76cf06f7908e2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/vnc_drivers.csv",
+      "group": "paper-results",
+      "size": 88561,
+      "sha256": "1d5dc8ccd3bd5414efd449db6a4d9c84174ed6e922837b2f67fbb7108b4225e0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/cases-v1/vnc_nodes.csv",
+      "group": "paper-results",
+      "size": 1441719,
+      "sha256": "a03559d151612ca91fec8f3eb2668f38f81e588fe1cc45f8799294acf7b1ef7c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/brain_root_ids.npy",
+      "group": "paper-results",
+      "size": 1109240,
+      "sha256": "7df8b3a8fcd63849ceb98db2b8263000ee0c4e5000afe10e93d72c9d1f82e449",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/001-sugar-planner.json",
+      "group": "paper-results",
+      "size": 15181,
+      "sha256": "8d3b3b9bdb9027f4fc34c5d95d1d1d6e48c9d79bc8e0f4d2a112f4ac9746aa3f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/002-sugar-narrator.json",
+      "group": "paper-results",
+      "size": 9089,
+      "sha256": "2df364fb216bbfdbf689e303585d39927aafcb98bceb64a61367f7f55da0475e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/003-bitter-planner.json",
+      "group": "paper-results",
+      "size": 15390,
+      "sha256": "35598eadff897dee3807f34903fda39d653062ad6afdbfe8f344bad8ac60149e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/004-bitter-narrator.json",
+      "group": "paper-results",
+      "size": 9067,
+      "sha256": "9704449ef890d1be6b176f3bbe0bd03602a18973a9c92bd15c0a60923780f2b3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/005-sugar_bitter-planner.json",
+      "group": "paper-results",
+      "size": 15388,
+      "sha256": "3720a790fb2085bb6f60a27f9196e7f4f8c19a78ec3c99738deaed9b98108242",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/006-sugar_bitter-narrator.json",
+      "group": "paper-results",
+      "size": 8997,
+      "sha256": "03c97fce60b05cb187f0be924993ce92a674e98b5b9d62458eb78be46c76ca68",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/007-antenna_touch-planner.json",
+      "group": "paper-results",
+      "size": 15159,
+      "sha256": "da5d78494c9331379562d991890521bc20064dcfd502dd3ec28dde0beb11fb40",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/008-antenna_touch-narrator.json",
+      "group": "paper-results",
+      "size": 9516,
+      "sha256": "e84669819e0fac4a8eacf581ea5a3e53a3ad5743a268585a3f409780425d8819",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/009-looming-planner.json",
+      "group": "paper-results",
+      "size": 15232,
+      "sha256": "e4b4a320f9fa6c0b3c635f14c48cd1983b9f376e9708b61c7bd301797d9734a3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/010-looming-narrator.json",
+      "group": "paper-results",
+      "size": 9781,
+      "sha256": "485a37f50f9e81cf49b9d78fab91a30a73aa65395277eb57bbe8ecdefbbe85eb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/011-sugar_paraphrase-planner.json",
+      "group": "paper-results",
+      "size": 15534,
+      "sha256": "c374a7ba1f014976032c879d3d4b2dc9a22634aa11370125b2b6270ce2993a09",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/012-sugar_paraphrase-narrator.json",
+      "group": "paper-results",
+      "size": 9542,
+      "sha256": "48818f9141cf794dc9b376027e1ded61448a3b9c21270be54745dff10ffb453d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/013-looming_paraphrase-planner.json",
+      "group": "paper-results",
+      "size": 15355,
+      "sha256": "e09137fc7f747841160db113934a4b03ab1daf00bf8824d81fb86c02ca379492",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/014-looming_paraphrase-narrator.json",
+      "group": "paper-results",
+      "size": 10093,
+      "sha256": "dfc73467094e5363c8a5ab1e697b890936d1c075861b639e37a21015523a0fb9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/015-apple-planner.json",
+      "group": "paper-results",
+      "size": 15047,
+      "sha256": "b3f254bbb8a7885c04c1fad9a2149552dbe2c943b73174fb97d7a1bd5460c76c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/016-apple-simulation_and_resolver.json",
+      "group": "paper-results",
+      "size": 4969,
+      "sha256": "6f8f4302b1263068558bdd8e9675c3d5f57a4de843d185db97a4153ad959f9be",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/017-apple-narrator.json",
+      "group": "paper-results",
+      "size": 12633,
+      "sha256": "21076db19ac8b988232bdd2b1deecadd19e6a673ac602b1ca15abce6a6755847",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/018-vinegar-planner.json",
+      "group": "paper-results",
+      "size": 15081,
+      "sha256": "332d5ef2eebae3b386a91315fd48e684ff41f48024672390ff39aae82a9a982a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/019-vinegar-simulation_and_resolver.json",
+      "group": "paper-results",
+      "size": 5018,
+      "sha256": "12cde341dc273b5b06085a7a3ecf790936adec173435c78e02bf7da13dfca37d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/020-vinegar-narrator.json",
+      "group": "paper-results",
+      "size": 12295,
+      "sha256": "1b394c6fb2227462cd14066ecc1d4cfcd62d3c7801141a747548cd5709dd45d9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/021-sound_400hz-planner.json",
+      "group": "paper-results",
+      "size": 15353,
+      "sha256": "51157814b253104ee0f7270dbbd3b4cc5dc7fe9e8e9f377dd1c9f283545e5a43",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/022-sound_400hz-narrator.json",
+      "group": "paper-results",
+      "size": 9314,
+      "sha256": "13ffb76c943010a6aff692139a191f964f1adc572a909fe5b98a77787cc567ff",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/023-zero_hz_sugar-planner.json",
+      "group": "paper-results",
+      "size": 15452,
+      "sha256": "304c5ea36952b8ff03f973a95901c73fd97441dda25e93d365d835144ec1d792",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/024-zero_hz_sugar-narrator.json",
+      "group": "paper-results",
+      "size": 7669,
+      "sha256": "daf7377b6c734460b9a55451107bb4290c6fe93c93c3eaefd06c8dbc7bb17bba",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/025-glass-planner.json",
+      "group": "paper-results",
+      "size": 15526,
+      "sha256": "fe4acf272391e8aa24623f1548fdad302b13bb91525df124a224c98f7a9ea09b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/026-glass-simulation_and_resolver.json",
+      "group": "paper-results",
+      "size": 5140,
+      "sha256": "785cf2086f2ce4d850e8d41b255652da8ace4f8ce7b0800a1418c68c5d4f9479",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/027-glass-narrator.json",
+      "group": "paper-results",
+      "size": 10115,
+      "sha256": "b87bccdea05454f0f68d5c57c68b3f28c45186a9f7ae2bc4741b94ca3fda8258",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/028-memory_naive_ethyl_acetate-planner.json",
+      "group": "paper-results",
+      "size": 15213,
+      "sha256": "f542c441d7e3ece2e7c05ef4784346dba718b9be76c1dc3749939534ce42be3d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/029-memory_naive_ethyl_acetate-narrator.json",
+      "group": "paper-results",
+      "size": 13076,
+      "sha256": "235a8d7322baaae29131b9eda8e82ed3ab4ede5f5f19f0246e7941dba89b5062",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/030-memory_naive_pyrrolidine-planner.json",
+      "group": "paper-results",
+      "size": 15200,
+      "sha256": "cdad1cda702b134a88cb8a4b13ad1b64b0b59dbc4a340380259eb246c0bdbe84",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/031-memory_naive_pyrrolidine-narrator.json",
+      "group": "paper-results",
+      "size": 11607,
+      "sha256": "61827ad3562c6ec39bb1de46f5bf622591ed4e43407adecabd3cd7e831991ed1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/032-memory_A_ethyl_acetate-planner.json",
+      "group": "paper-results",
+      "size": 15238,
+      "sha256": "ded4a7139a6367b6d95648da55e61efe6949025d980c7b7c58700b71cc0b6293",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/033-memory_A_ethyl_acetate-narrator.json",
+      "group": "paper-results",
+      "size": 13554,
+      "sha256": "c4dc77b3b3d8980ad6498fbc4f23239ee0f7df25e884c2b69a83175ae2a68a93",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/034-memory_A_pyrrolidine-planner.json",
+      "group": "paper-results",
+      "size": 15158,
+      "sha256": "9330c8457a34134deae2b953c6eaa844ffe90aac63f000df3f5b6e21de9e149d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/035-memory_A_pyrrolidine-narrator.json",
+      "group": "paper-results",
+      "size": 11647,
+      "sha256": "aa7d448b1da2a211ade2d82964af156b963e0d102341dd22d709ec81df16ca0d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/036-memory_B_ethyl_acetate-planner.json",
+      "group": "paper-results",
+      "size": 15145,
+      "sha256": "6eb20a3823c597d90e8ba4a54d7cd386358783db3c55342fb76e3ee0b737c159",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/037-memory_B_ethyl_acetate-narrator.json",
+      "group": "paper-results",
+      "size": 13379,
+      "sha256": "ffb15f798be5a5a98662049d0e74975187e8cc3064262465a0a500cc8e1c22ae",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/038-memory_B_pyrrolidine-planner.json",
+      "group": "paper-results",
+      "size": 15121,
+      "sha256": "3931f534daf208ae0d372d7ab3d3f41d87340077a7066a74e5127140948b986d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/llm/039-memory_B_pyrrolidine-narrator.json",
+      "group": "paper-results",
+      "size": 11958,
+      "sha256": "9a4352689c3f35eb2fb7140353cb55edb82a25e57c163b4ddddec2a91ab34385",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/manifest.json",
+      "group": "paper-results",
+      "size": 154396,
+      "sha256": "63de9f93d73d979ea607997eedde397ea92353f1210521e966857a7dbfb31081",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "35c8ed2f6d1b4eb501df1c686daf2e079250ef5ac4ee68f5b7b895ba74153a9e",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/memory/43b9d8bdbaeec01040f772a73382aac6cd24ba3c016ac4830f09b2472b9642ec.npz",
+      "group": "paper-results",
+      "size": 111052,
+      "sha256": "a71557f25e66b317f69d8295ad5456af65ef6a2d3898a28a625f29fed456ed38",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/memory/80cb1da11a84a15246794e8e355a91236926de6fa18b31dabae97493ef8c11f8.npz",
+      "group": "paper-results",
+      "size": 105119,
+      "sha256": "8a4307ea228cfc7cefd11d816c93ecfc40366b4689d4fd16955eb15614f71657",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/memory/e1633e5096b055cffcc404ae2bac80c2b2fc4bff817fe5532dd1eebaf4aa9eb3.npz",
+      "group": "paper-results",
+      "size": 113258,
+      "sha256": "100e0fc8d9bf97b810e1d6f27b10aa4375d173edea54da1669831f8a16af6d44",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/panel.json",
+      "group": "paper-results",
+      "size": 5843,
+      "sha256": "6959d216ea16fb0b6cc2e849140649eda9aca0b7083243417c05cb8f5aeda22d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/records.jsonl",
+      "group": "paper-results",
+      "size": 2091852,
+      "sha256": "1096ab4fac5572dabf1041fc58316121d8f5b0cad22b7e968c95c1e291e3b5c0",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "d43f0ec1e308fbf935c725c86293f4fd9e5a4b3df1c718fbb9da073c245380a1",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/replay-sugar.json",
+      "group": "paper-results",
+      "size": 175,
+      "sha256": "7947569592f2c497dba0106ab93894f48aecea147cf1e78f6ffccc342da4d80c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/source_memory/43b9d8bdbaeec01040f772a73382aac6cd24ba3c016ac4830f09b2472b9642ec.npz",
+      "group": "paper-results",
+      "size": 111052,
+      "sha256": "a71557f25e66b317f69d8295ad5456af65ef6a2d3898a28a625f29fed456ed38",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/source_memory/80cb1da11a84a15246794e8e355a91236926de6fa18b31dabae97493ef8c11f8.npz",
+      "group": "paper-results",
+      "size": 105119,
+      "sha256": "8a4307ea228cfc7cefd11d816c93ecfc40366b4689d4fd16955eb15614f71657",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/source_memory/e1633e5096b055cffcc404ae2bac80c2b2fc4bff817fe5532dd1eebaf4aa9eb3.npz",
+      "group": "paper-results",
+      "size": 113258,
+      "sha256": "100e0fc8d9bf97b810e1d6f27b10aa4375d173edea54da1669831f8a16af6d44",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/state/odor_resolved.json",
+      "group": "paper-results",
+      "size": 777,
+      "sha256": "86500e12b4e501954b8a8fad89644b9126d87f818530c9b3b8f2a4070f9ba104",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/antenna_touch/brain-0.json",
+      "group": "paper-results",
+      "size": 74612,
+      "sha256": "effca6f9095c0ccbd73acee679675870a6dc52557ee92dcd68f051713f344c33",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/antenna_touch/brain-0.npz",
+      "group": "paper-results",
+      "size": 81316,
+      "sha256": "9a56b09d26175d6d74518199ebf2cb0ac4384382f966a28e62455964e7bcd117",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/antenna_touch/reader_features.npz",
+      "group": "paper-results",
+      "size": 39828,
+      "sha256": "890f59509b91b007edb5b3504f9107153f65fe4de1567c062eb0acf9d5805354",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/antenna_touch/result.json",
+      "group": "paper-results",
+      "size": 126688,
+      "sha256": "21105311373dd99ddb1e421e60575d8f0e6a076c929ad6cef34a32bda8540f11",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/antenna_touch/vnc.npz",
+      "group": "paper-results",
+      "size": 2676,
+      "sha256": "f0c1d7641373648ac6da1386deca967bb9b4669d9c2ac1b2cdd4171612ab990b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/apple/brain-0.json",
+      "group": "paper-results",
+      "size": 136333,
+      "sha256": "a278d851c1bc4a55c99c8e098e35b535903f437e4bf48b7c38510ecd72881a52",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/apple/brain-0.npz",
+      "group": "paper-results",
+      "size": 43140,
+      "sha256": "de2e6179b3b145b2b22759858fc202e3910e43fc6ed487bd495f104ecbadf118",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/apple/brain-1.json",
+      "group": "paper-results",
+      "size": 136346,
+      "sha256": "d7136ebca77f9541cd7c5025e86f273d7ebdad85f6baf5a2f5f13f462c1bfcab",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/apple/brain-1.npz",
+      "group": "paper-results",
+      "size": 42389,
+      "sha256": "66ef9338c846abc7b062a5b67c79e80eb75be57f2dbe4f90cc1c44f37443fee1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/apple/reader_features.npz",
+      "group": "paper-results",
+      "size": 39754,
+      "sha256": "948f8f30d65058ab3ea827228544b0399bdd70c0e47b40df783c41ce3354c499",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/apple/result.json",
+      "group": "paper-results",
+      "size": 371322,
+      "sha256": "004012a9ff10c7b7de36abb165c382819f88575948ca185714737f86de21be05",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/apple/vnc.npz",
+      "group": "paper-results",
+      "size": 1887,
+      "sha256": "c13f32fe084f59b9baef4071a499e10233afd10d95704fbbf4c3298492436fcd",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/bitter/brain-0.json",
+      "group": "paper-results",
+      "size": 11624,
+      "sha256": "3d17260ea8e58d1f97dc64caa92c2828e6ef2e71a63d6f8f1145d85d114abd62",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/bitter/brain-0.npz",
+      "group": "paper-results",
+      "size": 14021,
+      "sha256": "bcb3f150b5d0e9908907004ce866dc1cc09b0bfa72e3f06e631a69a1060bff1f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/bitter/reader_features.npz",
+      "group": "paper-results",
+      "size": 39559,
+      "sha256": "74b123f39b657ee0eec5b18d23b3763f294579be233fd88e6c0f9709849c51f6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/bitter/result.json",
+      "group": "paper-results",
+      "size": 30358,
+      "sha256": "1332f6d5b60bdc67637431048d7b117948491bd7074e149a117eb48452911be0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/bitter/vnc.npz",
+      "group": "paper-results",
+      "size": 2017,
+      "sha256": "3a18a490a3c498ee74eb63b4427d7d16eddf376464192137d6b83704236d7a54",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/glass/brain-0.json",
+      "group": "paper-results",
+      "size": 2150,
+      "sha256": "48cc004d09c73d4e1a105df70dd6e86a5e738863e814f91e124d5acce18d3879",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/glass/brain-0.npz",
+      "group": "paper-results",
+      "size": 5090,
+      "sha256": "9cfa0487f7c2a33d01b9702aafc59403abf92ea2728b99a7332832a6a49fa89d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/glass/reader_features.npz",
+      "group": "paper-results",
+      "size": 39571,
+      "sha256": "02c38c6d26ab982e74bbcc324f7c0a519466fa6d26d2e7e555fca81a7a7f0695",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/glass/result.json",
+      "group": "paper-results",
+      "size": 18045,
+      "sha256": "d0a8bdf5fdc14ec5865834ce188213243afe52c351f6facc1fc6804ecabe82ab",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/glass/vnc.npz",
+      "group": "paper-results",
+      "size": 937,
+      "sha256": "01f2902594b8edd3a623f91fe6c489f04cfa61290bf071f359a48a620532a197",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming/brain-0.json",
+      "group": "paper-results",
+      "size": 49135,
+      "sha256": "800bfc6655085458c243e63bc1fa576c1112d90ae25a86a60e7c1f99eaea3ae2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming/brain-0.npz",
+      "group": "paper-results",
+      "size": 87092,
+      "sha256": "06fc5769ffaa4e523963d63388ab6b4c54781a4e9a44b260e838c4f5e2adc63e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming/reader_features.npz",
+      "group": "paper-results",
+      "size": 39992,
+      "sha256": "f518b995b0b47c3f397de7642ec1f6afdf9f80d393b351d4c6d6cbd0f2949139",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming/result.json",
+      "group": "paper-results",
+      "size": 95977,
+      "sha256": "f43d14b62223b69f7592ae690697aeb25db063c5d0d673472712e8cf213ac037",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming/vnc.npz",
+      "group": "paper-results",
+      "size": 5414,
+      "sha256": "2216c915af0551d38ab8ec99b79d495fad2faf14e0ba29eb2bdd89ef9609647a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming_paraphrase/brain-0.json",
+      "group": "paper-results",
+      "size": 49144,
+      "sha256": "7c930c8c31b265e82be84a98890c98d9dacdd5bd879bb6e7feca22e8f6645eb1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming_paraphrase/brain-0.npz",
+      "group": "paper-results",
+      "size": 96595,
+      "sha256": "b84e23671ff83b13d33cc152300a8c51dfb4cf3b2419f553e40ce52255d8c436",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming_paraphrase/reader_features.npz",
+      "group": "paper-results",
+      "size": 40085,
+      "sha256": "a532cbf728b8a0883516fc5dc0ba9d3c57e2ea06af3f0f5d542570c1492bd4dd",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming_paraphrase/result.json",
+      "group": "paper-results",
+      "size": 97036,
+      "sha256": "f1686a369d08bf95490153bc7ed9562d0b5ebf7cc5856d391e64babf656a76b1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/looming_paraphrase/vnc.npz",
+      "group": "paper-results",
+      "size": 5534,
+      "sha256": "4f2c1b969c0d0d1a4e1bc4ced73aa0a495ca2528d1fd663e039b559667d8e689",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_ethyl_acetate/brain-0.json",
+      "group": "paper-results",
+      "size": 138182,
+      "sha256": "2d9cb9d089fc510c554ba210bd9f534d90c87b0f54cdf763de612590fde9e416",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_ethyl_acetate/brain-0.npz",
+      "group": "paper-results",
+      "size": 69512,
+      "sha256": "ba6b14d640f247a00ce0860015de33b5e1122950df1ba8eea02b2e1450f3daeb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_ethyl_acetate/brain-1.json",
+      "group": "paper-results",
+      "size": 138179,
+      "sha256": "6c425584a1c0023b359e50edd69153f71ffa5fe67d739510f437afc3eb9791db",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_ethyl_acetate/brain-1.npz",
+      "group": "paper-results",
+      "size": 72616,
+      "sha256": "f4466d2b8303c04d19994d312ff7c6aa71fbf492d702e486d0e1fe5dc7129558",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_ethyl_acetate/reader_features.npz",
+      "group": "paper-results",
+      "size": 40113,
+      "sha256": "86d11db83468623a32e04a2f8878f65687f972a2f764bf3b6085ead5a2f149bc",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_ethyl_acetate/result.json",
+      "group": "paper-results",
+      "size": 407344,
+      "sha256": "e1e70e7d82eb44eac20c19af5b9010a0d0e5117044a8f63a79eee9d6810023cc",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "06e76eaaba9897fe9cdc185426d6a0b67e0aeddb63ce3713eda87f0dc99a9e9e",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_ethyl_acetate/vnc.npz",
+      "group": "paper-results",
+      "size": 2678,
+      "sha256": "e142c74c097449c75e031eb18616df1dae9d837aa4f54180d5b4a7b3a66895cd",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_pyrrolidine/brain-0.json",
+      "group": "paper-results",
+      "size": 97950,
+      "sha256": "2b9a37893e4a3f7e8cf9bb1398bb37a901f43deb09524acc0c7350e38b86672e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_pyrrolidine/brain-0.npz",
+      "group": "paper-results",
+      "size": 34368,
+      "sha256": "f4f28e7d46b81a2e8a283ff42414c8d2e24852f624b2d53cdf26d46e7e71be66",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_pyrrolidine/brain-1.json",
+      "group": "paper-results",
+      "size": 97946,
+      "sha256": "9370d425e45cd437e1a572cbeb45e9c0865edef028f1491dc93bd1f6645111fa",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_pyrrolidine/brain-1.npz",
+      "group": "paper-results",
+      "size": 33536,
+      "sha256": "75667264e993101486d48d28abb0a9edba513152d08109e0bd26844d9cdf072d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_pyrrolidine/reader_features.npz",
+      "group": "paper-results",
+      "size": 39710,
+      "sha256": "27d530400697a42ea13afd926f4f70bbb3fa31e31f36328fce3701d7990d1b68",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_pyrrolidine/result.json",
+      "group": "paper-results",
+      "size": 289594,
+      "sha256": "9b9c3d23536e405e979088a4cc21c75ba325a780d0f00c6cec57ca963ef2ca24",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "8e0f47cb1bca0f09d18a2d3a55ba8308bc278dc7a56438cd96e4bccfbd147ae0",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_A_pyrrolidine/vnc.npz",
+      "group": "paper-results",
+      "size": 886,
+      "sha256": "7db5cf6bd12aff5f1e51e6fe22b54d4631a3ec580d2864002ed5dca874367a32",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_ethyl_acetate/brain-0.json",
+      "group": "paper-results",
+      "size": 138183,
+      "sha256": "99fa456ad4bd530eafd51411d21b18857dde96ef933abee6f7cc5d4d3fec579d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_ethyl_acetate/brain-0.npz",
+      "group": "paper-results",
+      "size": 66816,
+      "sha256": "a4b8929bcd620ea220456568448afaa80c75c3f647d430cc85542c3cfc22e610",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_ethyl_acetate/brain-1.json",
+      "group": "paper-results",
+      "size": 138179,
+      "sha256": "cf592c302bb65bf9a31015968a513d12abf744df7efc826a54bebb4ddb0e7ee3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_ethyl_acetate/brain-1.npz",
+      "group": "paper-results",
+      "size": 74157,
+      "sha256": "68e1ffe56af59bad40e8796ccf62146d0b2715009062419040e1fe8d308a83c6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_ethyl_acetate/reader_features.npz",
+      "group": "paper-results",
+      "size": 40036,
+      "sha256": "0ddebf0579124bb12894d631355ca5e2b62b63237e5c011397ccea6f87a96dea",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_ethyl_acetate/result.json",
+      "group": "paper-results",
+      "size": 406650,
+      "sha256": "0a5029b3e87f59959d9b63892812314be73493a1e6dc7c4158e2a78bd6b22d06",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "d2f0f622b7ef9ec88d07dd166ff916680e733cd096258eb066c50efa1b80d810",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_ethyl_acetate/vnc.npz",
+      "group": "paper-results",
+      "size": 2458,
+      "sha256": "3165eeb7bad6bb1a6c9eeaac094f58d48e8a8a6d9af872cd5a14e2a3a4210f5b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_pyrrolidine/brain-0.json",
+      "group": "paper-results",
+      "size": 97951,
+      "sha256": "d1fcb2f985e3dbc1a50759b58ecf0b7e50e742b9b150e2e3a8e96ed9de5c9bc3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_pyrrolidine/brain-0.npz",
+      "group": "paper-results",
+      "size": 36309,
+      "sha256": "169015bfe6526802f2183e21ed869eca465bd94b2097055a731fdabeb8a8548e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_pyrrolidine/brain-1.json",
+      "group": "paper-results",
+      "size": 97947,
+      "sha256": "d5152785b03bbac4974cfba7920e077ad64a229ec3f364ec072bd300d47eadb1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_pyrrolidine/brain-1.npz",
+      "group": "paper-results",
+      "size": 34069,
+      "sha256": "05a6adce82cb67141dc72f4de33c8d4e54747d29bb0d57a27d95434ad4601c24",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_pyrrolidine/reader_features.npz",
+      "group": "paper-results",
+      "size": 39753,
+      "sha256": "360a60150c8d2c7259488ba3fedb5468394ae012e252fe829982f6030c831084",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_pyrrolidine/result.json",
+      "group": "paper-results",
+      "size": 292608,
+      "sha256": "d826e19a4faca9023fb86e4acee312b020956e0328381d6d9bed6724a8249757",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "f6985b61eb17d18ecda2ef773976991bfe296c4ca0b88b514f73c28455b2f87a",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_B_pyrrolidine/vnc.npz",
+      "group": "paper-results",
+      "size": 1346,
+      "sha256": "29a7e32ab376c6808e21a3120d6a3ea3c716813e3121795d61df746e98e0f42b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_ethyl_acetate/brain-0.json",
+      "group": "paper-results",
+      "size": 138170,
+      "sha256": "fdb8834c356d9104552f4d35de9fe905b2fa8513535703e290cae0770154e4fc",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_ethyl_acetate/brain-0.npz",
+      "group": "paper-results",
+      "size": 71512,
+      "sha256": "0965b2ce66eac778d6c4f6176134bfac733d46560f77906cf48eb2d11b4f8d56",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_ethyl_acetate/brain-1.json",
+      "group": "paper-results",
+      "size": 138183,
+      "sha256": "eaf7e6be6b49658829aeb8552584a1d1823d8c8ead45d56bf2257a256b834f12",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_ethyl_acetate/brain-1.npz",
+      "group": "paper-results",
+      "size": 72163,
+      "sha256": "bcfc3419d8cb19864daf2aaaba9115b549dec8af73e913ea58d80ff101688973",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_ethyl_acetate/reader_features.npz",
+      "group": "paper-results",
+      "size": 40097,
+      "sha256": "56097878e17c2afc56c0cec5c3341aa4357f728a1e2a649ed2fcfbcdec123add",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_ethyl_acetate/result.json",
+      "group": "paper-results",
+      "size": 406464,
+      "sha256": "bf48c02ba142322e73000d87d63a2121323a4efc391ad784197111ce18e3188e",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "b8b7e38ec3e0bfd76a1940ee776d0eaa96e7d94d1e1769f3c3f0a6ce6ccbaf14",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_ethyl_acetate/vnc.npz",
+      "group": "paper-results",
+      "size": 2763,
+      "sha256": "6a8447ad85d62a39ad92072e94e42701c7d3f2abe6ed5d84f2655cb73c21a6ae",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_pyrrolidine/brain-0.json",
+      "group": "paper-results",
+      "size": 97937,
+      "sha256": "94b4addce1c1eafcb1a011894ca959526d58e6950dc79da784377935f9185fb6",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_pyrrolidine/brain-0.npz",
+      "group": "paper-results",
+      "size": 31917,
+      "sha256": "c6082ad68f0c3480d3566236a74d956aa8687aecf6158b00ea79c6f2cf5ba61e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_pyrrolidine/brain-1.json",
+      "group": "paper-results",
+      "size": 97951,
+      "sha256": "990d39a00c49e0e1a08ce890ca331479b995a667c27051b1dbc0049be3291eb4",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_pyrrolidine/brain-1.npz",
+      "group": "paper-results",
+      "size": 32095,
+      "sha256": "4e62aab6e229d6763eb9fea5e6a0d0153f9b500ab6303a5e5c4d33a482ccf42f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_pyrrolidine/reader_features.npz",
+      "group": "paper-results",
+      "size": 39699,
+      "sha256": "076657fb719a223a6b29f12f893c9740be50c9138c280e14a4e7b4262af1648c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_pyrrolidine/result.json",
+      "group": "paper-results",
+      "size": 289037,
+      "sha256": "15852e6a17a0165f5e4c9f9f2bbc4b9cd76e2382ca4c8a16e5549dc039359308",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "9a3894960994f1466d80833dcf794bc9733ff7b7b6ae31afd827e3f4424b98d6",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/trials/memory_naive_pyrrolidine/vnc.npz",
+      "group": "paper-results",
+      "size": 834,
+      "sha256": "9b90e14dcb18d1a0be8acdfa6127f2f3b7789b0ced7210e31dd1f40b1d68bc9e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sound_400hz/brain-0.json",
+      "group": "paper-results",
+      "size": 101030,
+      "sha256": "8453afa7fe1e9676a04084d6eae3c6ad827cb5215a646901be8143df2382919f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sound_400hz/brain-0.npz",
+      "group": "paper-results",
+      "size": 21576,
+      "sha256": "de9a713409b39014253474a2293294db5480799d6ef22100c5b5b6385fa07b79",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sound_400hz/reader_features.npz",
+      "group": "paper-results",
+      "size": 39519,
+      "sha256": "9c0f9ce33555902f21964f6376ec7fd66911356e36e0f2b52e2de0ca5dc93d93",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sound_400hz/result.json",
+      "group": "paper-results",
+      "size": 154464,
+      "sha256": "abeea66bbad5a5c20c207edad8831c84ca83979ffaf649c7ca200a7b2368ef2e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sound_400hz/vnc.npz",
+      "group": "paper-results",
+      "size": 1083,
+      "sha256": "2b17adc49664892901748a8c4f3f6cf38f583d075b65050056f63a6e7dcc866c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar/brain-0.json",
+      "group": "paper-results",
+      "size": 3846,
+      "sha256": "091ba43a064053bb0d594cd784f2c4a338094501d3b12e828bcb696f84f7b1f4",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar/brain-0.npz",
+      "group": "paper-results",
+      "size": 14541,
+      "sha256": "18fe26dc79e80a9a8c8fa526d396487c6730ef7ce392219da071e8756215a9c4",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar/reader_features.npz",
+      "group": "paper-results",
+      "size": 39664,
+      "sha256": "0317fc2ec396ba72e7a6b46e6b267da999888a8b1971b9ba4ae181a12d2dc48c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar/result.json",
+      "group": "paper-results",
+      "size": 27059,
+      "sha256": "276cf2be241e6576ec8c0bced9b694b429ff4964ff75db134cb1c6e49a2d6510",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar/vnc.npz",
+      "group": "paper-results",
+      "size": 2055,
+      "sha256": "4525a0ff5ca01068782e98d6ff5bcf05ef43e33588b6cb83d0e644df5f23c3ed",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_bitter/brain-0.json",
+      "group": "paper-results",
+      "size": 7030,
+      "sha256": "2d03e19492dccb31d78289f91e02057a342e8059552b4a88b4c3d2bf65b644e3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_bitter/brain-0.npz",
+      "group": "paper-results",
+      "size": 14714,
+      "sha256": "2f58faa7ea993fa3f7cc4440fb92cd2a737564db6e01d38da770a8082e940084",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_bitter/reader_features.npz",
+      "group": "paper-results",
+      "size": 39662,
+      "sha256": "d45528455b0f5418f7a1f21602027fb063a32a374d5ce150ead3ac2ebeb61337",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_bitter/result.json",
+      "group": "paper-results",
+      "size": 30236,
+      "sha256": "870f46f5c1ee970bec9e756ab01fda927d0bcae4c89b9f24ed3073dab500dcf1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_bitter/vnc.npz",
+      "group": "paper-results",
+      "size": 1026,
+      "sha256": "e513665f7233923210552c22d2bad3bb91d88489cccc13c5630cdaaa5f90d071",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_paraphrase/brain-0.json",
+      "group": "paper-results",
+      "size": 22280,
+      "sha256": "d6be64160ea5fd5cc9232b0e8b1711ae4f35afa85ef248b10060b2f8b38fdaf9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_paraphrase/brain-0.npz",
+      "group": "paper-results",
+      "size": 33256,
+      "sha256": "5caacec1010fee594ca23611e3908a318bc17ac017f37238fc45b1592be1ecd1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_paraphrase/reader_features.npz",
+      "group": "paper-results",
+      "size": 39749,
+      "sha256": "c8a0d660d3837be580108b6b28ea33cb5833d20e804929821478ae4fce39f0f0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_paraphrase/result.json",
+      "group": "paper-results",
+      "size": 54135,
+      "sha256": "0694239fba8f497fab35677a4485becdce026e88db5f2a0a76525a078b749d95",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/sugar_paraphrase/vnc.npz",
+      "group": "paper-results",
+      "size": 3022,
+      "sha256": "25310b2983d6af1597ef27e6906468feb82cacab6ceb6326cfd2b1cf7a5d1957",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/vinegar/brain-0.json",
+      "group": "paper-results",
+      "size": 54383,
+      "sha256": "01aca81659873abfafade04231c2ecff376f767acca9c670400fca6cc09ffde9",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/vinegar/brain-0.npz",
+      "group": "paper-results",
+      "size": 49917,
+      "sha256": "94341db713d110744fee31a064cc8daa621953132c86c6ab8c1cdfcd38ad322b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/vinegar/brain-1.json",
+      "group": "paper-results",
+      "size": 54396,
+      "sha256": "a86abc42219a58b6c6aadfe55f449632780f6532add0bfd47a6913e495f0422e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/vinegar/brain-1.npz",
+      "group": "paper-results",
+      "size": 50026,
+      "sha256": "f017ade09a2b00c9068180245a37869764697fd76eb4df407461940650a99e35",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/vinegar/reader_features.npz",
+      "group": "paper-results",
+      "size": 40055,
+      "sha256": "d2f9453add9a7d4c195b01ac6f3741b687b81ed28a60494eee6409bfaf01c63c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/vinegar/result.json",
+      "group": "paper-results",
+      "size": 163537,
+      "sha256": "bfcbea56303a41d1799f59162ea23860f72c1552c8d16d7c036079faccf79c4f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/vinegar/vnc.npz",
+      "group": "paper-results",
+      "size": 2548,
+      "sha256": "66a97e67a4ed9f20196384517a3aa9b7f1776bd3784de076e443600a0157b787",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/zero_hz_sugar/brain-0.json",
+      "group": "paper-results",
+      "size": 1309,
+      "sha256": "57e763e9047ab379642adc47b5111295b1b86c3ff6f172828d469aac93ef99eb",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/zero_hz_sugar/brain-0.npz",
+      "group": "paper-results",
+      "size": 959,
+      "sha256": "63926cc4a05cc20727586fd3733079a1899609730f1289c587149f07eaf0503c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/zero_hz_sugar/reader_features.npz",
+      "group": "paper-results",
+      "size": 39495,
+      "sha256": "5d01629f61f94ae7286e09e5711919431fa50016ddf7805d63e20fa2525eb17f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/zero_hz_sugar/result.json",
+      "group": "paper-results",
+      "size": 9326,
+      "sha256": "f8cabb4ceec6f44a0a8d3133385e9c371e1269d5e902569dccae3547d4bd2da7",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/trials/zero_hz_sugar/vnc.npz",
+      "group": "paper-results",
+      "size": 568,
+      "sha256": "3e70fa43a7204a4532b20db2bcf11cefebbaea49581b831e1f32e7faf3d64c33",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/validation.json",
+      "group": "paper-results",
+      "size": 148946,
+      "sha256": "7571c63a365ca638f80d0e0060a613848fbbe83d607d08643e7484c0291e907e",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "946f9a121fc9d32a295b02023990e8b6dd8e3f8ddc78a235ee8e05b344665a04",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/results/language-v1/vnc_drivers.csv",
+      "group": "paper-results",
+      "size": 88561,
+      "sha256": "1d5dc8ccd3bd5414efd449db6a4d9c84174ed6e922837b2f67fbb7108b4225e0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/results/language-v1/vnc_nodes.csv",
+      "group": "paper-results",
+      "size": 1441719,
+      "sha256": "a03559d151612ca91fec8f3eb2668f38f81e588fe1cc45f8799294acf7b1ef7c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/language_audit.json",
+      "group": "paper-results",
+      "size": 45741,
+      "sha256": "6b6c009c4d24f19f3f52600e28d3fffd73f75b236d6e53ef78819519d6429866",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/language_audit_independent_evidence.json",
+      "group": "paper-results",
+      "size": 193897,
+      "sha256": "d01e3a72d60a57a760865ffc5c596a12ba259207d79bd24ee72793e3d5b2ca19",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/language_audit_summary.json",
+      "group": "paper-results",
+      "size": 895,
+      "sha256": "514d9270cfa65c27dd0e07ac05533ff56e6ddd05890193de5cba7d1bf2fea2bf",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/memory_resolution.csv",
+      "group": "paper-results",
+      "size": 4228,
+      "sha256": "759de102110d779f9c144a3a5b7748ac5fccb6f50f42dba83c492bb9ef1b372f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/memory_resolution.json",
+      "group": "paper-results",
+      "size": 730550,
+      "sha256": "f076acb6bbcfe884f045e6fc3a0847d5ddbca2406b92ffb0514a5db0b4d88982",
+      "licence": "CC-BY-NC-4.0",
+      "source_sha256": "73ce5189d1dbeec5d68a7dad99da2344fe3f84bc571ed4d518f428b92d86dbf9",
+      "metadata_change": "Absolute author-machine paths made relative; scientific values unchanged. Embedded historical receipts retain their original hashes."
+    },
+    {
+      "path": "paper/analysis/memory_resolution_history_weights.csv",
+      "group": "paper-results",
+      "size": 21159,
+      "sha256": "db9d271ca48879d5927fec288e278e7f9f76c6f2773e19e7754d5678b0042128",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/memory_resolution_mbon_counts.csv",
+      "group": "paper-results",
+      "size": 315707,
+      "sha256": "11a5e045f9ce26c1fb605c742cfedc1386d6dcd5d424d90fb8153e0bda173693",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/memory_resolution_training_weights.csv",
+      "group": "paper-results",
+      "size": 142815,
+      "sha256": "6ae3f3b4becb3361d8812a84096dfefb92a03a825df741aa95395cfd1010214e",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/physiology_pilot_sources.json",
+      "group": "paper-results",
+      "size": 511,
+      "sha256": "1c2fe7aeaab9f505a3a51e4481336424cfe5591393927c28f3c88d5bfd514665",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/question_decoder_plot_sources.json",
+      "group": "paper-results",
+      "size": 3753,
+      "sha256": "487e9cb4a219ae91ad08b834d13b90342bef93b2a6f20cda29afb7c43f4b0071",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/question_decoder_sources.json",
+      "group": "paper-results",
+      "size": 6359,
+      "sha256": "35b71a11357ff8b35c08bd9c4feb90a652f1bb8bc186b44eb68549e747f7aea7",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/analysis/unpaired_weight_update_audit.json",
+      "group": "paper-results",
+      "size": 8861,
+      "sha256": "bfb8bff1e043cca91dbab31a6cb6e8d662f40f2ee681d783478c8784b46ba585",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/export_manifest.json",
+      "group": "paper-results",
+      "size": 7022,
+      "sha256": "d55dd4731ab9b2028722b85b1d4b6f96a1549e0e797916a56668a1b4c291cedd",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_0/manifest.json",
+      "group": "paper-results",
+      "size": 1611193,
+      "sha256": "1117c3564f402a1f5e268f0942dc329ef3c525b8760a0b6f9ef4761eb206e2a0",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_0/model_snapshot.json",
+      "group": "paper-results",
+      "size": 98,
+      "sha256": "09a084d015b5e0eea11670e56cd55bc43f5932b7885f63339a86dfd483823993",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_0/original_SHA256.json",
+      "group": "paper-results",
+      "size": 1174,
+      "sha256": "33b9f84c8f3d05388c7c16a57d777cd9807ff897084c60aa9a8dac8052d3fcf1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_0/predictions.json",
+      "group": "paper-results",
+      "size": 139564,
+      "sha256": "bfdeb9ac5788e2d308c33dd68aab42673e31cfd766a1b530734d85014092284a",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_0/preparation_summary.json",
+      "group": "paper-results",
+      "size": 3168,
+      "sha256": "fdf87701f301c8ee652415460160b5390128f8ad2942c97b2e1fe33469ac3172",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_0/report.json",
+      "group": "paper-results",
+      "size": 116815,
+      "sha256": "dac10d455fb924deab33f268893b04e80e9a8f91aeb27d7ce8cbebfdeda982c1",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_0/source_manifest.json",
+      "group": "paper-results",
+      "size": 7033,
+      "sha256": "4bce3986806f6b180976209b85e1e086a013afc70e6b8ee03bf9233171fabd9d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_1/manifest.json",
+      "group": "paper-results",
+      "size": 1611193,
+      "sha256": "761b8fd9b4196b8c05740be3874f4f53bcaf1ee63da7e7fc48a7536e010326a3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_1/model_snapshot.json",
+      "group": "paper-results",
+      "size": 98,
+      "sha256": "09a084d015b5e0eea11670e56cd55bc43f5932b7885f63339a86dfd483823993",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_1/original_SHA256.json",
+      "group": "paper-results",
+      "size": 1174,
+      "sha256": "5fdea8410d63e43d86a0fbe446a5937204d9e1003cb4ba509216c98f49a0afc2",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_1/predictions.json",
+      "group": "paper-results",
+      "size": 140037,
+      "sha256": "79c6d53de49aaff314a6e650f211fec868f4fc778b34214209ea1ceb2906288b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_1/preparation_summary.json",
+      "group": "paper-results",
+      "size": 3168,
+      "sha256": "cd7aaee3a705012e061442895c6e57de67b7b8d1bd276f8ef61e6d2568626ea4",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_1/report.json",
+      "group": "paper-results",
+      "size": 116781,
+      "sha256": "c0215de21ec6a2dde792e8d92c8fa3820c34fcdddf7c3614444b66fc9b9ea32b",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_1/source_manifest.json",
+      "group": "paper-results",
+      "size": 7033,
+      "sha256": "4bce3986806f6b180976209b85e1e086a013afc70e6b8ee03bf9233171fabd9d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_2/manifest.json",
+      "group": "paper-results",
+      "size": 1611193,
+      "sha256": "761b8fd9b4196b8c05740be3874f4f53bcaf1ee63da7e7fc48a7536e010326a3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_2/model_snapshot.json",
+      "group": "paper-results",
+      "size": 98,
+      "sha256": "09a084d015b5e0eea11670e56cd55bc43f5932b7885f63339a86dfd483823993",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_2/original_SHA256.json",
+      "group": "paper-results",
+      "size": 1174,
+      "sha256": "590cbd2a78eb9e6b8510450b4105f2132b1dde8ec0c70b58b9042101ff8cfaae",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_2/predictions.json",
+      "group": "paper-results",
+      "size": 140450,
+      "sha256": "80b37308ab06d89d3c7a442e07b7829790b28317b0512e8198274b40a4036c05",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_2/preparation_summary.json",
+      "group": "paper-results",
+      "size": 3168,
+      "sha256": "cd7aaee3a705012e061442895c6e57de67b7b8d1bd276f8ef61e6d2568626ea4",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_2/report.json",
+      "group": "paper-results",
+      "size": 116806,
+      "sha256": "78ccffccb37846c6049a8e0e02260187d310bd5af2791266620cf327c6a83247",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/seed_2/source_manifest.json",
+      "group": "paper-results",
+      "size": 7033,
+      "sha256": "4bce3986806f6b180976209b85e1e086a013afc70e6b8ee03bf9233171fabd9d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "paper/reader_results/verified_summary.json",
+      "group": "paper-results",
+      "size": 7658,
+      "sha256": "fb0cf30cd7f7cce8244ef5e4715b0714341b8da9aff2add03aace5b99080c958",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "output/neural-link/dopamine_head.safetensors",
+      "group": "neural-link",
+      "size": 2623280,
+      "sha256": "6e290e49c502729c198904166ce3be8e8082fea144f895a63a15ec8b6ed2e4e9",
+      "licence": "Apache-2.0"
+    },
+    {
+      "path": "output/neural-link/manifest.json",
+      "group": "neural-link",
+      "size": 1511,
+      "sha256": "47cd0670ca640192f5c7e97ff422972a8bc35863f1b99f1c054820be457f5670",
+      "licence": "See THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "output/neural-link/reader.safetensors",
+      "group": "neural-link",
+      "size": 16266560,
+      "sha256": "0a59f0fb64004fa4917f23aa8b3b913e2c49d4f0bab8977e5dbadbe426df2cc2",
+      "licence": "Apache-2.0"
+    },
+    {
+      "path": "output/neural-link/reader_config.json",
+      "group": "neural-link",
+      "size": 161925,
+      "sha256": "01fdfe113a5637f27d43afd0d8fd7bd8545edc8c0cc7e7911bfd98c37f2b8900",
+      "licence": "See THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "output/neural-link/reader_dataset_manifest.json",
+      "group": "neural-link",
+      "size": 3190,
+      "sha256": "ba76607782f926f25a78e8ebd6c1a2e56c418b13859f050d7a379c4321b7f995",
+      "licence": "See THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "output/neural-link/reader_lora/README.md",
+      "group": "neural-link",
+      "size": 5180,
+      "sha256": "f9a652d102b7891e5e4dae770d08fe92eb6361a1fed184befa2157e26114ea00",
+      "licence": "Apache-2.0"
+    },
+    {
+      "path": "output/neural-link/reader_lora/adapter_config.json",
+      "group": "neural-link",
+      "size": 1088,
+      "sha256": "0c783440e60ce9de0d9e5516c065bce2a4f097dc55dd3d2199051696e6ab3ddb",
+      "licence": "Apache-2.0"
+    },
+    {
+      "path": "output/neural-link/reader_lora/adapter_model.safetensors",
+      "group": "neural-link",
+      "size": 11815504,
+      "sha256": "5c177c13ae2c97fda83d1692615148d132a4bbbf6f87c447b45f8f7339e0d1a6",
+      "licence": "Apache-2.0"
+    },
+    {
+      "path": "output/neural-link/reader_preprocessing.npz",
+      "group": "neural-link",
+      "size": 129495,
+      "sha256": "1025ad04d935bffb9f35ad246db5bd10178e1a2c02bad393e0667ccc65fa0631",
+      "licence": "See THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "output/neural-link/writer.safetensors",
+      "group": "neural-link",
+      "size": 799020,
+      "sha256": "073eafafc43e6fb63907475c2366885e12930a2020fc58e84fa9a2b743d7a25a",
+      "licence": "Apache-2.0"
+    },
+    {
+      "path": "output/neural-link/writer_config.json",
+      "group": "neural-link",
+      "size": 1138,
+      "sha256": "454660db496af260ec4a6397b32924210dc4aff68436a83c5270744d5ed38da3",
+      "licence": "See THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "output/neural-link/writer_preprocessing.npz",
+      "group": "neural-link",
+      "size": 47866,
+      "sha256": "04468fcc3c9f065d69dc0a3e12e6f7ab7cf215f4658c69357c98d6199ef57c2e",
+      "licence": "See THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "output/neural-link-reports/fresh_twins.json",
+      "group": "neural-link",
+      "size": 980,
+      "sha256": "9e3e163c32e25194f740ff14313b8d0d200491c4c3056d8d644180204dd11b1d",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "output/neural-link-reports/reader.json",
+      "group": "neural-link",
+      "size": 5129,
+      "sha256": "200fba7d73ba77e02144a18a3d1a043b24c8bdc04b9e750eaa868f1b45d02bc3",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "output/neural-link-reports/fresh_reader.json",
+      "group": "neural-link",
+      "size": 1746,
+      "sha256": "f909f032661b7ea3730e94ca2d40dd4e0de3fedbfdfad8014c37ce9b265dc08c",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "output/neural-link-reports/writer.json",
+      "group": "neural-link",
+      "size": 1814,
+      "sha256": "cb48092e1ffc73f5c876d408e1e306028d1a90a1b41c57514ad0337362afa87f",
+      "licence": "CC-BY-NC-4.0"
+    },
+    {
+      "path": "output/neural-link-LICENSES.md",
+      "group": "neural-link",
+      "size": 676,
+      "sha256": "deeaae21c75e2da8df882527ca003097a519a4b530dd561371c0893304a4275f",
+      "licence": "Component-specific"
+    }
+  ],
+  "derived": [
+    {
+      "path": "data/connectivity_783.npz",
+      "group": "brain",
+      "build": "from flypet import connectome as c; c.connections()",
+      "arrays_sha256": {
+        "i_post": "07e7d3f98e4f03c4770416faf2e716d5832e462d86c75f70d69af1902afde8ea",
+        "i_pre": "87d1cf69d1c54734ab61288cd95d7a1cabaa15757a152b4d5f86258481f95ecb",
+        "order": "a9b8d31e836795df2f8228ce50feeddddbc7300df7da22c4b7554610b0c2b8cc",
+        "w": "4170dfdc1baaa0099542536d352560c1178f61c40f6d5bf645b8981ba3680130"
+      }
+    },
+    {
+      "path": "data/vnc_malecns.npz",
+      "group": "vnc",
+      "build": "scripts/build_vnc.py",
+      "arrays_sha256": {
+        "body": "41b1aad4f7f04b68693deee812355233cd7343f0f29d3d1b1d0af98fcf39a3f5",
+        "i_post": "35baf9f6518c17f9e9320d837fe59d6e3645e1924b7495ee9f3ed8eeb7174dec",
+        "i_pre": "c9694aeb073b941b168bf03358c76ad9a075f52d2875124a989eddcae1d9962f",
+        "min_syn": "2594b6a92ebfb1c3312deb7d01c015fb95e9fbe9bd7bc6b527af07813ec7b910",
+        "n_drivers": "3f0fc68400f1eb66a0ae87db4ff614c8602a000bd911f6dc55ee389cf2656863",
+        "w": "d72321935446a35e1225c974224c6f3b8a59653f788c9483f9d60c5ce3d5d769"
+      }
+    }
+  ],
+  "archives": [
+    {
+      "group": "results",
+      "name": "flypet-results-v0.1.0.tar.gz",
+      "url": "https://github.com/AdeliyaLeleytner/flypet/releases/download/v0.1.0/flypet-results-v0.1.0.tar.gz",
+      "size": 101200042,
+      "sha256": "1e3b103835aaaff9e8c8770f3dc78d9c498b0d591768cdca2f39eeabd4c3ade8"
+    },
+    {
+      "group": "paper-results",
+      "name": "flypet-paper-results-v0.1.0.tar.gz",
+      "url": "https://github.com/AdeliyaLeleytner/flypet/releases/download/v0.1.0/flypet-paper-results-v0.1.0.tar.gz",
+      "size": 23520891,
+      "sha256": "948a713b74c7c2505b2226b7661d116dfecd7e43356649c0961ec65980e515c0"
+    },
+    {
+      "group": "neural-link",
+      "name": "flypet-neural-link-v0.1.0.tar.gz",
+      "url": "https://github.com/AdeliyaLeleytner/flypet/releases/download/v0.1.0/flypet-neural-link-v0.1.0.tar.gz",
+      "size": 29275093,
+      "sha256": "8ca62b66b4561073d1933876bb2db00537f11dc960f05b02ebd84e671db64f32"
+    }
+  ]
+}

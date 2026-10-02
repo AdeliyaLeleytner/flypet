@@ -1,0 +1,3 @@
+Notes from earlier experiments with flies of this kind (averages over many flies):
+
+Measurement noise, the SD of repeated measurements of the same fly: ethyl acetate 0.01, methyl acetate 0.02, 1-hexanol 0.02, 2-heptanone 0.02, hexanal 0.06, acetic acid 0.02, linalool 0.12.

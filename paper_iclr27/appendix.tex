@@ -1,0 +1,292 @@
+\section{Model details}\label{app:model}
+\textbf{Neurons and synapses.} The network follows \citet{shiu2024}: current-based LIF neurons with $v_0=v_{\mathrm{reset}}=-52$~mV, threshold $-45$~mV, membrane time constant 20~ms, synaptic-current decay 5~ms, refractory period 2.2~ms and transmission delay 1.8~ms. A synapse's weight is its FlyWire v783 synapse count times 0.275~mV, with the sign of the predicted transmitter of the presynaptic neuron.
+
+\textbf{Corrections.} Four synapse classes deviate from this rule. Each was checked not to change the three pathways validated by \citet{shiu2024}: sugar to the MN9 motor neuron, Johnston's organ to antennal grooming, and looming to the giant fibre.
+\begin{itemize}
+\item Antennal-lobe local neurons: outputs of LNs with a predicted monoamine transmitter are made inhibitory and outputs of LNs predicted cholinergic are removed. Almost all LNs are GABAergic; with the original rule one glomerulus recruited all 330 uniglomerular PNs.
+\item Dopamine neurons have no fast synaptic effect; dopamine acts only through Eq.~\ref{eq:rule}.
+\item PN$\rightarrow$KC weights $\times2$, so that about 7\% of KCs respond to an odour (5--10\% is reported in flies); with $\times1$ fewer than 3\% respond.
+\item KC$\rightarrow$MBON weights $\times3$, so that both glutamatergic and cholinergic MBONs respond to odours; with $\times1$ only three GABAergic $\gamma$-lobe MBONs fire.
+\end{itemize}
+These are implementation choices and not a biological validation.
+
+\textbf{Inputs.} An odour drives the receptor neurons of each glomerulus with Poisson input at 150~Hz times its DoOR response \citep{munch2016}; responses below 0.05 and unmeasured glomeruli give no drive. Sugar is 60~Hz Poisson input to all PAM neurons and shock the same input to all PPL1 neurons, delivered together with the odour.
+
+\textbf{Plasticity.} The DANs of MBON~$j$ are those with at least three synapses onto it, weighted by synapse count and normalised to sum to one; $d_j=\min(1,\sum_k w_{jk} r_k/20\,\mathrm{Hz})$ and $d_j=0$ if $d_j<0.3$. Eq.~\ref{eq:rule} multiplies the corrected weight, and a fly's memory is the vector of factors $m_{ij}$, saved and reloaded exactly.
+
+\textbf{Valence.} Cholinergic MBONs and the GABAergic MBON11 count as approach, glutamatergic MBONs as avoidance \citep{aso2014}, and other GABAergic MBONs are left out. $V=(A-B)/(A+B+1)$ with $A$, $B$ the summed firing rates in Hz over a 250~ms trial.
+
+\textbf{KC$\rightarrow$DAN cut.} Setting all 81{,}056 KC$\rightarrow$DAN connection rows to zero reduces the DANs active in an odour-alone trial of ethyl acetate from 13--17 to 5--7 and the synapses changed per trial from 830--2{,}393 to 77--135. Of the DANs this odour recruits, PPL106 (PPL1-$\alpha$3; 465 synapses onto MBON14) fires at 80~Hz, PAM04 (onto MBON02 and MBON24) at 14~Hz and PAM08 (onto MBON05) at 15~Hz. In a point-neuron model, axo-axonal KC$\rightarrow$DAN synapses in the lobes drive DAN spikes directly, so the size of this effect depends on that simplification.
+
+\begin{table}[h]
+\centering
+\caption{DANs active in an odour-alone trial, in an untrained fly and after three pairings of the same odour with sugar or shock (seed-matched probes).}
+\label{tab:dan}
+\small
+\begin{tabular}{lccc}
+\toprule
+Odour & Untrained & After 3 sugar & After 3 shock \\
+\midrule
+ethyl acetate & 17 & 25 & 10 \\
+methyl acetate & 16 & 26 & 9 \\
+acetic acid & 19 & 15 & 10 \\
+2-heptanone & 9 & 9 & 3 \\
+1-hexanol & 8 & 5 & 5 \\
+hexanal & 5 & 8 & 3 \\
+linalool & 7 & 6 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Tasks, prompts and scoring}\label{app:tasks}
+\textbf{Panel.} The rule was fixed before any teaching result: odours with stable valence and at least 40 spikes in the MBONs that enter $V$, the strongest responder of each chemical class, plus the odour whose KC code overlaps most with ethyl acetate (methyl acetate, 0.81). A first rule that used only response strength gave five esters and was replaced before any results.
+
+\textbf{Teaching.} The 74 test profiles are all 14 single targets, all 42 ordered pairs (one odour up, one down) and 18 distinct random triples. Another 274 profiles of 1--3 targets are used for training and 30 for validation. Training trial $t$ uses seed $5000+t$; the panel is then probed on seeds 101--103 without learning. A target is met if $V$ moves by at least 0.15 in the required direction, or by less than 0.15 for ``unchanged''. Every teacher receives this prompt, with the profile filled in:
+{\scriptsize
+\begin{verbatim}
+A fruit fly will be trained with classical conditioning and then tested on each odour.
+Odours: ethyl acetate, methyl acetate, 1-hexanol, 2-heptanone, hexanal, acetic acid,
+linalool.
+
+Goal for the test after training, compared with the same fly before training:
+- ethyl acetate: approach MORE than now
+- methyl acetate: stay UNCHANGED
+...
+You may give at most 6 trials. Each trial is one line in exactly one of these forms:
+TRAIN <odour> + REWARD    (the odour is paired with sugar)
+TRAIN <odour> + PUNISH    (the odour is paired with an electric shock)
+EXPOSE <odour>            (the odour alone, nothing else)
+
+Write only the trial lines, nothing else.
+\end{verbatim}}
+
+\textbf{Diagnosis and erasure.} A hidden history picks $k\in\{0,1,2\}$ odours with probability 0.1, 0.45 and 0.45, gives each a sign and 1--3 pairings, and applies the pairings in random order with random seeds, all determined by the fly's seed. A measurement probes the odour on a fresh seed without learning and returns ``The fly's approach valence for linalool: +0.17 (11 actions left)''. The diagnosis score is $\frac12(\text{trained odours labelled with the right sign}+\text{untrained odours labelled }0)$, and flies with $k=0$ score their untrained term alone. The erasure score is $\frac12(\text{trained odours restored to within }0.15+\text{untrained odours kept within }0.15)$. The diagnosis prompt, which every language agent receives:
+{\scriptsize
+\begin{verbatim}
+You are working with a fruit fly in an olfactory learning experiment. Its response to an
+odour is measured as an approach valence: positive means it tends to approach the odour,
+higher means it likes it more. Pairing an odour with sugar raises the valence for that
+odour; pairing it with an electric shock lowers it. Repeated measurements of the same
+odour differ by a few hundredths.
+
+Before you got this fly it may have been trained: up to two of the odours below were each
+paired with sugar or with shock, one to three times. You do not know which, if any.
+
+Valence of a typical untrained fly:
+- ethyl acetate: +0.19
+- methyl acetate: +0.17
+- 1-hexanol: +0.30
+- 2-heptanone: +0.27
+- hexanal: +0.35
+- acetic acid: +0.15
+- linalool: +0.38
+
+Your task: find out how this fly was trained. You have 12 measurements. Each turn, write
+exactly one line:
+SMELL <odour>
+When you are ready (or out of measurements), write ANSWER on the first line followed by
+one line per odour:
+<odour>: +   (paired with sugar)
+<odour>: -   (paired with shock)
+<odour>: 0   (not trained)
+\end{verbatim}}
+The erasure prompt replaces the task paragraph with the goal of matching the untrained fly within 0.15 and adds \texttt{TRAIN <odour> + REWARD}, \texttt{TRAIN <odour> + PUNISH}, \texttt{EXPOSE <odour>} and \texttt{FINISH}. A missing label counts as wrong.
+
+\section{Open-loop teaching}\label{app:teachgrpo}
+\textbf{Surrogate.} The surrogate copies Eq.~\ref{eq:rule}, records the KC and DAN rates of each odour, reinforcement and seed in the untrained fly, and assumes that (i) these rates do not depend on memory, which ignores MBON$\rightarrow$DAN feedback, and (ii) each MBON's rate changes linearly with its KC drive, with one fitted slope per MBON. On 40 held-out random protocols run on the brain model it predicts the change in $V$ with $r=0.88$ and $R^2=0.77$ (mean absolute error 0.079; SD of the changes 0.30), and it gets the sign right in 98\% of changes larger than 0.15. Assumption (i) is wrong (Table~\ref{tab:dan}).
+
+\textbf{Teachers.} Beam search (width 48) maximises surrogate success over protocols of up to six trials. Re-ranking runs the surrogate's 16 best protocols per profile on the brain model with training seeds 7000+ and probe seed 301 and keeps the best one. Structured search tries 1--3 pairings per target on the brain model, chosen on the same selection seeds. All teachers are scored on the test seeds.
+
+\begin{table}[h]
+\centering
+\caption{Teachers on the 74 test profiles, scored on the brain model. Success is the pre-registered fraction of odours meeting their target; moved and kept split it into targeted and untouched odours.}
+\label{tab:teach}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Teacher & Success & Solved & Moved & Kept & Trials & Surrogate \\
+\midrule
+Do nothing & 0.707 & 0\% & 0.00 & 1.00 & 0 & 0.707 \\
+One pairing per target & 0.799 & 18.9\% & 0.86 & 0.78 & 2.1 & 0.846 \\
+Claude Sonnet, zero-shot & 0.793 & 18.9\% & 0.84 & 0.78 & 2.3 & 0.842 \\
+Structured search on the fly & 0.786 & 18.9\% & 0.86 & 0.75 & 3.4 & 0.844 \\
+Surrogate + fly re-ranking & 0.774 & 13.5\% & 0.74 & 0.79 & 5.7 & 0.983 \\
+GRPO on surrogate (Qwen3-0.6B) & 0.770 & 9.5\% & 0.46 & 0.90 & 5.4 & 0.857 \\
+Surrogate beam search & 0.749 & 12.2\% & 0.74 & 0.75 & 5.7 & 0.988 \\
+Six alternating pairings & 0.701 & 8.1\% & 0.90 & 0.62 & 6.0 & 0.755 \\
+Qwen3-4B-Base, zero-shot & 0.349 & 0\% & 0.63 & 0.23 & 5.7 & 0.361 \\
+Random protocol & 0.331 & 0\% & 0.31 & 0.34 & 6.0 & 0.389 \\
+Qwen3-0.6B, zero-shot & 0.178 & 0\% & 0.51 & 0.04 & 6.0 & 0.203 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Leaving the fly untrained meets every ``unchanged'' target, so it scores 0.707 on the test profiles. With one pairing per target, ``approach more'' succeeds for ethyl acetate in 1 of 10 profiles (mean change $+0.075$), for linalool in 4 of 11 ($+0.168$) and for methyl acetate in 9 of 10 ($+0.174$).
+
+\textbf{GRPO.} Qwen3-0.6B and Qwen3-4B-Base with LoRA (rank 32, all attention and MLP projections), 16 profiles $\times$ 8 samples per step, reward $=$ success $+\,0.2\times$ graded success $-\,0.05\times$ invalid lines, one AdamW step per batch (so the PPO ratio is 1), KL coefficient 0.02 to the base model, at most 80 new tokens; lr $2\times10^{-5}$ for Qwen3-0.6B and $10^{-5}$ for Qwen3-4B-Base, which reads a plain-text prompt without the chat template. The brain-model runs were stopped after 59, 12 and 16 steps when we moved to the closed-loop tasks. Table~\ref{tab:teachgrpo} lists validation success on the 30 validation profiles, which mostly have three targets, so doing nothing scores 0.595 on them. With the surrogate as reward, validation success judged by the surrogate rises to 0.82, and the best checkpoint scores 0.770 on the brain model on the test profiles: every one of its 74 protocols begins with a sugar pairing of ethyl acetate, and 61\% of its trials are odour-alone exposures. With rewards from the brain model (probe seed 201, training seeds 6000--9000), Qwen3-0.6B stalls at the do-nothing level and Qwen3-4B-Base reaches 0.56 after 10 steps. Starting the brain-model run from the surrogate-trained adapter (0.667 at step 0) lowers validation success to 0.619 after 10 steps.
+
+\begin{table}[h]
+\centering
+\caption{GRPO for teaching: success on the 30 validation profiles (doing nothing scores 0.595).}
+\label{tab:teachgrpo}
+\small
+\begin{tabular}{llcccccc}
+\toprule
+Model & Reward & step 0 & 10 & 20 & 50 & 100 & 150 \\
+\midrule
+Qwen3-0.6B & surrogate & 0.281 & 0.595 & 0.595 & 0.657 & 0.805 & 0.824 \\
+Qwen3-0.6B & brain model & 0.314 & 0.562 & 0.552 & 0.552 & -- & -- \\
+Qwen3-0.6B, surrogate start & brain model & 0.667 & 0.619 & -- & -- & -- & -- \\
+Qwen3-4B-Base & brain model & 0.438 & 0.562 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Multi-turn GRPO for diagnosis}\label{app:grpo}
+We fine-tune Qwen3-32B (bf16, gradient checkpointing) with LoRA (rank 16, $\alpha=32$, no dropout) on the q, k, v, o, gate, up and down projections. Each step plays 8 new flies (history seeds drawn uniformly from $[1000, 10^6)$) with 4 sampled episodes per fly (temperature 0.7, top-$p$ 1), 32 episodes in all; thinking is off, a turn may generate up to 96 tokens, an episode has at most 14 turns, and the last turn is forced to \texttt{ANSWER}. The reward is the episode's diagnosis score. The advantage is the score normalised by the mean and standard deviation of the fly's 4 episodes and applies to every generated token; observation tokens are masked, and the trained token sequence is identical to the generated one. We take one AdamW step per batch (lr $3\times10^{-5}$, betas 0.9/0.99, no weight decay, gradient-norm clip 1.0), so the PPO ratio is 1, and add a per-token k3 KL penalty (coefficient 0.02) towards the base model, normalising the loss by the number of generated tokens. Training ran on one NVIDIA RTX PRO 6000 Blackwell (96~GB) with 40 simulator workers on the same machine. Test evaluation is greedy on seeds 0--59. A first run at temperature 1.0 and lr $10^{-5}$ was stopped after 5 steps without a test evaluation: sampled episodes scored 0.52--0.58 against 0.76 for greedy decoding, and the policy barely moved (KL about $4\times10^{-4}$).
+
+Training made the policy more conservative. Over steps 0, 10, 20 and 30 the number of flies with more than two odours labelled trained fell from 42 to 32, 20 and 14, and measurements from 11.1 to 10.0. False alarms fell (ethyl acetate 23 of 52 flies to 7, hexanal 17 of 44 to 6; unshifted odours 52 of 222 to 10) while misses rose (hexanal 0 of 16 to 9 of 16; all trained odours 8 of 87 to 21). The ester twin of a trained ester is still labelled trained in 12 of 15 flies. At step 20, 17 of the 420 labels were missing from the answers and were scored as wrong; at step 30 none were missing. The 30 steps took 5{,}147~s (171~s per step) and each test evaluation about 4.5 minutes; the GPU was busy for about 2.7 hours in total, including the stopped first run, the zero-shot evaluations and the Qwen3-32B embeddings of Section~\ref{sec:language}.
+
+\section{Diagnosis details}\label{app:diagnose}
+\textbf{Bayes player.} For each of the 799 histories the sampler can produce we trained two replicate flies (random trial order and seeds) and probed every odour on four seeds. Each history and odour gets a Gaussian with the mean and SD of the 8 values (SD at least 0.015), mixed with a 1\% uniform outlier component. The player measures the odour with the largest posterior predictive variance. After 12 measurements it answers either with each odour's most probable marginal label, which maximises the expected number of correct labels, or with the labelling of all seven odours (out of $3^7$) that maximises the expected balanced score under the posterior; both answers use the same measurements. The balanced decision labels three or four odours in 10 flies, when it cannot tell which of two similar odours was trained. The table and the test flies use different trial orders and seeds, so the likelihood is approximate and the player is a reference rather than a bound.
+
+\textbf{Generalised and unshifted odours.} For every test fly and untrained odour we take the expected shift from the table entry of the fly's true history. 111 of the 333 untrained odour--fly pairs shift by more than 0.10 (ethyl acetate 9 of 52, methyl acetate 6 of 49, 1-hexanol 24 of 46, 2-heptanone 29 of 47, hexanal 19 of 44, acetic acid 2 of 42, linalool 22 of 53). The SD between measurements in the untrained fly is 0.015 or less for the esters, 0.021 for 1-hexanol and 2-heptanone, 0.024 for acetic acid, 0.063 for hexanal and 0.122 for linalool.
+
+\begin{table}[h]
+\centering
+\caption{Errors on the 60 test flies. Untrained odours labelled as trained, split into odours with an expected shift above 0.10 through generalisation (111) and the rest (222); trained odours labelled $0$ (no player gave a trained odour the wrong sign); flies in which the untrained one of the two esters was labelled trained when only one was trained (15); flies with more than two odours labelled trained. Missing labels (7, 10, 17 and 0 of 420 for the four Qwen3-32B rows) count as $0$ here and as wrong in the score.}
+\label{tab:errors}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+Player & Generalised & Unshifted & Missed & Twin & $>2$ labelled \\
+\midrule
+Threshold rule & 102 & 14 & 4 & 14 & 43 \\
+Qwen3-32B, zero-shot & 66 & 52 & 8 & 14 & 42 \\
+Qwen3-32B, 10 GRPO steps & 60 & 25 & 10 & 14 & 32 \\
+Qwen3-32B, 20 GRPO steps & 44 & 12 & 15 & 12 & 20 \\
+Qwen3-32B, 30 GRPO steps & 42 & 10 & 21 & 12 & 14 \\
+Claude Sonnet, zero-shot & 33 & 8 & 21 & 11 & 0 \\
+Threshold rule, $\le 2$ odours & 34 & 4 & 20 & 11 & 0 \\
+Claude Sonnet 5 + scoring rule & 40 & 8 & 22 & 11 & 4 \\
+Claude Sonnet 5 + brief & 18 & 3 & 24 & 7 & 0 \\
+Claude Sonnet 5 + brief + scoring & 11 & 1 & 17 & 5 & 0 \\
+Qwen3-32B + brief & 51 & 26 & 17 & 9 & 31 \\
+Qwen3-32B, 30 GRPO steps + brief & 49 & 12 & 21 & 11 & 17 \\
+\midrule
+Bayes, marginal labels & 19 & 0 & 24 & 10 & 0 \\
+Bayes, balanced decision & 29 & 1 & 9 & 11 & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Untrained odours labelled as trained, by odour (flies in which the odour was untrained in the denominator). GRPO 30: Qwen3-32B after 30 GRPO steps; Bayes: balanced decision.}
+\label{tab:errorsodour}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+Odour & Threshold & Qwen3-32B & GRPO 30 & Claude & Threshold $\le 2$ & Bayes \\
+\midrule
+ethyl acetate & 9/52 & 23/52 & 7/52 & 7/52 & 7/52 & 7/52 \\
+methyl acetate & 6/49 & 14/49 & 5/49 & 4/49 & 4/49 & 4/49 \\
+1-hexanol & 29/46 & 25/46 & 14/46 & 13/46 & 10/46 & 8/46 \\
+2-heptanone & 28/47 & 20/47 & 10/47 & 9/47 & 8/47 & 6/47 \\
+hexanal & 19/44 & 17/44 & 6/44 & 5/44 & 6/44 & 2/44 \\
+acetic acid & 2/42 & 2/42 & 0/42 & 1/42 & 0/42 & 0/42 \\
+linalool & 23/53 & 17/53 & 10/53 & 2/53 & 3/53 & 3/53 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{An example.} Fly 5 was paired once with sugar on ethyl acetate and twice on acetic acid. Claude Sonnet's episode (valence against the untrained fly):
+{\scriptsize
+\begin{verbatim}
+SMELL ethyl acetate   +0.47 (untrained +0.19)   SMELL acetic acid     +0.61 (untrained +0.15)
+SMELL methyl acetate  +0.41 (untrained +0.17)   SMELL linalool        +0.42 (untrained +0.38)
+SMELL 1-hexanol       +0.42 (untrained +0.30)   SMELL 1-hexanol       +0.47
+SMELL 2-heptanone     +0.42 (untrained +0.27)   SMELL acetic acid     +0.61
+SMELL hexanal         +0.42 (untrained +0.35)   SMELL ethyl acetate   +0.48
+ANSWER  ethyl acetate +, acetic acid +, all others 0
+\end{verbatim}}
+\noindent Five of the seven odours moved by more than 0.10. The threshold rule labelled five odours as trained (score 0.70); Claude named the two largest shifts, which is the true history.
+
+\textbf{The brief.} For the runs with the brief (Section~\ref{sec:diagnose}), this text, computed from the Bayes player's table (replicate flies and probe seeds disjoint from the test flies), was inserted before the task paragraph of the prompt. Command-line calls that exceeded 300~s were re-run with a 900~s limit, so every condition has all 60 flies. In a second variant it is followed by the scoring rule, and in a third the scoring rule is inserted without the brief: ``How your answer is scored: the average of two fractions, the fraction of trained odours you label with the right sign and the fraction of untrained odours you label 0. If no odour was trained, only the second fraction counts.''
+{\scriptsize
+\begin{verbatim}
+Notes from earlier experiments with flies of this kind (averages over many flies):
+
+Measurement noise, the SD of repeated measurements of the same fly: ethyl acetate 0.01,
+methyl acetate 0.02, 1-hexanol 0.02, 2-heptanone 0.02, hexanal 0.06, acetic acid 0.02,
+linalool 0.12.
+
+Training one odour also changes the valence of other odours whose Kenyon-cell codes overlap
+with it. Average change of each odour when only the odour at the start of the row was
+trained (columns in the order: ethyl acetate, methyl acetate, 1-hexanol, 2-heptanone,
+hexanal, acetic acid, linalool):
+
+One pairing with sugar:
+- ethyl acetate: +0.16 +0.16 +0.09 +0.12 +0.03 +0.03 +0.03
+- methyl acetate: +0.16 +0.19 +0.09 +0.08 +0.02 +0.02 +0.08
+- 1-hexanol: +0.03 +0.03 +0.26 +0.23 +0.18 +0.01 +0.10
+- 2-heptanone: +0.03 +0.02 +0.21 +0.33 +0.15 +0.00 +0.21
+- hexanal: +0.01 +0.01 +0.13 +0.14 +0.28 -0.00 +0.03
+- acetic acid: +0.03 +0.03 +0.04 +0.04 -0.01 +0.23 +0.07
+- linalool: +0.01 +0.00 +0.04 +0.09 -0.03 -0.00 +0.15
+
+Three pairings with sugar:
+- ethyl acetate: +0.45 +0.55 +0.14 +0.18 +0.01 +0.06 +0.05
+- methyl acetate: +0.45 +0.52 +0.11 +0.13 +0.03 +0.02 +0.06
+- 1-hexanol: +0.06 +0.04 +0.23 +0.26 +0.24 +0.01 +0.18
+- 2-heptanone: +0.05 +0.04 +0.23 +0.29 +0.27 +0.01 +0.17
+- hexanal: +0.01 +0.01 +0.18 +0.23 +0.23 +0.00 +0.03
+- acetic acid: +0.04 +0.03 +0.05 +0.06 +0.03 +0.35 +0.11
+- linalool: +0.01 -0.00 +0.06 +0.13 +0.10 +0.01 +0.06
+
+One pairing with shock:
+- ethyl acetate: -0.35 -0.34 -0.03 -0.06 -0.03 -0.05 -0.04
+- methyl acetate: -0.29 -0.38 -0.04 -0.07 -0.02 -0.05 -0.05
+- 1-hexanol: -0.03 -0.02 -0.50 -0.15 -0.27 -0.03 +0.01
+- 2-heptanone: -0.02 -0.01 -0.16 -0.55 -0.07 -0.02 -0.29
+- hexanal: -0.00 -0.00 -0.05 -0.08 -0.52 -0.03 +0.08
+- acetic acid: -0.02 -0.02 +0.01 -0.01 -0.05 -0.40 +0.05
+- linalool: +0.01 +0.00 -0.01 -0.04 -0.05 -0.02 -0.44
+
+Three pairings with shock:
+- ethyl acetate: -0.61 -0.63 -0.09 -0.12 -0.03 -0.10 +0.03
+- methyl acetate: -0.61 -0.62 -0.08 -0.07 -0.06 -0.06 +0.00
+- 1-hexanol: -0.06 -0.05 -0.62 -0.29 -0.33 -0.03 -0.19
+- 2-heptanone: -0.04 -0.03 -0.41 -0.61 -0.20 -0.02 -0.32
+- hexanal: +0.00 -0.00 -0.13 -0.09 -0.52 -0.02 -0.00
+- acetic acid: -0.04 -0.03 +0.01 -0.02 -0.03 -0.69 -0.03
+- linalool: +0.01 +0.00 -0.01 -0.04 -0.03 -0.01 -0.42
+\end{verbatim}}
+
+\section{Language interface}\label{app:language}
+\textbf{Setup.} DoOR has complete responses in 23 glomeruli for 111 odorants; unmeasured glomeruli are silent in the model, so only odorants with identical coverage are compared. A ridge regression per glomerulus is trained on all 688 DoOR odorants outside the test fold (8 folds over the 111). Features are Qwen3 hidden states (4B-Base, layer 18 of 36, mean over the name tokens of ``The odorant \{name\}'', or the last token of ``\{name\} smells like''), Morgan fingerprints, character n-grams of the name, and row-shuffled Qwen features. The predicted input drives the brain model (3 seeds, 250~ms). Identification ranks the 111 odorants by the correlation between the evoked code and each odorant's own code, after subtracting the block mean; chance gives top-1 0.9\%, top-5 4.5\% and median rank 56.
+
+\begin{table}[h]
+\centering
+\caption{Word to fly: top-5 identification and median rank among 111 odorants, by level of the brain model.}
+\label{tab:rosetta}
+\small
+\begin{tabular}{lccccc}
+\toprule
+Level & Qwen, name & Qwen, ``smells like'' & Morgan & n-grams & Shuffled \\
+\midrule
+Input (glomeruli) & 28.8\% / 12 & 26.1\% / 11 & 27.9\% / 14 & 26.1\% / 12 & 4.5\% / 59 \\
+ORN & 19.8\% / 20 & 18.9\% / 23 & 17.1\% / 20 & 16.2\% / 27 & 4.5\% / 58 \\
+PN & 17.1\% / 21 & 21.6\% / 21 & 22.5\% / 23 & 13.5\% / 23 & 4.5\% / 55 \\
+KC & 22.5\% / 16 & 21.6\% / 20 & 30.6\% / 13 & 22.5\% / 16 & 4.5\% / 57 \\
+Lateral horn & 22.5\% / 20 & 22.5\% / 19 & 27.0\% / 15 & 24.3\% / 16 & 3.6\% / 62 \\
+MBON & 21.6\% / 24 & 18.9\% / 28 & 19.8\% / 21 & 17.1\% / 20 & 6.3\% / 56 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Reverse map and similarity.} Mapping the fly's code into Qwen's space identifies the odorant best from the lateral horn (top-5 18.0\%, median rank 19) and worst from MBONs (5.4\%, 32). Spearman correlations between representational dissimilarity matrices are 0.12--0.17 for Qwen and 0.15--0.22 for Morgan fingerprints from the input to the lateral horn, and fall to 0.05 (Qwen) and 0.07 (Morgan) at MBONs. Qwen's partial correlation after removing Morgan similarity is 0.07--0.10.
+
+\textbf{Scale.} Qwen3-32B at its middle layer (32 of 64) predicts glomerular input with $r=0.458$ [0.402, 0.520] against 0.461 [0.408, 0.510] for Qwen3-4B at layer 18; with the ``smells like'' prompt the values are 0.481 and 0.448. The best layer of each model gives 0.526 (32B) and 0.482 (4B), with overlapping intervals, and the similarity with the KC code peaks at 0.209 (32B) and 0.208 (4B).
+
+\textbf{Everyday smells.} The pre-registered test (25 everyday words, key compound excluded from the ridge training, ``\{word\} smells like'', KC level) gave a median rank of 45 of 111 for the key compound and 4 of 25 words in the top 5 (1.1 expected by chance). Successes are words close to a compound's name in language (orange peel to limonene, rank 2; vodka to ethanol, 4); fruity esters and green-leaf volatiles fail (banana to isopentyl acetate, 96; cut grass to Z3-hexenol, 97). In an exploratory follow-up, Qwen3-32B chose one of the 111 compounds for each word and the fly smelled that compound: the key compound was named for 16 of 25 words, and its median rank by KC code was 1 (top 5 for 76\% of words).

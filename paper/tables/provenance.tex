@@ -1,0 +1,17 @@
+\begin{table}[t]
+\caption{Origin and interpretation of the main system components. Empirical input does not make every subsequent transformation empirically calibrated.}
+\label{tab:provenance}
+\small
+\begin{tabularx}{\linewidth}{@{}p{0.20\linewidth}XX@{}}
+\toprule
+Component & Data or literature constraint & Implementation choice / scope \\
+\midrule
+Brain graph & FlyWire v783 connectivity and cell annotations & LIF dynamics; global parameters and selected gain/sign corrections \\
+Chemical input & DoOR receptor-response profiles & Glomerular averaging, response threshold, rate scaling; partial coverage \\
+Other senses & Annotated target populations and pathway literature & Stimulus-to-rate mapping; some inputs bypass peripheral processing \\
+Plastic memory & KC--MBON/DAN anatomy and plasticity literature & Rate-based depression, threshold and floor; no explicit weight recovery \\
+Motor bridge & MaleCNS v1.0 subgraph and motor annotations & Type/side matching, Poisson rate transfer; hybrid female/male assembly \\
+Language interface & User text and recorded model state & Planner and narrator prompts; learned reader prefix; separate access to evidence \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,32 @@
+\section{Implementation details and provenance}
+\label{app:methods}
+The brain implementation uses $v_0=v_{\mathrm{reset}}=-52$ mV, $v_{\mathrm{threshold}}=-45$ mV, a membrane time constant of 20 ms, a synaptic-current decay of 5 ms, a refractory period of 2.2 ms, and a transmission delay of 1.8 ms. The base synaptic factor is 0.275 mV. The current default corrections impose inhibitory antennal-lobe local-neuron output, treat dopamine output as modulatory, multiply projection-neuron-to-KC weights by two, and KC-to-MBON weights by three. These corrections are explicit implementation choices; their combined use is not a new biological validation.
+
+Memory defaults are $\eta=0.6$, $m_{\min}=0.05$, KC normalization at 15 Hz, dopamine normalization at 20 Hz, and a normalized dopamine threshold of 0.3. The MBON-specific signal weights incoming DAN activity by the corresponding anatomical connection strength. Saved state contains the learned factor and synapse indices. Valence is a defined summary of selected MBON groups rather than a directly measured preference of an animal.
+
+Reader training uses AdamW with learning rate $10^{-3}$, weight decay 0.01, batch size eight, four epochs, and cosine learning-rate decay. Three training seeds, 0, 1, and 2, share split seed 0; every selected checkpoint is from epoch four. There are 11,467 downstream features, transformed by $\log(1+r)$ and standardized using the training mean and standard deviation plus 0.001. Generation is capped at 256 tokens.
+
+The audited model revision begins \texttt{c1899de}. The environment reports PyTorch 2.6.0+cu124, NumPy 2.2.6, and Transformers 5.17.0. Full revisions and verified source, split, and checkpoint hashes are retained in the artifact manifests.
+
+\section{Case-study protocol and records}
+The fixed protocol contains 18 chemical-input records, 18 sensory-panel records, 102 memory records, and 18 giant-fiber/control records. Training seeds and effective per-neuron inputs are stored per record. Each independent memory history starts from naive synaptic factors; the save--reload comparison restores history A rather than retraining it.
+
+For chemical input, measured/driven glomerular counts are: ethyl acetate 45/20; methyl acetate 27/7; 1-hexanol 33/22; Z3-hexenol 30/24; acetic acid 40/9; and pyrrolidine 29/11, out of 53 mapped glomeruli. Measured but subthreshold responses contribute no external drive. Missing responses are omitted rather than treated as measured zeros. The paired similarity calculation uses only jointly measured glomeruli. These distinctions are retained in the validation record.
+
+The memory-index groups use neurotransmitter annotations, with MBON11 assigned to the approach group; remaining GABAergic MBONs are excluded. In the unpaired history, the update function is called on all 36 training pulses (18 odor-only and 18 reinforcement-only); nine odor-only pulses contain ethyl acetate.
+
+The record verification includes 48 distinct memory states. Figure values are computed directly from the records, and separate source hashes distinguish numerical runs from later manuscript and visualization edits.
+
+
+\paragraph{Input labels and realized anatomy.}
+For the catalog taste sets used in the fixed sensory panel, \texttt{side=both} means all available reference IDs without a side filter. Both the sugar and bitter sets each contain 20 neurons annotated on the left in this checkout. They are not bilateral sensory stimulation. In contrast, the physical labellar taste channels used by some language plans contain 67 left/62 right sugar--water neurons and 32 left/33 right bitter neurons. Exact delivered IDs and anatomical side counts are recorded. Recipe-side labels, including those in the legacy reader targets, denote interface semantics rather than independent anatomical ground truth.
+
+\section{Language execution and audit}
+The CLI was requested to use the \texttt{sonnet} alias. Run-level usage metadata reports \texttt{claude-sonnet-5} and \texttt{claude-haiku-4-5-20251001} across 39 calls, including ancillary processing. The metadata does not establish both models as the primary generator of every response or role. Original requests, planner output, normalized and accepted plans, protocol overrides, final replies, and call identifiers are retained. The six memory queries use probe seed 11 and reproduce the corresponding numerical case-C states; no planner-accuracy credit is assigned to their clamped inputs.
+
+No additional LLM calls were used for the AI-assisted record audit. Hedged metaphors were not automatically counted as physical measurements. Full Russian replies, quoted-span labels, evidence paths, and independent array checks are retained for author adjudication; the excerpts in Table~\ref{tab:dialogue} are translations, not new responses.
+
+\clearpage
+\section{Spike-count support of the memory readout}
+\input{tables/memory_counts}
+For these 250-ms probes the index can be written as $(n_{\mathrm{approach}}-n_{\mathrm{avoid}})/(n_{\mathrm{approach}}+n_{\mathrm{avoid}}+0.25)$, where the last term follows from the 1-Hz stabilizer in its rate definition. The contributing counts therefore matter when interpreting a large index change. Pyrrolidine has much lower counting support than ethyl acetate; this does not erase the recorded punishment shift or establish a biological absence of reward learning. The artifact reports every MBON's counts and the actual pre/post weight changes, separated by output sign and anatomical contact count. Those weight summaries are descriptive and do not by themselves identify a causal floor mechanism.

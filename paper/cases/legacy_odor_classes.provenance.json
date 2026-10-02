@@ -1,0 +1,47 @@
+{
+  "n_compounds": 52,
+  "n_source_labels": 1983,
+  "sources": [
+    {
+      "file": "shard_0000.npz",
+      "sha256": "52d32b5032582af2d4e792f4d4546c915373dbb642c124a921fc192b6646e9d9"
+    },
+    {
+      "file": "shard_0001.npz",
+      "sha256": "473f5de97861f66e85e003850d236c6a33ca041112237ac9030250e8506e1609"
+    },
+    {
+      "file": "shard_0002.npz",
+      "sha256": "9e2c6acba8dcb647014168de646611524fa0e916c3267b6172698c30166f1744"
+    },
+    {
+      "file": "shard_0003.npz",
+      "sha256": "ff8188578aa7d1d8fc29fa04c34733d2293aa2b31dfa948d2e682e74f67a4f2a"
+    },
+    {
+      "file": "shard_0004.npz",
+      "sha256": "8bfbb1a8a4671a2e83af0c11769b61178f8c55f6c71753bd641383e5bf2b910d"
+    },
+    {
+      "file": "shard_0005.npz",
+      "sha256": "b0744d3e790c495d924abaf75465361a7de33fe5fd97699e0a1699376daf5562"
+    },
+    {
+      "file": "shard_0006.npz",
+      "sha256": "3255ed8a367d611e67d837c56393f90bc18ac5247619776633caf39697d64301"
+    },
+    {
+      "file": "shard_0007.npz",
+      "sha256": "f68f8d844d78f8ad2ff87dd51e097696d53a2caa93d080ed9fc1d472ecc0d7a4"
+    },
+    {
+      "file": "shard_0008.npz",
+      "sha256": "c7d9169ad37a6c1803912ffb4f3d5d99e07550b36b442bd2f68391ec9b34a7b2"
+    },
+    {
+      "file": "shard_0009.npz",
+      "sha256": "84d0f1233569d3c8ea5477fead11c2e3843c263ef84faf2a0ccd5b7fd0f69413"
+    }
+  ],
+  "procedure": "Read labels only; preserve historic class assignment exactly; no reassignment or new chemistry claims."
+}

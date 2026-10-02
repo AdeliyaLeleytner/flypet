@@ -1,0 +1,29 @@
+{
+  "protocol_id": "flypet-paper-cases-v1",
+  "schema_version": 1,
+  "fixed_on": "2026-09-24",
+  "seeds": [11, 23, 47],
+  "duration_ms": 250,
+  "vnc_duration_ms": 200,
+  "odor_rate_max_hz": 150.0,
+  "odor_min_response": 0.05,
+  "odor_scale": 1.0,
+  "selection_basis": "Existing 52-compound dataset names and DoOR receptor coverage/similarity only; no neural outputs used for selecting this panel.",
+  "odors": ["ethyl acetate", "methyl acetate", "1-hexanol", "Z3-hexenol", "acetic acid", "pyrrolidine"],
+  "odor_pairs": [{"kind": "similar", "compounds": ["ethyl acetate", "methyl acetate"]}, {"kind": "similar", "compounds": ["1-hexanol", "Z3-hexenol"]}, {"kind": "dissimilar", "compounds": ["ethyl acetate", "pyrrolidine"]}],
+  "memory_compounds": ["ethyl acetate", "pyrrolidine"],
+  "pairing_trials": 3,
+  "reinforcement_rate_hz": 60.0,
+  "memory_protocol": "Naive probes; independent A (odor 1 reward, odor 2 punish) and B (odor 1 punish, odor 2 reward) histories; unpaired history with isolated odor then reinforcement pulses and reset membrane dynamics between pulses; save/reload A and repeat probes. learn() called on every training pulse, including isolated pulses. No reversal inference.",
+  "sensory": [
+    {"name": "zero", "stimuli": [{"key": "sugar", "rate_hz": 0.0, "side": "both"}]},
+    {"name": "sugar", "stimuli": [{"key": "sugar", "rate_hz": 150.0, "side": "both"}]},
+    {"name": "bitter", "stimuli": [{"key": "bitter", "rate_hz": 150.0, "side": "both"}]},
+    {"name": "sugar_bitter", "stimuli": [{"key": "sugar", "rate_hz": 150.0, "side": "both"}, {"key": "bitter", "rate_hz": 150.0, "side": "both"}]},
+    {"name": "antenna_touch", "stimuli": [{"key": "antenna_touch", "rate_hz": 150.0, "side": "both"}]},
+    {"name": "looming", "stimuli": [{"key": "looming", "rate_hz": 200.0, "side": "both"}]}
+  ],
+  "gf": {"cell_type": "DNp01", "rate_hz": 240.0, "duration_ms": 300, "random_panels": 5, "panel_seed": 0, "random_pool": "all descending driver rows excluding the selected DNp01 drivers", "target_motor_type": "TTMn"},
+  "modes": {"planner": "off", "narrator": "off", "soft_token_reader": "off", "odor_resolution": "exact_compound", "vnc": "required_for_B_and_GF_only"},
+  "provenance": {"DoOR_responses": "measured_aggregate_after_SFR_subtraction_and_nonnegative_clipping", "connectomes": "anatomical_data", "lif_parameters": "literature_and_Shiu_fitted_parameter", "odor_rate_scale": "engineering_parameter", "MB_plasticity_and_valence": "implemented_model_assumptions", "VNC_transfer": "engineering_bridge_between_different_animals"}
+}

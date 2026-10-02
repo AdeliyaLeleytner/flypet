@@ -1,0 +1,205 @@
+<title>Пять нейронов по шагам</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
+<style>
+  :root {
+    --bg: #eef1f4; --panel: #ffffff; --ink: #1b2129; --muted: #5d6874; --line: #d3d9e0; --soft: #f5f7f9;
+    --orn: #c8862a; --pn: #2c8c80; --ln: #7a5bbf; --kc: #6b8f2a; --mbon: #c14468; --thr: #d23a2f;
+    --hi: #ffe9a8; --chg: #d6f0c2; --dim: #9aa4ae;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #13181d; --panel: #1b2229; --ink: #e5e9ee; --muted: #98a3ae; --line: #2f3a44; --soft: #141a20;
+    --orn: #e0a04a; --pn: #48b3a5; --ln: #a48ae0; --kc: #93bd4a; --mbon: #e26a8c; --thr: #ef5a4f;
+    --hi: #4a3f14; --chg: #24401c; --dim: #56606a;
+  } }
+  :root[data-theme="dark"] {
+    --bg: #13181d; --panel: #1b2229; --ink: #e5e9ee; --muted: #98a3ae; --line: #2f3a44; --soft: #141a20;
+    --orn: #e0a04a; --pn: #48b3a5; --ln: #a48ae0; --kc: #93bd4a; --mbon: #e26a8c; --thr: #ef5a4f;
+    --hi: #4a3f14; --chg: #24401c; --dim: #56606a;
+  }
+  body { background: var(--bg); color: var(--ink); font: 15px/1.5 "IBM Plex Sans", system-ui, sans-serif; }
+  main { max-width: 1040px; margin: 0 auto; padding: 24px 20px 60px; display: grid; gap: 18px; }
+  h1 { font: 600 28px/1.15 "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif; margin: 0; text-wrap: balance; }
+  h2 { font: 600 18px/1.2 "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif; margin: 0; }
+  p { margin: 0; max-width: 72ch; }
+  .lead { color: var(--muted); }
+  .bar { position: sticky; top: 0; z-index: 5; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .bar input[type=range] { flex: 1 1 240px; accent-color: var(--pn); }
+  button { font: 500 14px "IBM Plex Sans", sans-serif; color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 7px; padding: 6px 12px; cursor: pointer; }
+  button:hover { border-color: var(--pn); } button:focus-visible { outline: 2px solid var(--pn); outline-offset: 2px; }
+  .step { font: 600 22px "IBM Plex Mono", monospace; min-width: 6ch; }
+  .stage { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 10px; }
+  .stage .num { font: 600 12px "IBM Plex Mono", monospace; color: var(--muted); letter-spacing: .1em; }
+  .formula { font: 500 14px/1.6 "IBM Plex Mono", monospace; background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; white-space: pre-wrap; }
+  .row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 14px; overflow-x: auto; }
+  .op { align-self: center; font: 600 22px "IBM Plex Mono", monospace; color: var(--muted); padding: 0 2px; }
+  .mat { display: grid; gap: 4px; }
+  .mat .cap { font: 500 12px "IBM Plex Mono", monospace; color: var(--muted); }
+  table { border-collapse: collapse; font: 13px "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: right; white-space: nowrap; }
+  th { color: var(--muted); font-weight: 500; }
+  td.z { color: var(--dim); }
+  td.hi { background: var(--hi); font-weight: 600; }
+  td.chg { background: var(--chg); font-weight: 600; }
+  td.off { color: var(--dim); text-decoration: line-through; }
+  th.orn, td.orn { color: var(--orn); } th.pn, td.pn { color: var(--pn); } th.ln, td.ln { color: var(--ln); } th.kc, td.kc { color: var(--kc); } th.mbon, td.mbon { color: var(--mbon); }
+  .calc { font: 13px/1.7 "IBM Plex Mono", monospace; }
+  .calc div { white-space: nowrap; overflow-x: auto; }
+  .calc b { font-weight: 600; }
+  .result { border-left: 3px solid var(--pn); padding: 4px 12px; font-size: 14px; }
+  .result b { font-weight: 600; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); }
+  .sw { display: inline-block; width: 12px; height: 12px; border: 1px solid var(--line); vertical-align: -2px; margin-right: 4px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<main>
+  <header style="display:grid;gap:8px">
+    <div class="num">flypet · один шаг симуляции целиком</div>
+    <h1>Пять нейронов: W, s, g, v по шагам</h1>
+    <p class="lead">Всё состояние сети это одна матрица и три вектора: <b>W</b> веса (5×5, не меняется во время пробы), <b>s</b> спайки (0/1), <b>g</b> накопленный вход, <b>v</b> потенциал. Каждый шаг в 1 мс это шесть операций над ними, ниже они идут по порядку с числами. Константы и формулы те же, что в движке; там шаг 0,1 мс. ORN это обонятельный рецепторный нейрон (здесь узел изображает весь гломерул), PN проекционный нейрон антеннальной доли, LN её локальный тормозный интернейрон, KC клетка Кеньона грибовидного тела, MBON выходной нейрон грибовидного тела. Запах приходит на ORN каждые 2 мс.</p>
+    <div class="legend"><span><i class="sw" style="background:var(--hi)"></i>участвует в расчёте</span><span><i class="sw" style="background:var(--chg)"></i>изменилось на этом шаге</span><span><i class="sw" style="text-decoration:line-through;width:auto;border:0">12.3</i>отброшено (нейрон в паузе)</span></div>
+  </header>
+
+  <div class="bar">
+    <button id="prev" aria-label="шаг назад">◀</button><button id="play">▶ Играть</button><button id="next" aria-label="шаг вперёд">▶</button>
+    <input id="slider" type="range" min="0" max="29" value="2" aria-label="шаг">
+    <div class="step">t = <span id="t">2</span> мс</div>
+  </div>
+
+  <section class="stage"><div class="num">ОПЕРАЦИЯ 0 · ЧТО ЕСТЬ В НАЧАЛЕ ШАГА</div>
+    <div class="row" id="st0"></div>
+    <div class="result" id="r0"></div>
+  </section>
+
+  <section class="stage"><div class="num">ОПЕРАЦИЯ 1 · ДОСТАВКА: Δg = Wᵀ · s(t−2)</div>
+    <p>Спайки, случившиеся два шага назад (задержка 1,8 мс), сейчас доезжают до адресатов. Для каждого адресата складываем веса от всех, кто тогда спайкнул: строка W это отправитель, столбец получатель. Если получатель в паузе после своего спайка, добавка отбрасывается.</p>
+    <div class="row" id="st1"></div>
+    <div class="calc" id="c1"></div>
+    <div class="result" id="r1"></div>
+  </section>
+
+  <section class="stage"><div class="num">ОПЕРАЦИЯ 2 · ПРИБАВИТЬ К НАКОПЛЕННОМУ: g′ = g(t−1) + Δg</div>
+    <div class="row" id="st2"></div>
+    <div class="result" id="r2"></div>
+  </section>
+
+  <section class="stage"><div class="num">ОПЕРАЦИЯ 3 · ПОТЕНЦИАЛ ПОЛЗЁТ К ЦЕЛИ: v(t) = −52 + 0,9512·(v(t−1) + 52) + 0,0442·g′</div>
+    <div class="formula">точное решение dv/dt = (−52 − v + g)/20 мс за один шаг, при том что g сам тает с постоянной 5 мс:
+0,9512 = e^(−1/20)   0,0442 = (5/15)·(e^(−1/20) − e^(−1/5))
+цель, к которой v стремится, это −52 + g′; за шаг проходится ~1/20 пути, поэтому один залп до порога не доводит</div>
+    <div class="row" id="st3"></div>
+    <div class="calc" id="c3"></div>
+    <div class="result" id="r3"></div>
+  </section>
+
+  <section class="stage"><div class="num">ОПЕРАЦИЯ 4 · ВХОД ТАЕТ: g(t) = 0,8187 · g′</div>
+    <div class="formula">0,8187 = e^(−1/5): за миллисекунду накопленный вход теряет 18 %</div>
+    <div class="row" id="st4"></div>
+    <div class="result" id="r4"></div>
+  </section>
+
+  <section class="stage"><div class="num">ОПЕРАЦИЯ 5 · ВНЕШНИЙ ВХОД, ПОРОГ, СБРОС: s(t) = [v > −45]</div>
+    <p>Запах действует только на ORN и минует g: на чётных шагах v[ORN] += 68,75 мВ, это гарантированный спайк. Дальше у всех проверяется порог. Кто спайкнул: s = 1, v = −52, g = 0, пауза 2 шага, и его спайк встаёт в очередь на доставку через 2 шага (это будет s(t−2) в операции 1 на шаге t+2).</p>
+    <div class="row" id="st5"></div>
+    <div class="result" id="r5"></div>
+  </section>
+
+  <section class="stage"><div class="num">ОПЕРАЦИЯ 6 · ПОСЛЕ ПРОБЫ: ОБУЧЕНИЕ, W ← W ⊙ (1 − 0,6·a·dᵀ)</div>
+    <p>Это делается не на каждом шаге, а один раз после всей пробы (200–300 мс), и только для труб KC→MBON. Два вектора: <b>a</b> активность клеток Кеньона, <b>d</b> дофамин у каждого MBON. Их внешнее произведение a·dᵀ это матрица, где ненулевые клетки стоят ровно там, где активность KC и дофамин совпали. Пример: в пробе KC спайковал 40 Гц, а мы подали награду, PAM 60 Гц, и MBON сидит в отделе PAM.</p>
+    <div class="row" id="st6"></div>
+    <div class="calc" id="c6"></div>
+    <div class="result" id="r6"></div>
+  </section>
+</main>
+<script>
+(function(){
+  const names=['ORN','PN','LN','KC','MBON'], cls=['orn','pn','ln','kc','mbon'];
+  const v0=-52, vth=-45, tm=20, tau=5, wsyn=0.275, delay=2, rfc=2, N=30;
+  const e20=Math.exp(-1/tm), e5=Math.exp(-1/tau), cg=(tau/(tm-tau))*(e20-e5);
+  const count=[[0,40,20,0,0],[0,0,0,30,0],[0,20,0,0,0],[0,0,0,0,8],[0,0,0,0,0]];
+  const sign=[1,1,-1,1,1], scale=[[1,1,1,1,1],[1,1,1,2,1],[1,1,1,1,1],[1,1,1,1,3],[1,1,1,1,1]];
+  const W=count.map((row,i)=>row.map((c,j)=>c*sign[i]*scale[i][j]*wsyn));
+  const inputSteps=new Set([0,2,4,6,8,10,12,14,16,18,20,22,24]);
+  const f2=x=>(Math.round(x*100)/100).toFixed(2), f1=x=>x.toFixed(1);
+  // ---- simulate, keeping every intermediate
+  const frames=[]; let v=Array(5).fill(v0), g=Array(5).fill(0), last=Array(5).fill(-99); const S=[];
+  for(let t=0;t<N;t++){
+    const s2=t-2>=0?S[t-2]:[0,0,0,0,0], s1=t-1>=0?S[t-1]:[0,0,0,0,0];
+    const refr=v.map((_,i)=>t-last[i]<=rfc);
+    const dg=names.map((_,j)=>W.reduce((acc,row,i)=>acc+row[j]*s2[i],0));
+    const gPrev=g.slice(), vPrev=v.slice();
+    const gDel=g.map((x,i)=>refr[i]?x:x+dg[i]);
+    const vNew=v.map((x,i)=>refr[i]?x:v0+(x-v0)*e20+cg*gDel[i]);
+    const gNew=gDel.map((x,i)=>refr[i]?x:x*e5);
+    const vIn=vNew.slice(); if(inputSteps.has(t)) vIn[0]+=68.75;
+    const s=vIn.map(x=>x>vth?1:0);
+    v=vIn.map((x,i)=>s[i]?v0:x); g=gNew.map((x,i)=>s[i]?0:x);
+    s.forEach((x,i)=>{ if(x) last[i]=t; });
+    S.push(s);
+    frames.push({t,s2,s1,refr,dg,gPrev,gDel,vPrev,vNew,gNew,input:inputSteps.has(t),vIn,s,v:v.slice(),g:g.slice(),pause:names.map((_,i)=>Math.max(0,rfc-(t-last[i])))});
+  }
+  // ---- renderers
+  const th=(txt,c)=>`<th class="${c||''}">${txt}</th>`;
+  function vec(cap, vals, opts={}){ // column vector 5x1
+    let h=`<div class="mat"><div class="cap">${cap}</div><table>`;
+    vals.forEach((x,i)=>{ const c=[cls[i]]; if(opts.hi&&opts.hi[i]) c.push('hi'); if(opts.chg&&opts.chg[i]) c.push('chg'); if(opts.off&&opts.off[i]) c.push('off'); if(Math.abs(x)<1e-9&&!opts.keepZero) c.push('z');
+      h+=`<tr>${th(names[i],cls[i])}<td class="${c.join(' ')}">${opts.fmt?opts.fmt(x,i):f2(x)}</td></tr>`; });
+    return h+'</table></div>';
+  }
+  function mat(cap, M, opts={}){
+    let h=`<div class="mat"><div class="cap">${cap}</div><table><tr><th>${opts.corner||'W: строка → столбец'}</th>${names.map((n,j)=>th(n,cls[j])).join('')}</tr>`;
+    M.forEach((row,i)=>{ h+=`<tr>${th(names[i],cls[i])}`; row.forEach((x,j)=>{ const c=[]; if(opts.hiRow&&opts.hiRow[i]&&x!==0) c.push('hi'); if(opts.chg&&opts.chg(i,j)) c.push('chg'); if(x===0) c.push('z'); h+=`<td class="${c.join(' ')}">${x===0?'·':f2(x)}</td>`; }); h+='</tr>'; });
+    return h+'</table></div>';
+  }
+  const op=s=>`<div class="op">${s}</div>`;
+  function show(k){
+    const f=frames[k]; slider.value=k; document.getElementById('t').textContent=f.t;
+    const on=x=>x?1:0;
+    // 0
+    document.getElementById('st0').innerHTML=mat('W, мВ (40·0,275 = 11; 30·0,275·2 = 16,5; 8·0,275·3 = 6,6; LN тормозный, минус)',W)
+      +vec('v(t−1), мВ',f.vPrev,{fmt:f1,keepZero:1})+vec('g(t−1), мВ',f.gPrev)+vec('пауза, шагов',f.pause.map((p,i)=>f.refr[i]?p:0),{fmt:x=>x?String(x):'·'})
+      +vec('s(t−1), доедет на след. шаге',f.s1,{fmt:x=>String(x)})+vec('s(t−2), доезжает сейчас',f.s2,{fmt:x=>String(x),hi:f.s2});
+    const inFlight=names.filter((_,i)=>f.s2[i]).join(', ');
+    document.getElementById('r0').innerHTML=inFlight?`Сейчас приедут спайки от: <b>${inFlight}</b>.`+(f.refr.some(x=>x)?` В паузе: <b>${names.filter((_,i)=>f.refr[i]).join(', ')}</b>, они этот шаг ничего не принимают и не меняются.`:''):'Спайков в пути на этот шаг нет: g просто тает, v ползёт.'+(f.refr.some(x=>x)?` В паузе: <b>${names.filter((_,i)=>f.refr[i]).join(', ')}</b>.`:'');
+    // 1
+    document.getElementById('st1').innerHTML=mat('Wᵀ·s: берём строки тех, кто спайкнул',W,{hiRow:f.s2})+op('·')+vec('s(t−2)',f.s2,{fmt:x=>String(x),hi:f.s2})+op('=')+vec('Δg, мВ',f.dg,{hi:f.dg.map(x=>x!==0),off:f.refr.map((r,i)=>r&&f.dg[i]!==0)});
+    const c1=[]; names.forEach((n,j)=>{ const terms=names.map((m,i)=>f.s2[i]&&W[i][j]!==0?`${f2(W[i][j])}·1`:null).filter(Boolean); if(terms.length) c1.push(`<span class="${cls[j]}">${n}</span>: ${terms.join(' + ')} = <b>${f2(f.dg[j])}</b>${f.refr[j]?' → отброшено, в паузе':''}`); });
+    document.getElementById('c1').innerHTML=c1.map(l=>`<div>${l}</div>`).join('')||'<div>все слагаемые нулевые: Δg = 0</div>';
+    const got=names.filter((_,j)=>f.dg[j]!==0&&!f.refr[j]), lost=names.filter((_,j)=>f.dg[j]!==0&&f.refr[j]);
+    document.getElementById('r1').innerHTML=(got.length?`Получили вход: <b>${got.map(n=>`${n} ${f2(f.dg[names.indexOf(n)])}`).join(', ')}</b>.`:'Никто ничего не получил.')+(lost.length?` Пропало из-за паузы: <b>${lost.join(', ')}</b>.`:'');
+    // 2
+    document.getElementById('st2').innerHTML=vec('g(t−1)',f.gPrev)+op('+')+vec('Δg',f.dg,{off:f.refr.map((r,i)=>r&&f.dg[i]!==0)})+op('=')+vec('g′',f.gDel,{chg:f.gDel.map((x,i)=>Math.abs(x-f.gPrev[i])>1e-9)});
+    document.getElementById('r2').innerHTML=got.length?`Накопленный вход вырос: ${got.map(n=>{const j=names.indexOf(n);return `<b>${n}</b> ${f2(f.gPrev[j])} + ${f2(f.dg[j])} = <b>${f2(f.gDel[j])}</b>`;}).join('; ')}.`:'g′ = g(t−1), добавлять нечего.';
+    // 3
+    document.getElementById('st3').innerHTML=vec('v(t−1)',f.vPrev,{fmt:f1,keepZero:1})+op('→')+vec('цель −52 + g′',f.gDel.map(x=>v0+x),{fmt:f1,keepZero:1})+op('⇒')+vec('v(t)',f.vNew,{fmt:f1,keepZero:1,chg:f.vNew.map((x,i)=>Math.abs(x-f.vPrev[i])>0.005)});
+    const c3=[]; names.forEach((n,i)=>{ if(f.refr[i]) { c3.push(`<span class="${cls[i]}">${n}</span>: пауза, v не меняется`); return; } if(Math.abs(f.vPrev[i]-v0)<1e-6&&f.gDel[i]<1e-6) return; c3.push(`<span class="${cls[i]}">${n}</span>: −52 + 0,9512·(${f1(f.vPrev[i])} + 52) + 0,0442·${f2(f.gDel[i])} = −52 + ${f2((f.vPrev[i]-v0)*e20)} + ${f2(cg*f.gDel[i])} = <b>${f2(f.vNew[i])}</b>`); });
+    document.getElementById('c3').innerHTML=c3.map(l=>`<div>${l}</div>`).join('')||'<div>все в покое: v = −52</div>';
+    const mover=names.map((n,i)=>[n,f.vNew[i]-f.vPrev[i]]).filter(([_,d])=>Math.abs(d)>0.005).sort((a,b)=>b[1]-a[1])[0];
+    document.getElementById('r3').innerHTML=mover?`Больше всех поднялся <b>${mover[0]}</b>: на ${f2(mover[1])} мВ. До порога −45 ему не хватает <b>${f1(vth-f.vNew[names.indexOf(mover[0])])} мВ</b>, а цель −52 + g′ = ${f1(v0+f.gDel[names.indexOf(mover[0])])} мВ${v0+f.gDel[names.indexOf(mover[0])]>vth?' выше порога, так что при таком же потоке входа он дойдёт':' ниже порога, с таким входом он не дойдёт никогда'}.`:'Никто не сдвинулся.';
+    // 4
+    document.getElementById('st4').innerHTML=vec('g′',f.gDel)+op('× 0,8187 =')+vec('g(t)',f.gNew,{chg:f.gNew.map((x,i)=>Math.abs(x-f.gDel[i])>1e-9)});
+    const dec=names.filter((_,i)=>f.gDel[i]>1e-9&&!f.refr[i]);
+    document.getElementById('r4').innerHTML=dec.length?`${dec.map(n=>{const i=names.indexOf(n);return `<b>${n}</b> ${f2(f.gDel[i])} → ${f2(f.gNew[i])}`;}).join('; ')}. Без новых доставок через 5 шагов от g останется треть.`:'Таять нечему.';
+    // 5
+    document.getElementById('st5').innerHTML=vec('v после запаха',f.vIn,{fmt:f1,keepZero:1,hi:[f.input?1:0,0,0,0,0]})+op('> −45 ⇒')+vec('s(t)',f.s,{fmt:x=>String(x),chg:f.s})+op('сброс ⇒')+vec('v(t) итог',f.v,{fmt:f1,keepZero:1,chg:f.s})+vec('g(t) итог',f.g,{chg:f.s});
+    const sp=names.filter((_,i)=>f.s[i]);
+    document.getElementById('r5').innerHTML=(f.input?`Запах: v[ORN] = ${f1(f.vNew[0])} + 68,75 = ${f1(f.vIn[0])} > −45. `:'Запаха на этом шаге нет. ')+(sp.length?`Спайкуют: <b>${sp.join(', ')}</b>${sp.some(n=>n!=='ORN')?` (${sp.filter(n=>n!=='ORN').map(n=>`${n} дошёл до ${f1(f.vIn[names.indexOf(n)])}`).join(', ')})`:''}. Им ставится v = −52, g = 0 и пауза 2 шага; их спайк доедет до адресатов на шаге <b>t = ${f.t+2}</b>.`:'Порог никто не перешёл, s(t) = 0.');
+  }
+  // ---- learning (static example, matrices)
+  (function(){
+    const a=[0,0,0,1,0], d=[0,0,0,0,1], eta=0.6;
+    const outer=a.map(ai=>d.map(dj=>ai*dj)); const factor=outer.map(r=>r.map(x=>1-eta*x)); const W2=W.map((r,i)=>r.map((x,j)=>x*factor[i][j]));
+    document.getElementById('st6').innerHTML=vec('a = min(1, частота KC / 15 Гц): 40/15 → 1',a,{fmt:x=>String(x),hi:a})+op('·')+`<div class="mat"><div class="cap">dᵀ = min(1, дофамин / 20): 60/20 → 1, ниже 0,3 обнуляется</div><table><tr>${names.map((n,j)=>th(n,cls[j])).join('')}</tr><tr>${d.map((x,j)=>`<td class="${x?'hi':'z'}">${x}</td>`).join('')}</tr></table></div>`+op('=')
+      +mat('a·dᵀ (совпадение активности KC и дофамина)',outer,{corner:'KC → MBON',chg:(i,j)=>outer[i][j]!==0})+op('⇒')+mat('1 − 0,6·a·dᵀ',factor,{corner:'множитель',chg:(i,j)=>factor[i][j]!==1})
+      +op('⊙ W =')+mat('W после (было 6,60)',W2,{chg:(i,j)=>W2[i][j]!==W[i][j]});
+    document.getElementById('c6').innerHTML=`KC→MBON: 1 − 0,6·1·1 = 0,40; W = 6,60 · 0,40 = <b>2,64 мВ</b>. Все остальные клетки умножаются на 1. В файл памяти уходит только матрица множителей (mem), при запуске она снова умножается на W.`;
+    document.getElementById('r6').innerHTML=`Синапс от этой клетки Кеньона к этому MBON ослаб в 2,5 раза. Если MBON глутаматный (отдел PAM, ведёт к избеганию), то тот же запах в следующий раз слабее гонит избегание; это и есть память об одном запахе с наградой. Непарный контроль: если бы дофамин был в другой пробе, d = 0, множитель 1, W без изменений.`;
+  })();
+  const slider=document.getElementById('slider'); let timer=null; const play=document.getElementById('play');
+  function stop(){ if(timer){ clearInterval(timer); timer=null; play.textContent='▶ Играть'; } }
+  play.onclick=()=>{ if(timer) return stop(); play.textContent='⏸ Пауза'; timer=setInterval(()=>{ const k=(+slider.value+1)%N; show(k); if(k===N-1) stop(); },1400); };
+  document.getElementById('prev').onclick=()=>{ stop(); show(Math.max(0,+slider.value-1)); };
+  document.getElementById('next').onclick=()=>{ stop(); show(Math.min(N-1,+slider.value+1)); };
+  slider.oninput=()=>{ stop(); show(+slider.value); };
+  show(2);
+})();
+</script>

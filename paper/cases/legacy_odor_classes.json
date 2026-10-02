@@ -1,0 +1,72 @@
+{
+  "альдегиды": [
+    "E2-hexenal",
+    "benzaldehyde",
+    "butanal",
+    "hexanal",
+    "octanal",
+    "pentanal",
+    "phenylacetaldehyde",
+    "propanal"
+  ],
+  "амины": [
+    "ammonium hydroxide",
+    "cadaverine",
+    "putrescine"
+  ],
+  "кетоны": [
+    "2,3-butanedione",
+    "2-butanone",
+    "2-heptanone",
+    "6-methyl-5-hepten-2-one",
+    "acetophenone",
+    "cyclohexanone"
+  ],
+  "кислоты": [
+    "acetic acid",
+    "butyric acid",
+    "hexanoic acid",
+    "isobutyric acid",
+    "lactic acid",
+    "pentanoic acid",
+    "propanoic acid"
+  ],
+  "особые": [
+    "carbon dioxide",
+    "furfural",
+    "pyrrolidine"
+  ],
+  "спирты": [
+    "1-butanol",
+    "1-hexanol",
+    "1-octen-3-ol",
+    "1-pentanol",
+    "Z3-hexenol",
+    "benzyl alcohol",
+    "ethanol",
+    "linalool"
+  ],
+  "терпены": [
+    "(1R)-(-)-fenchone",
+    "alpha-pinene",
+    "geraniol",
+    "limonene",
+    "p-cymene"
+  ],
+  "фенолы": [
+    "2-methylphenol",
+    "4-methylphenol"
+  ],
+  "эфиры": [
+    "ethyl acetate",
+    "ethyl butyrate",
+    "ethyl hexanoate",
+    "ethyl propionate",
+    "geranyl acetate",
+    "hexyl acetate",
+    "isopentyl acetate",
+    "methyl acetate",
+    "methyl salicylate",
+    "pentyl acetate"
+  ]
+}

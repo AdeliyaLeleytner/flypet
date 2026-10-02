@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flypet"
+version = "0.1.0"
+description = "Connectome-based fly simulation, neural language interfaces and agent experiments"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dynamic = ["dependencies"]
+
+[project.optional-dependencies]
+dev = ["httpx>=0.28", "ruff==0.16.10"]
+analysis = ["matplotlib>=3.9", "rdkit"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["flypet*"]
+
+[tool.setuptools.package-data]
+flypet = ["static/*"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]

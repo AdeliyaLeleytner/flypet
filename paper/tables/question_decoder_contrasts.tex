@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering\small
+\caption{Paired differences, question-conditioned minus state-only decoder. Positive accuracy differences and negative NLL differences favor conditioning. Intervals use 10,000 bootstrap samples of the 72 whole counterfactual groups; the final column additionally resamples the three initialization indices. These intervals describe this exploratory reused split and three seeds, not population-level architecture superiority. Both paired histories correct requires correct answers for the same queried object under both event orders.}
+\label{tab:question-decoder-contrasts}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Metric & Mean difference & Group interval & Seed + group interval \\
+\midrule
+Overall accuracy (pp) & -1.27 & $[-5.44, 2.89]$ & $[-7.87, 4.86]$ \\
+Earlier-object accuracy (pp) & -5.32 & $[-12.04, 1.16]$ & $[-14.81, 3.94]$ \\
+Latest-object accuracy (pp) & +2.78 & $[-2.55, 8.10]$ & $[-5.09, 10.42]$ \\
+Both questions correct (pp) & -0.69 & $[-4.17, 2.78]$ & $[-5.56, 4.63]$ \\
+Both paired histories correct (pp) & -4.40 & $[-8.56, -0.23]$ & $[-9.72, 0.93]$ \\
+Answer-token NLL (nats) & 0.00 & $[-0.07, 0.07]$ & $[-0.17, 0.16]$ \\
+\bottomrule
+\end{tabular}
+\end{table}

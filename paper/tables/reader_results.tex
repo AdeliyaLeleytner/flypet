@@ -1,0 +1,14 @@
+\begin{table}[t]
+\caption{Reader characterization on the corrected split. NLL uses 578 test rows; stimulus-set accuracy uses the same 100 generated captions; interaction accuracy uses 27 sugar--bitter rows. Values are mean $\pm$ sample standard deviation over three initializations of one fixed split. Interaction majority-class accuracy is 81.5\%. Shuffled-state generation was not evaluated.}
+\label{tab:reader}
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Input & Test NLL $\downarrow$ & Stimuli exact (\%) & Interaction (\%) \\
+\midrule
+Neural-state reader & 0.135 $\pm$ 0.022 & 56.7 $\pm$ 3.1 & 55.6 $\pm$ 23.1 \\
+Direct stimulus input & 0.043 $\pm$ 0.004 & 89.0 $\pm$ 2.6 & 16.0 $\pm$ 2.1 \\
+Reader, shuffled states & 0.737 $\pm$ 0.031 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

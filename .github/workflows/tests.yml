@@ -1,0 +1,23 @@
+name: checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        neural: [false, true]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install -c requirements-lock.txt -e '.[dev]'
+      - if: matrix.neural
+        run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: make check test
+      - run: python release/check.py

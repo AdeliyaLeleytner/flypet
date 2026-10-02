@@ -1,0 +1,41 @@
+Notes from earlier experiments with flies of this kind (averages over many flies):
+
+Measurement noise, the SD of repeated measurements of the same fly: ethyl acetate 0.01, methyl acetate 0.02, 1-hexanol 0.02, 2-heptanone 0.02, hexanal 0.06, acetic acid 0.02, linalool 0.12.
+
+Training one odour also changes the valence of other odours whose Kenyon-cell codes overlap with it. Average change of each odour when only the odour at the start of the row was trained (columns in the order: ethyl acetate, methyl acetate, 1-hexanol, 2-heptanone, hexanal, acetic acid, linalool):
+
+One pairing with sugar:
+- ethyl acetate: +0.16 +0.16 +0.09 +0.12 +0.03 +0.03 +0.03
+- methyl acetate: +0.16 +0.19 +0.09 +0.08 +0.02 +0.02 +0.08
+- 1-hexanol: +0.03 +0.03 +0.26 +0.23 +0.18 +0.01 +0.10
+- 2-heptanone: +0.03 +0.02 +0.21 +0.33 +0.15 +0.00 +0.21
+- hexanal: +0.01 +0.01 +0.13 +0.14 +0.28 -0.00 +0.03
+- acetic acid: +0.03 +0.03 +0.04 +0.04 -0.01 +0.23 +0.07
+- linalool: +0.01 +0.00 +0.04 +0.09 -0.03 -0.00 +0.15
+
+Three pairings with sugar:
+- ethyl acetate: +0.45 +0.55 +0.14 +0.18 +0.01 +0.06 +0.05
+- methyl acetate: +0.45 +0.52 +0.11 +0.13 +0.03 +0.02 +0.06
+- 1-hexanol: +0.06 +0.04 +0.23 +0.26 +0.24 +0.01 +0.18
+- 2-heptanone: +0.05 +0.04 +0.23 +0.29 +0.27 +0.01 +0.17
+- hexanal: +0.01 +0.01 +0.18 +0.23 +0.23 +0.00 +0.03
+- acetic acid: +0.04 +0.03 +0.05 +0.06 +0.03 +0.35 +0.11
+- linalool: +0.01 -0.00 +0.06 +0.13 +0.10 +0.01 +0.06
+
+One pairing with shock:
+- ethyl acetate: -0.35 -0.34 -0.03 -0.06 -0.03 -0.05 -0.04
+- methyl acetate: -0.29 -0.38 -0.04 -0.07 -0.02 -0.05 -0.05
+- 1-hexanol: -0.03 -0.02 -0.50 -0.15 -0.27 -0.03 +0.01
+- 2-heptanone: -0.02 -0.01 -0.16 -0.55 -0.07 -0.02 -0.29
+- hexanal: -0.00 -0.00 -0.05 -0.08 -0.52 -0.03 +0.08
+- acetic acid: -0.02 -0.02 +0.01 -0.01 -0.05 -0.40 +0.05
+- linalool: +0.01 +0.00 -0.01 -0.04 -0.05 -0.02 -0.44
+
+Three pairings with shock:
+- ethyl acetate: -0.61 -0.63 -0.09 -0.12 -0.03 -0.10 +0.03
+- methyl acetate: -0.61 -0.62 -0.08 -0.07 -0.06 -0.06 +0.00
+- 1-hexanol: -0.06 -0.05 -0.62 -0.29 -0.33 -0.03 -0.19
+- 2-heptanone: -0.04 -0.03 -0.41 -0.61 -0.20 -0.02 -0.32
+- hexanal: +0.00 -0.00 -0.13 -0.09 -0.52 -0.02 -0.00
+- acetic acid: -0.04 -0.03 +0.01 -0.02 -0.03 -0.69 -0.03
+- linalool: +0.01 +0.00 -0.01 -0.04 -0.03 -0.01 -0.42
