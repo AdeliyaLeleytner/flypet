@@ -105,9 +105,18 @@ class MemoryTaskTests(unittest.TestCase):
         )
         x = torch.randn(2, 4, 8)
         p, stats = m(x)
-        zero, _ = m(x, intervention="zero_state")
+        decoder_inputs = []
+        hook = m.decoder.register_forward_pre_hook(
+            lambda module, args: decoder_inputs.append(args[0].detach().clone())
+        )
+        try:
+            zero, _ = m(x, intervention="zero_state")
+        finally:
+            hook.remove()
         self.assertEqual(p.shape, (2, 2, 8))
-        torch.testing.assert_close(zero[0], zero[1], rtol=0, atol=0)
+        self.assertEqual(torch.count_nonzero(decoder_inputs[0]).item(), 0)
+        # Batched BLAS kernels can round identical rows differently in float32.
+        torch.testing.assert_close(zero[0], zero[1], rtol=1e-6, atol=1e-8)
         p[:, :, 0].sum().backward()
         self.assertIsNotNone(m.core.raw_gain.grad)
         self.assertTrue(torch.isfinite(m.core.raw_gain.grad).all())

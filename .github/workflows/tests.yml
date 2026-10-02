@@ -18,6 +18,8 @@ jobs:
           node-version: '22'
       - run: pip install -c requirements-lock.txt -e '.[dev]'
       - if: matrix.neural
-        run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+        run: |
+          pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          pip install -c requirements-lock.txt -r requirements-llm.txt
       - run: make check test
       - run: python release/check.py
