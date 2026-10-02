@@ -52,6 +52,8 @@ def main():
     data = json.loads((ROOT / "data/manifest.json").read_text())
     data["files"] = [r for r in data["files"] if r["group"] == "brain"]
     data["derived"] = [r for r in data["derived"] if r["group"] == "brain"]
+    for key in ("archives", "group_aliases", "research_coverage"):
+        data.pop(key, None)
     (a.out / "data").mkdir()
     write_json(a.out / "data/manifest.json", data)
     (a.out / "README.md").write_text("""---

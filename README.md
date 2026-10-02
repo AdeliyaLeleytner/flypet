@@ -126,18 +126,41 @@ python scripts/fetch_data.py brain neural-link results paper-results --check
 python -m pip install -e '.[analysis]'  # plotting and molecular fingerprints
 ```
 
-Artifacts are attached to the `v0.1.0` GitHub release. `results` restores the published
-manifest's historical experiment outputs; `paper-results` restores the principal platform
-cases, language cases, reader summaries and analysis tables. `neural-link` also restores
-its reader/writer and fresh evaluation reports in `output/neural-link-reports/`.
-These are recorded results, not experiments rerun during this cleanup.
+The initial selected results and inference bundle remain in release `v0.1.0`.
+Release `v0.2.0` adds the complete local experiment families: Neural Link datasets and
+historically sealed panels, all reader/writer versions, memory-interface and forecast,
+projector/architecture/decoder runs, FlyTalk GRPO checkpoints, courtship, and remaining
+teaching/Rosetta/physiology artifacts. Failed, partial and superseded runs are preserved.
 
-Author-machine paths in a few metadata files were made relative. The transport manifest
-records both the released hash and `source_sha256` for changed files. Historical receipts
-inside those files still refer to original bytes. Raw numeric arrays and scientific values
-were not changed. Raw session memory, billing records, abandoned exports and caches are not
-part of the release. Three old GPU launchers depended on an external, private experiment
-farm and were omitted; their actual training/evaluation programs remain in `scripts/`.
+```bash
+python scripts/fetch_data.py research --no-cache
+python scripts/fetch_data.py research --check
+```
+
+`research` expands to all experiment groups, including the earlier release. To work
+selectively, use groups such as `neural-history`, `memory-interface`, `memory-forecast`,
+`projector-history`, `architecture-reader`, `question-decoder`, `flytalk-checkpoints`,
+or `courtship`; some shared summaries are in `results`. Simulation inputs are separate:
+`python scripts/fetch_data.py brain vnc`. Allow at least 25 GB of free disk for the full
+research download with `--no-cache`; keeping transport archives requires more space.
+
+The machine-readable index is `data/manifest.json`: each file names its archive and
+released SHA-256, and new files also record their source SHA-256. `research_coverage`
+accounts for every file in the selected original directories, including exact exclusions.
+Private user-session state, selected infrastructure/billing receipts, bytecode and process
+locks are excluded. Historical worker source snapshots and result archives are retained.
+
+Personal paths, host addresses and credentials are removed from metadata. Nested archive member
+ownership and timestamps are normalized. Numeric arrays and tensor storage are unchanged;
+original pickle serialization formats are retained. Embedded historical receipts still
+refer to original bytes: use the release manifest to verify the downloaded files. These
+are recorded experiments, not new training or evaluations performed during packaging.
+The formerly sealed panels are now public historical evaluation data; do not treat them
+as unseen tests for future model selection. The aborted `latent_runtime_20260927_v1`
+is preserved for diagnosis and must not be used as the corrected training set.
+
+Three old GPU launchers depended on an external private experiment farm and remain
+omitted; their training/evaluation programs and available project artifacts are included.
 
 Before scientific publication:
 
@@ -151,8 +174,9 @@ Before scientific publication:
 3. Select and reconcile the manuscript draft. Both `.tex` trees are working research
    artifacts with existing figures and tables; neither represents a verified submission.
    With a TeX distribution, run `latexmk -pdf main.tex` inside the chosen directory.
-   Some historical physiology/decoder training inputs remain outside the released data;
-   the shipped results do not establish full end-to-end reproduction of every draft claim.
+   The full project archive is available, but older external experiment-farm directories
+   are not part of this checkout. Packaging does not establish end-to-end reproduction
+   of every draft claim.
 4. Validate the selected inference bundle and actual deployment: resource limits, expired
    sessions, concurrent visitors, model failures, and restart/replay behavior. Unit tests use
    small synthetic networks and fake API models; they do not qualify a public GPU service.

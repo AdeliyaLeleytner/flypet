@@ -10,16 +10,26 @@ import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from scripts.fetch_data import safe_destination, sha256_file
+from scripts.fetch_data import safe_destination, sha256_file, archive_entries
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("group")
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--archive", help="select one chunk of a multipart group")
     args = parser.parse_args()
     manifest = json.loads((ROOT / "data/manifest.json").read_text())
-    entries = [f for f in manifest["files"] if f["group"] == args.group]
+    assets = [a for a in manifest.get("archives", []) if a["group"] == args.group]
+    if len(assets) > 1 and not args.archive:
+        parser.error("This group has multiple chunks; choose --archive")
+    if args.archive:
+        selected = [a for a in assets if a["name"] == args.archive]
+        if len(selected) != 1:
+            parser.error("Unknown archive for this group")
+        entries = archive_entries(manifest, selected[0])
+    else:
+        entries = [f for f in manifest["files"] if f["group"] == args.group]
     if not entries:
         parser.error("Unknown or empty artifact group")
     for entry in entries:
@@ -33,7 +43,7 @@ def main():
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("xb") as output:
         with gzip.GzipFile(fileobj=output, mode="wb", filename="", mtime=0) as compressed:
-            with tarfile.open(fileobj=compressed, mode="w") as archive:
+            with tarfile.open(fileobj=compressed, mode="w", dereference=True) as archive:
                 for entry in entries:
                     path = safe_destination(entry["path"])
                     info = archive.gettarinfo(str(path), arcname=entry["path"])

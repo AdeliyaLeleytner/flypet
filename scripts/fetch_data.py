@@ -79,6 +79,51 @@ def safe_destination(name):
     return destination
 
 
+def archive_entries(manifest, artifact):
+    """Select one chunk, retaining compatibility with the original single-archive groups."""
+    siblings = [a for a in manifest.get("archives", []) if a["group"] == artifact["group"]]
+    entries = [f for f in manifest["files"] if f["group"] == artifact["group"]]
+    if len(siblings) > 1 and any("archive" not in f for f in entries):
+        raise ValueError("Multipart groups require an archive name on every file")
+    selected = [f for f in entries if f.get("archive", artifact["name"]) == artifact["name"]]
+    if not selected:
+        raise ValueError(f"Empty archive: {artifact['name']}")
+    return selected
+
+
+def audit_manifest(manifest):
+    """Every archived file belongs to exactly one declared transport chunk."""
+    paths = [f["path"] for f in manifest["files"]]
+    if len(paths) != len(set(paths)):
+        raise ValueError("Duplicate file paths in artifact manifest")
+    names = [a["name"] for a in manifest.get("archives", [])]
+    if len(names) != len(set(names)):
+        raise ValueError("Duplicate archive names")
+    covered = set()
+    groups = {a["group"] for a in manifest.get("archives", [])}
+    for artifact in manifest.get("archives", []):
+        for entry in archive_entries(manifest, artifact):
+            if entry["path"] in covered:
+                raise ValueError("Artifact belongs to more than one archive")
+            covered.add(entry["path"])
+    expected = {f["path"] for f in manifest["files"] if f["group"] in groups or "archive" in f}
+    if covered != expected:
+        raise ValueError("Archive membership is incomplete")
+
+
+def resolve_groups(manifest, requested):
+    known = {f["group"] for f in manifest["files"]}
+    if "all" in requested:
+        return sorted(known)
+    aliases = manifest.get("group_aliases", {})
+    groups = {g for value in requested for g in aliases.get(value, [value])}
+    if unknown := groups - known:
+        raise ValueError(
+            f"Unknown groups: {sorted(unknown)}; known: {sorted(known | set(aliases))}"
+        )
+    return sorted(groups)
+
+
 def extract_archive(archive, entries, force=False):
     """Check all members before replacing any destination; never extract links."""
     expected = {entry["path"]: entry for entry in entries}
@@ -143,7 +188,7 @@ def main() -> None:
         "groups",
         nargs="*",
         default=["brain"],
-        help="brain (default), vnc, results, neural-link or all",
+        help="brain (default), research (all experiments), an individual group, or all",
     )
     ap.add_argument(
         "--mirror",
@@ -152,15 +197,19 @@ def main() -> None:
     )
     ap.add_argument("--check", action="store_true", help="verify files on disk, download nothing")
     ap.add_argument(
+        "--no-cache", action="store_true", help="delete each downloaded archive after installation"
+    )
+    ap.add_argument(
         "--force", action="store_true", help="replace local files whose checksum differs"
     )
     a = ap.parse_args()
 
     m = json.loads(MANIFEST.read_text())
-    known = sorted({f["group"] for f in m["files"]})
-    groups = known if "all" in a.groups else a.groups
-    if unknown := set(groups) - set(known):
-        ap.error(f"unknown group(s) {sorted(unknown)}; known: {known}")
+    audit_manifest(m)
+    try:
+        groups = resolve_groups(m, a.groups)
+    except ValueError as error:
+        ap.error(str(error))
     mirror = m.get("mirror", {}).get("base_url")
     if a.mirror and not mirror:
         ap.error(
@@ -171,7 +220,7 @@ def main() -> None:
     for artifact in m.get("archives", []):
         if artifact["group"] not in groups:
             continue
-        entries = [f for f in m["files"] if f["group"] == artifact["group"]]
+        entries = archive_entries(m, artifact)
         archived.update(f["path"] for f in entries)
         if a.check:
             continue
@@ -185,10 +234,12 @@ def main() -> None:
                     sys.exit(f"Local file differs: {entry['path']}; use --force to replace")
                 missing = True
         if missing:
-            cache = ROOT / "data" / ".downloads" / artifact["name"]
+            cache = safe_destination("data/.downloads/" + artifact["name"])
             if not cache.exists() or sha256_file(cache) != artifact["sha256"]:
                 download(artifact["url"], cache, artifact["size"], artifact["sha256"])
             extract_archive(cache, entries, force=a.force)
+            if a.no_cache:
+                cache.unlink()
 
     problems = 0
     for f in (f for f in m["files"] if f["group"] in groups):
