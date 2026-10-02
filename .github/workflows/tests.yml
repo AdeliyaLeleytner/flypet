@@ -31,6 +31,12 @@ jobs:
       - run: docker compose up --build --detach garden
       - run: python3 scripts/check_server.py --timeout 300
       - run: docker compose exec -T garden python scripts/flytalk/smoke_test.py --workers 1
+      - run: docker compose --profile neural build neural-link
+      - run: >-
+          docker compose --profile neural run --rm --no-deps neural-link
+          python -c "from flypet.neural_records import verify_bundle;
+          from flypet.latent_inference import LatentModels;
+          print(verify_bundle('output/neural-link')['revision'])"
       - if: always()
         run: |
           docker compose logs --no-color
