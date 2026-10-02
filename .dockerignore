@@ -11,6 +11,9 @@
 !scripts/**
 !data/
 !data/manifest.json
+!paper/
+!paper/cases/
+!paper/cases/*.json
 **/__pycache__/
 **/*.pyc
 **/.DS_Store
