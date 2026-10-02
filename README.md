@@ -9,10 +9,60 @@ This is a developer handoff and experimental source release. It includes runnabl
 tests, both manuscript drafts, and downloadable recorded results and interface weights.
 It is not a publication-ready scientific claim or a production service.
 
-## Install and run
+## Run from a fresh clone
 
-Use Python 3.12, a C/C++ compiler for Brian2, and Node.js 22 for the frontend tests.
-Run commands from this checkout. The default interfaces bind to localhost.
+The repository is not a hosted website. The commands below create a server on the
+researcher's own machine; they do not connect to the author's computer. No account,
+API key, local Claude installation, private files or pretrained interface weights are
+needed for the sensory garden.
+
+Install Docker with Docker Compose, allocate at least 4 GB RAM to it, then run:
+
+```bash
+git clone https://github.com/AdeliyaLeleytner/flypet.git
+cd flypet
+docker compose up --build garden
+```
+
+After the container is healthy, open `/garden` on port `8765` of the machine running
+Docker (on that same machine: `http://localhost:8765/garden`). The first build downloads
+about 136 MB of checksum-pinned public brain data and installs the compiler and Python
+dependencies. The first simulation also compiles Brian2 code. Subsequent starts reuse
+the image. `docker compose down` stops the app; learned garden memory remains in its
+named volume. `docker compose down --volumes` deletes that saved memory.
+
+This mode runs the real neural simulator, sensory controls and measured readouts.
+Natural-language chat/narration is optional and requires an LLM backend. It is not
+part of this no-credentials garden mode. The learned Neural Link interface is below.
+
+GitHub Actions builds this same container from the committed source, downloads the
+public data, starts the server, checks the page and static files, runs baseline and
+sugar stimuli through the live API, and checks FlyTalk against its reference outputs.
+
+### Neural Link
+
+For the experimental learned reader/writer on CPU, allow at least 24 GB RAM and
+several GB of free disk space for Qwen3-4B. From the same checkout:
+
+```bash
+docker compose --profile neural up --build neural-link
+```
+
+Once the server starts, open port `8775` on the machine running Docker
+(`http://localhost:8775` on that machine). This target downloads the public, hash-checked
+interface bundle and the pinned Qwen3-4B base model; the base-model cache persists in a
+named volume. No API subscription is needed. CPU inference can be slow. Full Qwen
+inference is not exercised by the small GitHub Actions runner; the garden container and
+synthetic neural tests are the CI-verified paths. The reader's known qualification
+failure is recorded below.
+
+For CUDA or Apple MPS, use the native installation below and select `--device cuda`
+or `--device mps`. Nothing in either launch command publishes a server on the internet.
+
+### Native installation and development
+
+Use Python 3.12 and a C/C++ compiler for Brian2. Node.js 22 is needed only for frontend
+tests. Start in a clone of this repository:
 
 ```bash
 python3.12 -m venv .venv
@@ -21,36 +71,25 @@ python -m pip install -c requirements-lock.txt -e '.[dev]'
 python scripts/fetch_data.py brain
 make test
 make smoke
-```
-
-The brain download is about 136 MB and comes directly from pinned upstream revisions.
-Every file is checked against `data/manifest.json`; a derived connectivity cache is built
-on first use. Allow a few GB of RAM per brain and extra time for the first Cython compilation.
-`make smoke` checks FlyTalk simulator outputs against committed reference values.
-
-Run the sensory garden without a language-model service:
-
-```bash
 FLYPET_READER=0 FLYPET_THOUGHTS=0 python -m flypet.pet
 ```
 
-Open <http://127.0.0.1:8765/garden>. Stimuli and measured readouts work without an LLM;
-chat requires a backend. `FLYPET_LLM=ollama` uses a running local Ollama server;
-`FLYPET_LLM=anthropic` uses `ANTHROPIC_API_KEY`. The legacy default is the local Claude CLI.
-Configuration is read directly from the environment; no environment template is needed.
+The native garden uses port `8765`. Optional chat uses `FLYPET_LLM=ollama` with a
+running local Ollama server, or `FLYPET_LLM=anthropic` with `ANTHROPIC_API_KEY`.
+The legacy default chat backend is the local Claude CLI; sensory simulation does not
+invoke it. Configuration comes directly from environment variables.
 
-For Neural Link, install the PyTorch build suitable for your machine, then:
+For native Neural Link, first install the PyTorch build suitable for your machine:
 
 ```bash
 python -m pip install -c requirements-lock.txt -r requirements-llm.txt
-python scripts/fetch_data.py neural-link
-python -m flypet.latent_web --bundle output/neural-link
+python scripts/fetch_data.py brain neural-link
+python -m flypet.latent_web --bundle output/neural-link --device cpu
 ```
 
-Open <http://127.0.0.1:8775>. This downloads a roughly 30 MB interface bundle; the
-Qwen3-4B base model is downloaded separately from Hugging Face at the revision recorded
-in the bundle. `--device cuda`, `--device mps`, or `--device cpu` selects the backend.
-Full-model latency and memory use must be checked on the deployment machine.
+Every downloaded artifact is checked against `data/manifest.json`. `make smoke`
+compares actual simulator outputs with committed FlyTalk reference values. Allow a
+few GB of RAM per brain and additional memory for the language model.
 
 ## Code map
 

@@ -1,0 +1,25 @@
+services:
+  garden:
+    build:
+      context: .
+      target: garden
+    ports:
+      - "127.0.0.1:8765:8765"
+    volumes:
+      - garden-state:/var/lib/flypet
+    init: true
+
+  neural-link:
+    profiles: [neural]
+    build:
+      context: .
+      target: neural-link
+    ports:
+      - "127.0.0.1:8775:8775"
+    volumes:
+      - model-cache:/var/cache/flypet/huggingface
+    init: true
+
+volumes:
+  garden-state:
+  model-cache:

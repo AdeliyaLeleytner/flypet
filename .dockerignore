@@ -1,0 +1,16 @@
+**
+!Dockerfile
+!README.md
+!LICENSE
+!THIRD_PARTY_NOTICES.md
+!pyproject.toml
+!requirements*.txt
+!flypet/
+!flypet/**
+!scripts/
+!scripts/**
+!data/
+!data/manifest.json
+**/__pycache__/
+**/*.pyc
+**/.DS_Store

@@ -23,3 +23,15 @@ jobs:
           pip install -c requirements-lock.txt -r requirements-llm.txt
       - run: make check test
       - run: python release/check.py
+  container:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose up --build --detach garden
+      - run: python3 scripts/check_server.py --timeout 300
+      - run: docker compose exec -T garden python scripts/flytalk/smoke_test.py --workers 1
+      - if: always()
+        run: |
+          docker compose logs --no-color
+          docker compose down --volumes
